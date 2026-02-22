@@ -5,11 +5,11 @@ import Experience from "@/components/Experience";
 
 const AboutPageContent = () => {
   return (
-    <>
+    <div className="pt-32">
       <About />
       <Experience />
       <Skill />
-    </>
+    </div>
   );
 };
 

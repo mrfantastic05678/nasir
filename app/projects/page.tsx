@@ -59,7 +59,9 @@ const projects = () => {
         type="projects"
         pageUrl="https://owaisabdullah.dev/projects"
       />
-      <ProjectsTab />
+      <div className="pt-32">
+        <ProjectsTab />
+      </div>
     </>
   );
 };

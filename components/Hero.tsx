@@ -5,6 +5,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { RiNextjsLine, RiWordpressLine } from "react-icons/ri";
 import { TbBrandTypescript, TbBrandPython } from "react-icons/tb";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { HeroHighlight } from "./ui/HeroHighlight";
 import { AnimatedTooltip } from "./ui/AnimatedTooltip";
 import { Github, Linkedin, Mail } from "lucide-react";
@@ -20,32 +21,35 @@ const Typewriter = dynamic(
 
 const Hero = () => {
   return (
-    <section className="relative text-gray-600 overflow-hidden z-0 -mt-20">
+    <section className="relative text-white overflow-hidden z-0">
+      {/* Background Ambient Glows */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[150px] opacity-20 pointer-events-none z-[-1]" />
+      <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] bg-accent rounded-full blur-[150px] opacity-10 pointer-events-none z-[-1]" />
+
       <HeroHighlight>
-        <div className="max-w-7xl mx-auto flex px-5 pt-40 py-10 md:flex-row flex-col items-center">
+        <div className="max-w-7xl mx-auto flex px-5 pt-24 py-10 md:flex-row flex-col items-center min-h-screen">
           <div className="sm:entrance-left lg:flex-grow md:w-1/2 lg:pr-16 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center lg:w-3/5">
             {/* Available Badge with Live Indicator */}
             <div className="mb-4">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 bg-muted/70 border border-border/50">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-gray-300 border border-white/10 bg-card shadow-xl backdrop-blur-md">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
                 </span>
                 Available for FTE & SaaS Projects
               </span>
             </div>
 
             <div className="min-h-60 xs:min-h-44 md:min-h-0">
-              <h1 className="sm:text-5xl text-4xl mb-4 font-montserrat font-bold text-foreground ">
-                Hi, I&apos;m <span className="text-accent">Owais Abdullah</span>
+              <h1 className="sm:text-5xl text-4xl mb-4 font-montserrat font-bold text-white tracking-tight">
+                Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Owais Abdullah</span><span className="text-accent">.</span>
                 <br />
-                <span className="">
+                <span className="text-gray-200 font-semibold tracking-normal mt-2 inline-block">
                   <Typewriter
                     words={[
                       "a Spec-Driven Developer.",
                       "an AI Agent Developer.",
                       "an AI-Driven Engineer.",
-                      "a Next.js & SaaS Architect.",
                       "a Full Stack Digital FTE.",
                       "a TypeScript Specialist.",
                       "a WordPress & CMS Expert.",
@@ -61,67 +65,54 @@ const Hero = () => {
               </h1>
             </div>
             <p className="mb-8 leading-relaxed font-poppins text-gray-400">
-              I build production-ready web applications and AI agents using <span className="text-accent font-semibold">spec-driven development</span> and <span className="text-accent font-semibold">AI-driven engineering</span>. Specializing in Next.js SaaS products, full-time digital solutions, and intelligent automation that scales with your business.
+              I build production-ready web applications and AI agents using <span className="text-white font-medium">spec-driven development</span> and <span className="text-white font-medium">AI-driven engineering</span>. Specializing in Next.js SaaS products, full-time digital solutions, and intelligent automation that scales with your business.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Link href="#contact" className="scroll-smooth duration-300">
-                <button className="group flex items-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 py-2 hover:bg-blue-500 hover:bg-gradient-to-tr rounded-full font-medium text-lg px-8">
-                  Get In Touch
-                  <FaChevronRight className="ml-3 group-hover:mt-2 group-hover:rotate-90 duration-300" />
-                </button>
+                <motion.button
+                  whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(99, 102, 241, 0.5)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative overflow-hidden flex items-center text-white px-8 py-3.5 rounded-full font-medium text-sm tracking-wide bg-gradient-to-r from-primary to-accent border-0"
+                >
+                  <span className="relative z-10 flex items-center">
+                    Get In Touch
+                    <FaChevronRight className="ml-3 group-hover:translate-x-1 duration-300 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </motion.button>
               </Link>
               <Link href="#projects" className="scroll-smooth duration-300">
-                <button className="group flex items-center text-foreground bg-card hover:bg-accent hover:text-white border-2 border-border hover:border-accent py-2 rounded-full font-medium text-lg px-8 transition-all duration-300">
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group flex items-center text-white bg-transparent border border-white/20 hover:border-white/50 py-3.5 rounded-full font-medium text-sm px-8 transition-all duration-300"
+                >
                   View Projects
                   <FaChevronRight className="ml-3 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </motion.button>
               </Link>
             </div>
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-center">
+            <div className="flex flex-col lg:flex-row gap-4 items-center justify-center mt-8">
               <div>
-                <p className="mt-8 mb-2 font-bold md:ml-4">TECH STACK:</p>
+                <p className="mb-2 font-bold md:ml-4 text-xs tracking-widest text-gray-500 uppercase">TECH STACK:</p>
                 <div className="container flex flex-row items-center gap-3 justify-center md:justify-start flex-wrap">
-                  <AnimatedTooltip
-                    tooltipTitle="Next.js"
-                    tooltipDescription="SaaS & Full-Stack"
-                  >
-                    <div
-                      title="Next.js"
-                      className=" shadow-sm opacity-50 hover:opacity-100 shadow-slate-700 rounded-lg bg-gray-900 p-3 text-2xl text-text  hover:bg-gray-950 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"
-                    >
+                  <AnimatedTooltip tooltipTitle="Next.js" tooltipDescription="SaaS & Full-Stack">
+                    <div className="shadow-xl shadow-black/50 opacity-80 hover:opacity-100 rounded-lg bg-card border border-primary/30 p-3 text-2xl text-gray-300 hover:text-white transition-all">
                       <RiNextjsLine />
                     </div>
                   </AnimatedTooltip>
-                  <AnimatedTooltip
-                    tooltipTitle="TypeScript"
-                    tooltipDescription="Type-Safe Development"
-                  >
-                    <div
-                      title="TypeScript"
-                      className=" shadow-sm opacity-50 hover:opacity-100 shadow-slate-700 rounded-lg bg-gray-900 p-3 text-2xl text-text hover:bg-gray-950 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"
-                    >
+                  <AnimatedTooltip tooltipTitle="TypeScript" tooltipDescription="Type-Safe Development">
+                    <div className="shadow-xl shadow-black/50 opacity-80 hover:opacity-100 rounded-lg bg-card border border-primary/30 p-3 text-2xl text-gray-300 hover:text-white transition-all">
                       <TbBrandTypescript />
                     </div>
                   </AnimatedTooltip>
-                  <AnimatedTooltip
-                    tooltipTitle="Python"
-                    tooltipDescription="AI Agents & Automation"
-                  >
-                    <div
-                      title="Python"
-                      className=" shadow-sm opacity-50 hover:opacity-100 shadow-slate-700 rounded-lg bg-gray-900 p-3 text-2xl text-text hover:bg-gray-950 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"
-                    >
+                  <AnimatedTooltip tooltipTitle="Python" tooltipDescription="AI Agents & Automation">
+                    <div className="shadow-xl shadow-black/50 opacity-80 hover:opacity-100 rounded-lg bg-card border border-primary/30 p-3 text-2xl text-gray-300 hover:text-white transition-all">
                       <TbBrandPython />
                     </div>
                   </AnimatedTooltip>
-                  <AnimatedTooltip
-                    tooltipTitle="WordPress"
-                    tooltipDescription="CMS & E-commerce"
-                  >
-                    <div
-                      title="WordPress"
-                      className=" shadow-sm opacity-50 hover:opacity-100 shadow-slate-700 rounded-lg bg-gray-900 p-3 text-2xl text-text hover:bg-gray-950 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"
-                    >
+                  <AnimatedTooltip tooltipTitle="WordPress" tooltipDescription="CMS & E-commerce">
+                    <div className="shadow-xl shadow-black/50 opacity-80 hover:opacity-100 rounded-lg bg-card border border-primary/30 p-3 text-2xl text-gray-300 hover:text-white transition-all">
                       <RiWordpressLine />
                     </div>
                   </AnimatedTooltip>
@@ -129,50 +120,26 @@ const Hero = () => {
               </div>
 
               <div>
-                <p className="mt-8 mb-2 font-bold md:ml-4">CONNECT WITH ME:</p>
-                <div className="container flex flex-row items-center gap-3 justify-center md:justify-start ">
-                  <AnimatedTooltip
-                    tooltipTitle="Linkedin"
-                    tooltipDescription="Connect with me on Linkedin"
-                  >
-                    <Link
-                      href={"https://www.linkedin.com/in/mrowaisabdullah/"}
-                      target="_blank"
-                    >
-                      <div                       className="shadow-sm opacity-50 hover:opacity-100 shadow-slate-700 rounded-lg bg-gray-900 p-3 text-2xl text-text  hover:bg-gray-950 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"
-                      >
-
-                      <Linkedin />
+                <p className="mt-8 lg:mt-0 mb-2 font-bold md:ml-4 text-xs tracking-widest text-gray-500 uppercase">CONNECT WITH ME:</p>
+                <div className="container flex flex-row items-center gap-3 justify-center md:justify-start">
+                  <AnimatedTooltip tooltipTitle="Linkedin" tooltipDescription="Connect with me on Linkedin">
+                    <Link href={"https://www.linkedin.com/in/mrowaisabdullah/"} target="_blank">
+                      <div className="shadow-xl shadow-black/50 opacity-80 hover:opacity-100 rounded-lg bg-card border border-primary/30 p-3 text-2xl text-gray-300 hover:text-white transition-all">
+                        <Linkedin />
                       </div>
                     </Link>
                   </AnimatedTooltip>
-                  <AnimatedTooltip
-                    tooltipTitle="Github"
-                    tooltipDescription="View my repositories on Github"
-                  >
-                    <Link
-                      href={"https://github.com/MrOwaisAbdullah"}
-                      target="_blank"
-                    >
-                      <div                       className="shadow-sm opacity-50 hover:opacity-100 shadow-slate-700 rounded-lg bg-gray-900 p-3 text-2xl text-text  hover:bg-gray-950 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"
-                      >
-
-                      <Github />
+                  <AnimatedTooltip tooltipTitle="Github" tooltipDescription="View my repositories on Github">
+                    <Link href={"https://github.com/MrOwaisAbdullah"} target="_blank">
+                      <div className="shadow-xl shadow-black/50 opacity-80 hover:opacity-100 rounded-lg bg-card border border-primary/30 p-3 text-2xl text-gray-300 hover:text-white transition-all">
+                        <Github />
                       </div>
                     </Link>
                   </AnimatedTooltip>
-                  <AnimatedTooltip
-                    tooltipTitle="Email"
-                    tooltipDescription="Send me an email"
-                  >
-                    <Link
-                      href={"mailto:mrowaisabdullah@gmail.com"}
-                      target="_blank"
-                    >
-                      <div                       className="shadow-sm opacity-50 hover:opacity-100 shadow-slate-700 rounded-lg bg-gray-900 p-3 text-2xl text-text  hover:bg-gray-950 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"
-                      >
-
-                      <Mail />
+                  <AnimatedTooltip tooltipTitle="Email" tooltipDescription="Send me an email">
+                    <Link href={"mailto:mrowaisabdullah@gmail.com"} target="_blank">
+                      <div className="shadow-xl shadow-black/50 opacity-80 hover:opacity-100 rounded-lg bg-card border border-primary/30 p-3 text-2xl text-gray-300 hover:text-white transition-all">
+                        <Mail />
                       </div>
                     </Link>
                   </AnimatedTooltip>
@@ -181,15 +148,15 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="sm:entrance-right lg:max-w-lg md:w-2/5 sm:-ml-16 sm:pt-0 relative lg:-mt-8 xl:-mt-14 md:ml-20 md:-mt-52 ">
-            <div className="-mt-56 -mr-[155px] w-11/12 sm:w-[24rem] h-[70%] shadow-xl opacity-30 shadow-slate-500 rounded-xl absolute bottom-0 right-40 z-0 bg-black md:w-11/12 md:h-[75%] md:-mr-28 md:bottom-0 xs:h-[75%] xs:bottom-0 sm:bottom-0 sm:-mr-32 sm:w-10/12  lg:-mr-40 xl:w-10/12 xl:-mr-30 xl:h-[75%] xl:bottom-0 bg-gradient-to-br to-[#1c1f22] from-[#16161f]"></div>
+          <div className="sm:entrance-right lg:max-w-lg md:w-2/5 sm:-ml-16 sm:pt-0 relative lg:mt-4 xl:mt-0 md:ml-20 md:-mt-20">
+            <div className="-mt-56 -mr-[155px] w-11/12 sm:w-[24rem] h-[70%] shadow-2xl opacity-40 shadow-indigo-900/30 rounded-xl absolute bottom-0 right-40 z-0 md:w-11/12 md:h-[75%] md:-mr-28 md:bottom-0 xs:h-[75%] xs:bottom-0 sm:bottom-0 sm:-mr-32 sm:w-10/12 lg:-mr-40 xl:w-10/12 xl:-mr-30 xl:h-[75%] xl:bottom-0 bg-card border border-white/5"></div>
             <AnimatedTooltip
               tooltipTitle="Owais Abdullah"
               tooltipDescription="Spec-Driven & AI Engineer"
             >
               <Image
                 src="/assets/hero.png"
-                className="relative object-contain object-center -mt-16 xs:ml-5 xs:-mt-14 z-10 md:mt-32 md:-ml-10 sm:-mt-9 sm:ml-16 lg:ml-4 lg:mt-4 xl:ml-12"
+                className="relative object-contain object-center -mt-4 xs:ml-5 xs:-mt-2 z-10 md:mt-24 md:-ml-10 sm:-mt-2 sm:ml-16 lg:ml-4 lg:mt-8 xl:ml-12 drop-shadow-2xl"
                 width={450}
                 height={350}
                 quality={100}
@@ -200,7 +167,7 @@ const Hero = () => {
             </AnimatedTooltip>
           </div>
         </div>
-        <div className="h-px bg-border opacity-80 justify-center flex m-auto mt-10"></div>
+        <div className="h-px bg-white/10 justify-center flex m-auto mt-10"></div>
       </HeroHighlight>
     </section>
   );

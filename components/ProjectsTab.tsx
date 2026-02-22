@@ -96,7 +96,7 @@ const ProjectTabs = () => {
 
   if (loading) {
     return (
-      <section id="projects" className="max-w-7xl mx-auto mt-20 px-5">
+      <section id="projects" className="max-w-7xl mx-auto mt-20 px-5 pb-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ const ProjectTabs = () => {
   };
 
   return (
-    <section id="projects" className="max-w-7xl mx-auto mt-20 px-5">
+    <section id="projects" className="max-w-7xl mx-auto mt-20 px-5 pb-5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

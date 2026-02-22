@@ -44,39 +44,40 @@
   }
 
   .dark {
-    --background: #212428; /* dark background */
+    /* Tech-Luxury Theme - Approved in /design-sample */
+    --background: #05060A; /* Deep Onyx */
     --foreground: #ffffff; /* white foreground */
 
-    --card: #26292b; /* dark card */
+    --card: #0E101A; /* Slightly lighter card */
     --card-foreground: #ffffff; /* white card foreground */
 
-    --popover: #202224; /* dark popover */
+    --popover: #0E101A; /* dark popover */
     --popover-foreground: #ffffff; /* white popover foreground */
 
-    --primary: #3a69ff; /* blue primary */
+    --primary: #6366f1; /* Electric Indigo */
     --primary-foreground: #ffffff; /* white primary foreground */
 
     --secondary: #1f2937; /* dark secondary */
     --secondary-foreground: #ffffff; /* white secondary foreground */
 
-    --muted: #374151; /* dark muted */
-    --muted-foreground: #d1d5db; /* light muted foreground */
+    --muted: #1e2538; /* dark muted */
+    --muted-foreground: #a1a1aa; /* light muted foreground */
 
-    --accent: #3a69ff; /* blue accent */
+    --accent: #38bdf8; /* Vibrant Cyan */
     --accent-foreground: #ffffff; /* white accent foreground */
 
     --destructive: #ef4444; /* red destructive */
     --destructive-foreground: #ffffff; /* white destructive foreground */
 
-    --border: #2c333f; /* dark border */
-    --input: #374151; /* dark input */
-    --ring: #3a69ff; /* blue ring */
+    --border: rgba(99, 102, 241, 0.3); /* Indigo Glow border */
+    --input: #1e2538; /* dark input */
+    --ring: #38bdf8; /* Cyan ring */
 
     --heading: #ffffff; /* white heading */
     --text: #fff; /* white text */
     --text2: #d1d5db; /* light text2 */
-    --toc-background: #1F2937; /* dark TOC background */
-    --blog: #262a2e; /* dark blog background */
+    --toc-background: #0E101A; /* dark TOC background */
+    --blog: #0A0D15; /* dark blog background */
   }
 }
 
@@ -87,6 +88,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-poppins);
+  }
+  
+  .dark body {
+    /* Apply the global luxury noise texture only in dark mode */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    background-color: var(--background);
   }
 }
 

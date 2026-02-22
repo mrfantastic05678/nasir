@@ -48,7 +48,7 @@ export default function ServicesPage() {
       <JsonLdSchema type="services" pageUrl="https://owaisabdullah.dev/services" />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-20 px-5">
+        <section className="pt-32 pb-20 px-5">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Services

@@ -1,132 +1,186 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
-import { CgClose, CgMenuRight } from "react-icons/cg";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { FaArrowRight, FaTimes } from "react-icons/fa";
+import { CgMenuRight } from "react-icons/cg";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { name: "HOME", path: "/" },
+  { name: "ABOUT", path: "/about" },
+  { name: "PROJECTS", path: "/projects" },
+  { name: "SKILLS", path: "/skills" },
+  { name: "SERVICES", path: "/services" },
+];
 
 const Header = () => {
-  const [isoOpen, setisoOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  function handleLinkClick() {
-    setisoOpen(false);
-  }
+  // Handle scroll detection for sticky pill effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  function getMenuClassNames() {
-    let menuClasses = [];
-
-    if (isoOpen) {
-      menuClasses = [
-        "flex",
-        "absolute",
-        "w-full",
-        "mt-2",
-        "p-8",
-        "gap-10",
-        "flex-col",
-        "left-0",
-        "top-[60px]",
-        "bg-card", // Theme-aware background
-        "z-50",
-      ];
+  // Prevent background scrolling when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
     } else {
-      menuClasses = [
-        "hidden",
-        "md:flex",
-        "md:ml-auto",
-        "flex-wrap",
-        "items-center",
-        "justify-center",
-        "gap-4",
-      ];
+      document.body.style.overflow = "unset";
     }
-    return menuClasses.join(" ");
-  }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
-  // Determine text color classes based on page and theme
-  const textColorClass = "text-foreground";
-  const hoverColorClass = "hover:text-accent";
-  
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <header className="max-w-[1400px] mx-auto relative z-50 bg-transparent">
-      <div className="absolute top-0 left-0 w-full h-full z-[-1] pointer-events-none" />
+    <>
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
+          scrolled ? "pt-4" : "pt-6"
+        }`}
+      >
+        <div className="absolute top-[-50%] left-[-10%] w-[30%] h-[150%] bg-primary rounded-full blur-[100px] opacity-20 pointer-events-none -z-10" />
 
-      <div className="mx-auto flex flex-wrap justify-between font-medium p-5 flex-row z-10">
-        {/* Natural gradient blob coming from above with larger size */}
-        <div className="absolute -top-20 -left-14 w-48 h-48 md:w-56 md:h-56 bg-gradient-to-br from-accent to-black/60 rounded-full blur-2xl opacity-80 md:opacity-50 dark:opacity-30 -z-10"></div>
-        <Link href={"/"} className="flex mb-4 md:mb-0 z-10 relative">
-          <Image src="/assets/owais_logo.png" width={80} height={40} alt={"logo"} className="relative z-10" unoptimized />
-        </Link>
-
-        <nav className={getMenuClassNames()}>
-          <Link
-            href={"/"}
-            onClick={handleLinkClick}
-            className={`mr-5 ${textColorClass} text-base ${hoverColorClass}`}
-          >
-            HOME
-          </Link>
-          <Link
-            href={"/about"}
-            onClick={handleLinkClick}
-            className={`mr-5 ${textColorClass} text-base ${hoverColorClass}`}
-          >
-            ABOUT
-          </Link>
-          <Link
-            href={"/projects"}
-            onClick={handleLinkClick}
-            className={`mr-5 ${textColorClass} text-base ${hoverColorClass}`}
-          >
-            PROJECTS
-          </Link>
-          <Link
-            href={"/skills"}
-            onClick={handleLinkClick}
-            className={`mr-5 ${textColorClass} text-base ${hoverColorClass}`}
-          >
-            SKILLS
-          </Link>
-          <Link
-            href={"/services"}
-            onClick={handleLinkClick}
-            className={`mr-5 ${textColorClass} text-base ${hoverColorClass}`}
-          >
-            SERVICES
-          </Link>
-          <Link
-            href={"/contact"}
-            onClick={handleLinkClick}
-            className={`mr-5 ${textColorClass} text-base ${hoverColorClass}`}
-          >
-            CONTACT
+        <div
+          className={`mx-auto max-w-[1200px] flex items-center justify-between transition-all duration-300 ${
+            scrolled
+              ? "bg-card/80 backdrop-blur-md shadow-lg shadow-black/20 border border-white/10 rounded-full px-6 py-3 mx-4 lg:mx-auto"
+              : "bg-transparent px-6 py-2"
+          }`}
+        >
+          {/* Logo */}
+          <Link href={"/"} className="flex z-10 relative items-center" onClick={handleLinkClick}>
+            <Image
+              src="/assets/owais_logo.png"
+              width={scrolled ? 70 : 80}
+              height={scrolled ? 35 : 40}
+              alt={"logo"}
+              className="relative z-10 transition-all duration-300"
+              unoptimized
+            />
           </Link>
 
-          {/* hire button */}
-            <button className="group inline-flex items-center text-center font-bold bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 hover:bg-blue-500 hover:bg-gradient-to-tr text-white border-0 py-4 lg:py-2 px-6 focus:outline-none duration-500 rounded-full text-base mt-4 md:mt-0">
-              <Link href={"/contact"} onClick={handleLinkClick}>
-                HIRE ME
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.path}
+                className="text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors"
+              >
+                {link.name}
               </Link>
-              <FaArrowRight className="pl-3 text-2xl" />
+            ))}
+          </nav>
+
+          {/* Right Actions */}
+          <div className="flex items-center gap-4">
+            {/* Hire Me Button - Desktop */}
+            <Link href="/contact" className="hidden lg:block">
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 0px 20px rgba(99, 102, 241, 0.4)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group flex items-center text-center font-semibold bg-gradient-to-r from-primary to-accent border border-white/10 py-2.5 px-6 rounded-full text-sm text-white shadow-lg"
+              >
+                HIRE ME
+                <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
+
+            {/* Mobile Hamburger Menu */}
+            <button
+              className="lg:hidden flex items-center justify-center text-3xl text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsOpen(true)}
+            >
+              <CgMenuRight />
             </button>
-        </nav>
-        <div className="flex items-center gap-4">
-          <div>
-            <ThemeToggle />
           </div>
-          <button
-            className={`md:hidden flex items-center justify-end text-3xl text-foreground hover:text-accent z-20`}
-            onClick={() => {
-              setisoOpen(!isoOpen);
-            }}
-          >
-            {isoOpen ? <CgClose /> : <CgMenuRight />}
-          </button>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Drawer Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+              className="fixed right-0 top-0 bottom-0 w-[300px] sm:w-[350px] bg-card border-l border-white/10 z-[70] shadow-2xl flex flex-col"
+            >
+              <div className="flex items-center justify-between p-6 border-b border-white/5">
+                <span className="text-white font-montserrat font-bold tracking-widest text-sm">
+                  MENU
+                </span>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-400 hover:text-white p-2 transition-colors rounded-full hover:bg-white/5"
+                >
+                  <FaTimes size={20} />
+                </button>
+              </div>
+
+              <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-6">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + index * 0.05 }}
+                  >
+                    <Link
+                      href={link.path}
+                      onClick={handleLinkClick}
+                      className="text-2xl font-montserrat font-medium text-gray-300 hover:text-white hover:pl-2 transition-all duration-300 block"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="p-6 border-t border-white/5 bg-black/20 flex flex-col gap-4">
+                <Link href="/contact" onClick={handleLinkClick} className="w-full">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full flex items-center justify-center font-bold bg-gradient-to-r from-primary to-accent py-4 rounded-xl text-white shadow-lg shadow-primary/20"
+                  >
+                    HIRE ME
+                    <FaArrowRight className="ml-2" />
+                  </motion.button>
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

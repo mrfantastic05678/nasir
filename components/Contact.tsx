@@ -250,11 +250,14 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.55 }}
-              whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+              whileHover={{ 
+                scale: isSubmitting ? 1 : 1.05,
+                boxShadow: isSubmitting ? "none" : "0px 0px 20px rgba(99, 102, 241, 0.5)"
+              }}
+              whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
               type="submit"
               disabled={isSubmitting}
-              className="w-full text-white bg-gradient-to-br from-blue-400 via-accent to-blue-400 from-[0%] via-[10%] border-0 py-4 px-6 focus:outline-none hover:bg-text hover:scale-105 duration-300 ease-out rounded text-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="w-full text-white bg-gradient-to-r from-primary to-accent border-0 py-4 px-6 focus:outline-none hover:bg-opacity-90 rounded text-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
             </motion.button>

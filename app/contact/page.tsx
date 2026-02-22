@@ -62,7 +62,9 @@ const contact = () => {
         type="contact"
         pageUrl="https://owaisabdullah.dev/contact"
       />
-      <Contact />
+      <div className="pt-32">
+        <Contact />
+      </div>
     </>
   );
 };

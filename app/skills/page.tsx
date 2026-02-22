@@ -68,10 +68,12 @@ const skills = () => {
   return (
     <>
       <JsonLdSchema type="skills" pageUrl="https://owaisabdullah.dev/skills" />
-      <div className="my-10">
-        <SkillSlider />
+      <div className="pt-32">
+        <div className="mb-10">
+          <SkillSlider />
+        </div>
+        <Skill />
       </div>
-      <Skill />
     </>
   );
 };
