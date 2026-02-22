@@ -1,25 +1,34 @@
-import {
-  TransactionalEmailsApi,
-  SendSmtpEmail,
-  TransactionalEmailsApiApiKeys,
-} from "@getbrevo/brevo";
+import { BrevoClient } from "@getbrevo/brevo";
 
-// Initialize Brevo API client
-const apiInstance = new TransactionalEmailsApi();
+// Get configuration from environment
+const getSenderEmail = () => process.env.BREVO_SENDER_EMAIL || "noreply@owaisabdullah.dev";
+const getSenderName = () => process.env.BREVO_SENDER_NAME || "Owais Abdullah";
+const getAdminEmail = () => process.env.BREVO_ADMIN_EMAIL || "mrowaisabdullah@gmail.com";
 
-// Set API key from environment
-const apiKey = process.env.BREVO_API_KEY;
-if (!apiKey) {
-  throw new Error("BREVO_API_KEY not set in environment variables");
-}
-apiInstance.setApiKey(TransactionalEmailsApiApiKeys.apiKey, apiKey);
+// Get API key with validation
+const getApiKey = () => {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) {
+    throw new Error("BREVO_API_KEY not set in environment variables");
+  }
+  return apiKey;
+};
 
-// Get sender info from environment
-const senderEmail = process.env.BREVO_SENDER_EMAIL || "noreply@owaisabdullah.dev";
-const senderName = process.env.BREVO_SENDER_NAME || "Owais Abdullah";
-const adminEmail = process.env.BREVO_ADMIN_EMAIL || "mrowaisabdullah@gmail.com";
+// Initialize Brevo client (lazy initialization)
+let brevoInstance: BrevoClient | null = null;
 
-export { apiInstance, SendSmtpEmail, senderEmail, senderName, adminEmail };
+const getBrevoClient = () => {
+  if (!brevoInstance) {
+    brevoInstance = new BrevoClient({
+      apiKey: getApiKey(),
+      timeoutInSeconds: 30,
+      maxRetries: 2,
+    });
+  }
+  return brevoInstance;
+};
+
+export { getBrevoClient, getSenderEmail, getSenderName, getAdminEmail };
 
 /**
  * Send a direct HTML email
@@ -30,14 +39,16 @@ export async function sendDirectEmail(
   htmlContent: string,
   toName?: string
 ) {
-  const email = new SendSmtpEmail();
-  email.sender = { email: senderEmail, name: senderName };
-  email.to = [{ email: to, ...(toName && { name: toName }) }];
-  email.subject = subject;
-  email.htmlContent = htmlContent;
-  email.textContent = stripHtmlTags(htmlContent); // Fallback for text-only clients
+  const brevo = getBrevoClient();
+  const result = await brevo.transactionalEmails.sendTransacEmail({
+    sender: { email: getSenderEmail(), name: getSenderName() },
+    to: [{ email: to, ...(toName && { name: toName }) }],
+    subject,
+    htmlContent,
+    textContent: stripHtmlTags(htmlContent),
+  });
 
-  return await apiInstance.sendTransacEmail(email);
+  return result;
 }
 
 /**
@@ -49,6 +60,11 @@ export async function handleContactForm(data: {
   subject: string;
   message: string;
 }) {
+  const brevo = getBrevoClient();
+  const senderEmail = getSenderEmail();
+  const senderName = getSenderName();
+  const adminEmail = getAdminEmail();
+
   // Escape HTML to prevent XSS
   const escapeHtml = (text: string) =>
     text
@@ -64,11 +80,11 @@ export async function handleContactForm(data: {
   const safeMessage = escapeHtml(data.message).replace(/\n/g, "<br>");
 
   // Email to admin
-  const adminEmailContent = new SendSmtpEmail();
-  adminEmailContent.sender = { email: senderEmail, name: senderName };
-  adminEmailContent.to = [{ email: adminEmail, name: "Owais Abdullah" }];
-  adminEmailContent.subject = `Portfolio Contact: ${safeSubject}`;
-  adminEmailContent.htmlContent = `
+  const adminEmailParams = {
+    sender: { email: senderEmail, name: senderName },
+    to: [{ email: adminEmail, name: "Owais Abdullah" }],
+    subject: `Portfolio Contact: ${safeSubject}`,
+    htmlContent: `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #3a69ff;">New Contact Form Submission</h2>
       <table style="width: 100%; border-collapse: collapse;">
@@ -96,15 +112,16 @@ export async function handleContactForm(data: {
         Sent from portfolio contact form at ${new Date().toISOString()}
       </p>
     </div>
-  `;
+  `,
+  };
 
   // Auto-reply to sender
-  const autoReplyEmail = new SendSmtpEmail();
-  autoReplyEmail.sender = { email: senderEmail, name: senderName };
-  autoReplyEmail.to = [{ email: data.email, name: data.name }];
-  autoReplyEmail.subject = "Thanks for reaching out!";
-  autoReplyEmail.replyTo = { email: adminEmail, name: "Owais Abdullah" };
-  autoReplyEmail.htmlContent = `
+  const autoReplyParams = {
+    sender: { email: senderEmail, name: senderName },
+    to: [{ email: data.email, name: data.name }],
+    subject: "Thanks for reaching out!",
+    replyTo: { email: adminEmail, name: "Owais Abdullah" },
+    htmlContent: `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; text-align: center;">
       <div style="background: linear-gradient(135deg, #3a69ff 0%, #1a47ff 100%); padding: 30px; border-radius: 10px 10px 0 0;">
         <h1 style="color: white; margin: 0;">Thank You, ${safeName}! 👋</h1>
@@ -127,17 +144,18 @@ export async function handleContactForm(data: {
         This is an automated message. Please do not reply to this email.
       </p>
     </div>
-  `;
+  `,
+  };
 
   // Send both emails in parallel
   const [adminResult, autoReplyResult] = await Promise.all([
-    apiInstance.sendTransacEmail(adminEmailContent),
-    apiInstance.sendTransacEmail(autoReplyEmail),
+    brevo.transactionalEmails.sendTransacEmail(adminEmailParams),
+    brevo.transactionalEmails.sendTransacEmail(autoReplyParams),
   ]);
 
   return {
-    adminMessageId: adminResult.body.messageId,
-    autoReplyMessageId: autoReplyResult.body.messageId,
+    adminMessageId: adminResult.messageId,
+    autoReplyMessageId: autoReplyResult.messageId,
   };
 }
 
@@ -151,25 +169,23 @@ export async function sendEmailWithErrorHandling(
   toName?: string
 ) {
   try {
-    const result = await apiInstance.sendTransacEmail({
-      sender: { email: senderEmail, name: senderName },
+    const brevo = getBrevoClient();
+    const result = await brevo.transactionalEmails.sendTransacEmail({
+      sender: { email: getSenderEmail(), name: getSenderName() },
       to: [{ email: to, ...(toName && { name: toName }) }],
       subject,
       htmlContent,
     });
-    return { success: true, messageId: result.body.messageId };
-  } catch (error: any) {
-    // Brevo API error structure
-    if (error.response?.body) {
-      console.error("Brevo API error:", error.response.body);
-      return {
-        success: false,
-        error: error.response.body.message,
-        code: error.response.body.code,
-      };
-    }
-    console.error("Unexpected error:", error);
-    return { success: false, error: "Unknown error" };
+    return { success: true, messageId: result.messageId };
+  } catch (err: unknown) {
+    // Type guard for BrevoError
+    const brevoError = err as { statusCode?: number; message?: string; body?: unknown };
+    console.error("Brevo API error:", brevoError);
+    return {
+      success: false,
+      error: brevoError.message || "Unknown error",
+      code: brevoError.statusCode,
+    };
   }
 }
 

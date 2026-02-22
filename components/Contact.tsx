@@ -1,10 +1,68 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! I'll get back to you soon.",
+        });
+        // Reset form
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch {
+      setSubmitStatus({
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -76,10 +134,30 @@ const Contact = () => {
               CONNECT WITH ME
             </h2>
             <p className="text-muted-foreground text-sm">
-              Have a project in mind or want to discuss opportunities? Send me a message and I&apos;ll get back to you shortly.
+              Have a project in mind or want to discuss opportunities? Send me a
+              message and I&apos;ll get back to you shortly.
             </p>
           </motion.div>
-          <form action="https://formspree.io/f/xnnqvnzl" method="POST">
+
+          {/* Status Messages */}
+          {submitStatus.type && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`p-4 rounded-lg mb-4 ${
+                submitStatus.type === "success"
+                  ? "bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400"
+                  : "bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400"
+              }`}
+            >
+              <p className="text-sm font-medium">
+                {submitStatus.type === "success" ? "✓ " : "✕ "}
+                {submitStatus.message}
+              </p>
+            </motion.div>
+          )}
+
+          <form onSubmit={handleSubmit}>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -94,8 +172,11 @@ const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full bg-card rounded border border-border focus:border-accent focus:ring-1 text-base outline-none text-foreground py-1 px-3 leading-8 transition-colors duration-200 ease-in-out shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"
                 required
+                disabled={isSubmitting}
               />
             </motion.div>
 
@@ -113,8 +194,11 @@ const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full bg-card rounded border border-border focus:border-accent focus:ring-1 text-base outline-none text-foreground py-1 px-3 leading-8 transition-colors duration-200 ease-in-out shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"
                 required
+                disabled={isSubmitting}
               />
             </motion.div>
 
@@ -132,8 +216,11 @@ const Contact = () => {
                 type="text"
                 id="subject"
                 name="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 className="w-full bg-card rounded border border-border focus:border-accent focus:ring-1 text-base outline-none text-foreground py-1 px-3 leading-8 transition-colors duration-200 ease-in-out shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"
                 required
+                disabled={isSubmitting}
               />
             </motion.div>
 
@@ -150,9 +237,11 @@ const Contact = () => {
               <textarea
                 id="message"
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full bg-card rounded border border-border focus:border-accent focus:ring-1 h-36 text-base outline-none text-foreground py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"
-                defaultValue={""}
                 required
+                disabled={isSubmitting}
               />
             </motion.div>
 
@@ -161,12 +250,13 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.55 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               type="submit"
-              className="w-full text-white bg-gradient-to-br from-blue-400 via-accent to-blue-400 from-[0%] via-[10%] border-0 py-4 px-6 focus:outline-none hover:bg-text hover:scale-105 duration-300 ease-out rounded text-md font-semibold"
+              disabled={isSubmitting}
+              className="w-full text-white bg-gradient-to-br from-blue-400 via-accent to-blue-400 from-[0%] via-[10%] border-0 py-4 px-6 focus:outline-none hover:bg-text hover:scale-105 duration-300 ease-out rounded text-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              SEND MESSAGE
+              {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
             </motion.button>
           </form>
           <p className="text-xs bg-transparent text-center text-gray-500 mt-5">
