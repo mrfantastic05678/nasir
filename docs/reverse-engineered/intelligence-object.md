@@ -864,7 +864,7 @@ import { PortableText } from '@portabletext/react'
 
 ### Domain-Specific (Not Reusable)
 
-1. **Hero Section** → Specific to Owais's branding
+1. **Hero Section** → Specific to Nasir's branding
 2. **About Content** → Personal information
 3. **Project Data** → Specific to this portfolio
 4. **Experience Timeline** → Personal work history

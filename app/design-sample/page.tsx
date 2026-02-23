@@ -72,7 +72,7 @@ export default function DesignSample() {
 
               <div className="min-h-60 xs:min-h-44 md:min-h-0">
                 <h1 className="sm:text-5xl text-4xl mb-4 font-montserrat font-bold text-white tracking-tight">
-                  Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Owais Abdullah</span><span className={TechLuxuryTheme.accentText}>.</span>
+                  Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Nasir Siddiqui</span><span className={TechLuxuryTheme.accentText}>.</span>
                   <br />
                   <span className="text-gray-200 font-semibold tracking-normal mt-2 inline-block">
                     <Typewriter
@@ -175,7 +175,7 @@ export default function DesignSample() {
 
             <div className="sm:entrance-right lg:max-w-lg md:w-2/5 sm:-ml-16 sm:pt-0 relative lg:-mt-8 xl:-mt-14 md:ml-20 md:-mt-52 ">
               <div className={`-mt-56 -mr-[155px] w-11/12 sm:w-[24rem] h-[70%] shadow-2xl opacity-40 shadow-indigo-900/30 rounded-xl absolute bottom-0 right-40 z-0 md:w-11/12 md:h-[75%] md:-mr-28 md:bottom-0 xs:h-[75%] xs:bottom-0 sm:bottom-0 sm:-mr-32 sm:w-10/12 lg:-mr-40 xl:w-10/12 xl:-mr-30 xl:h-[75%] xl:bottom-0 ${TechLuxuryTheme.bgCard} border border-white/5`}></div>
-              <AnimatedTooltip tooltipTitle="Owais Abdullah" tooltipDescription="Spec-Driven & AI Engineer">
+              <AnimatedTooltip tooltipTitle="Nasir Siddiqui" tooltipDescription="Spec-Driven & AI Engineer">
                 <Image
                   src="/assets/hero.png"
                   className="relative object-contain object-center -mt-16 xs:ml-5 xs:-mt-14 z-10 md:mt-32 md:-ml-10 sm:-mt-9 sm:ml-16 lg:ml-4 lg:mt-4 xl:ml-12 drop-shadow-2xl"
@@ -184,7 +184,7 @@ export default function DesignSample() {
                   quality={100}
                   unoptimized
                   priority
-                  alt="Owais Abdullah - Spec-Driven Developer & AI Engineer"
+                  alt="Nasir Siddiqui - Spec-Driven Developer & AI Engineer"
                 />
               </AnimatedTooltip>
             </div>

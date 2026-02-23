@@ -24,19 +24,19 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${service.title} | Owais Abdullah`,
+    title: `${service.title} | Nasir Siddiqui`,
     description: service.description,
     keywords: [
       ...service.features,
       ...service.techStack,
       service.tagline,
-      "Owais Abdullah",
+      "Nasir Siddiqui",
       "AI Developer",
       "Next.js Developer",
       "SaaS Development",
     ],
     openGraph: {
-      title: `${service.title} | Owais Abdullah`,
+      title: `${service.title} | Nasir Siddiqui`,
       description: service.description,
       url: `https://owaisabdullah.dev/services/${slug}`,
       type: "website",

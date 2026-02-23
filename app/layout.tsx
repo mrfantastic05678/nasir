@@ -11,14 +11,14 @@ import Script from "next/script";
 export const metadata: Metadata = {
   metadataBase: new URL("https://owaisabdullah.dev"),
   title: {
-    default: "Owais Abdullah | Spec-Driven Developer & AI Engineer",
+    default: "Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
     template: "%s | Spec-Driven Developer & AI Engineer",
   },
   description:
-    "Owais Abdullah is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures with AI-driven engineering.",
+    "Nasir Siddiqui is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures with AI-driven engineering.",
   keywords: [
-    "Owais Abdullah",
-    "Owais",
+    "Nasir Siddiqui",
+    "Nasir",
     "Spec-Driven Developer",
     "AI Agent Engineer",
     "AI-Driven Development",
@@ -62,30 +62,30 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Owais Abdullah Portfolio",
+    title: "Nasir Siddiqui Portfolio",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://owaisabdullah.dev",
-    title: "Owais Abdullah | Spec-Driven Developer & AI Engineer",
+    title: "Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
     description:
-      "Owais Abdullah is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures.",
-    siteName: "Owais Abdullah Portfolio",
+      "Nasir Siddiqui is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures.",
+    siteName: "Nasir Siddiqui Portfolio",
     images: [
       {
         url: "/assets/owais-abdullah-og.png",
         width: 1200,
         height: 630,
-        alt: "Owais Abdullah - Spec-Driven Developer & AI Engineer",
+        alt: "Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Owais Abdullah | Spec-Driven Developer & AI Engineer",
+    title: "Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
     description:
-      "Owais Abdullah is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures.",
+      "Nasir Siddiqui is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures.",
     images: ["/assets/owais-abdullah-og.png"],
     creator: "@mrowaisabdullah",
   },
@@ -108,8 +108,8 @@ export const metadata: Metadata = {
     "theme-color": "#3a69ff",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "Owais Abdullah Portfolio",
-    "application-name": "Owais Abdullah Portfolio",
+    "apple-mobile-web-app-title": "Nasir Siddiqui Portfolio",
+    "application-name": "Nasir Siddiqui Portfolio",
     "mobile-web-app-capable": "yes",
   },
 };
@@ -128,9 +128,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta
           name="apple-mobile-web-app-title"
-          content="Owais Abdullah Portfolio"
+          content="Nasir Siddiqui Portfolio"
         />
-        <meta name="application-name" content="Owais Abdullah Portfolio" />
+        <meta name="application-name" content="Nasir Siddiqui Portfolio" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body

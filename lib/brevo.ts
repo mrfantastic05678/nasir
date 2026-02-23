@@ -2,7 +2,7 @@ import { BrevoClient } from "@getbrevo/brevo";
 
 // Get configuration from environment
 const getSenderEmail = () => process.env.BREVO_SENDER_EMAIL || "noreply@owaisabdullah.dev";
-const getSenderName = () => process.env.BREVO_SENDER_NAME || "Owais Abdullah";
+const getSenderName = () => process.env.BREVO_SENDER_NAME || "Nasir Siddiqui";
 const getAdminEmail = () => process.env.BREVO_ADMIN_EMAIL || "mrowaisabdullah@gmail.com";
 
 // Get API key with validation
@@ -82,7 +82,7 @@ export async function handleContactForm(data: {
   // Email to admin
   const adminEmailParams = {
     sender: { email: senderEmail, name: senderName },
-    to: [{ email: adminEmail, name: "Owais Abdullah" }],
+    to: [{ email: adminEmail, name: "Nasir Siddiqui" }],
     subject: `Portfolio Contact: ${safeSubject}`,
     htmlContent: `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -120,7 +120,7 @@ export async function handleContactForm(data: {
     sender: { email: senderEmail, name: senderName },
     to: [{ email: data.email, name: data.name }],
     subject: "Thanks for reaching out!",
-    replyTo: { email: adminEmail, name: "Owais Abdullah" },
+    replyTo: { email: adminEmail, name: "Nasir Siddiqui" },
     htmlContent: `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; text-align: center;">
       <div style="background: linear-gradient(135deg, #3a69ff 0%, #1a47ff 100%); padding: 30px; border-radius: 10px 10px 0 0;">

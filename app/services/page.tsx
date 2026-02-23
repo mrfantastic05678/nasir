@@ -5,9 +5,9 @@ import { ArrowRight } from "lucide-react";
 import ServicesGrid from "@/components/ServicesGrid";
 
 export const metadata: Metadata = {
-  title: "Services | Owais Abdullah - Spec-Driven Developer & AI Engineer",
+  title: "Services | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
   description:
-    "Explore services offered by Owais Abdullah: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
+    "Explore services offered by Nasir Siddiqui: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
   keywords: [
     "Digital FTE Development",
     "AI Employee Development",
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     "Startup CTO",
   ],
   openGraph: {
-    title: "Services | Owais Abdullah - Spec-Driven Developer & AI Engineer",
+    title: "Services | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
     description:
-      "Explore services offered by Owais Abdullah: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
+      "Explore services offered by Nasir Siddiqui: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
     url: "https://owaisabdullah.dev/services",
-    siteName: "Owais Abdullah Portfolio",
+    siteName: "Nasir Siddiqui Portfolio",
     type: "website",
   },
   alternates: {

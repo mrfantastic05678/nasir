@@ -575,7 +575,7 @@ This task breakdown represents how to rebuild this portfolio website from scratc
 ### Task 6.2: Create Chat API Route
 - [ ] Create `app/api/chat/route.ts`
 - [ ] Implement POST handler
-- [ ] Add system prompt for Owais's expertise
+- [ ] Add system prompt for Nasir's expertise
 - [ ] Format messages for Gemini
 - [ ] Call Gemini API
 - [ ] Handle errors

@@ -11,11 +11,11 @@ import Services from "@/components/Services";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Owais Abdullah | Spec-Driven Developer & AI Agent Engineer",
+  title: "Nasir Siddiqui | Spec-Driven Developer & AI Agent Engineer",
   description:
     "Spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Building production-ready web applications with TypeScript, OpenAI Agents SDK, and modern architectures.",
   keywords: [
-    "Owais Abdullah Portfolio",
+    "Nasir Siddiqui Portfolio",
     "Spec-Driven Developer",
     "AI Agent Developer",
     "AI-Driven Development",
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     "Python Developer",
   ],
   openGraph: {
-    title: "Owais Abdullah | Spec-Driven Developer & AI Agent Engineer",
+    title: "Nasir Siddiqui | Spec-Driven Developer & AI Agent Engineer",
     description:
       "Spec-driven developer and AI engineer building Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and production-ready web architectures.",
     url: "https://owaisabdullah.dev",
-    siteName: "Owais Abdullah Portfolio",
+    siteName: "Nasir Siddiqui Portfolio",
     locale: "en_US",
     type: "website",
     images: [
@@ -43,12 +43,12 @@ export const metadata: Metadata = {
         url: "/assets/owais-abdullah-og.png",
         width: 1200,
         height: 630,
-        alt: "Owais Abdullah - Spec-Driven Developer & AI Agent Engineer",
+        alt: "Nasir Siddiqui - Spec-Driven Developer & AI Agent Engineer",
       },
     ],
   },
   twitter: {
-    title: "Owais Abdullah | Spec-Driven Developer & AI Agent Engineer",
+    title: "Nasir Siddiqui | Spec-Driven Developer & AI Agent Engineer",
     description:
       "Spec-driven developer and AI engineer building Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and production-ready web architectures.",
     card: "summary_large_image",

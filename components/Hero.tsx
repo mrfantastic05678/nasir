@@ -42,7 +42,7 @@ const Hero = () => {
 
             <div className="min-h-60 xs:min-h-44 md:min-h-0">
               <h1 className="sm:text-5xl text-4xl mb-4 font-montserrat font-bold text-white tracking-tight">
-                Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Owais Abdullah</span><span className="text-accent">.</span>
+                Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Nasir Siddiqui</span><span className="text-accent">.</span>
                 <br />
                 <span className="text-gray-200 font-semibold tracking-normal mt-2 inline-block">
                   <Typewriter
@@ -151,7 +151,7 @@ const Hero = () => {
           <div className="sm:entrance-right lg:max-w-lg md:w-2/5 sm:-ml-16 sm:pt-0 relative lg:mt-4 xl:mt-0 md:ml-20 md:-mt-20">
             <div className="-mt-56 -mr-[155px] w-11/12 sm:w-[24rem] h-[70%] shadow-2xl opacity-40 shadow-indigo-900/30 rounded-xl absolute bottom-0 right-40 z-0 md:w-11/12 md:h-[75%] md:-mr-28 md:bottom-0 xs:h-[75%] xs:bottom-0 sm:bottom-0 sm:-mr-32 sm:w-10/12 lg:-mr-40 xl:w-10/12 xl:-mr-30 xl:h-[75%] xl:bottom-0 bg-card border border-white/5"></div>
             <AnimatedTooltip
-              tooltipTitle="Owais Abdullah"
+              tooltipTitle="Nasir Siddiqui"
               tooltipDescription="Spec-Driven & AI Engineer"
             >
               <Image
@@ -162,7 +162,7 @@ const Hero = () => {
                 quality={100}
                 unoptimized
                 priority
-                alt="Owais Abdullah - Spec-Driven Developer & AI Engineer"
+                alt="Nasir Siddiqui - Spec-Driven Developer & AI Engineer"
               />
             </AnimatedTooltip>
           </div>

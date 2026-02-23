@@ -18,7 +18,7 @@ A developer needs a professional, modern portfolio website to showcase their ski
 - Potential clients seeking web development services
 - Employers and recruiters evaluating technical capabilities
 - Technical peers reviewing projects and blog content
-- Visitors seeking information about Owais Abdullah's expertise
+- Visitors seeking information about Nasir Abdullah's expertise
 
 **Core Value Proposition**:
 A single-page application portfolio with multi-page sections that combines modern web technologies (Next.js 15, Sanity CMS, TypeScript, Tailwind CSS) to deliver a fast, SEO-optimized, and visually engaging showcase of technical work with AI-powered chat assistance.
@@ -81,7 +81,7 @@ A single-page application portfolio with multi-page sections that combines moder
 - **Success Criteria**:
   - Chat interface renders correctly
   - Messages send and receive properly
-  - Responses stay within scope (Owais's services/expertise)
+  - Responses stay within scope (Nasir's services/expertise)
   - Error handling for API failures
 
 ### Requirement 5: Projects Tabbed Display
@@ -322,7 +322,7 @@ A single-page application portfolio with multi-page sections that combines moder
 - Message displays in chat interface
 - API call succeeds
 - Response returns within 5 seconds
-- Response stays in scope (Owais's expertise)
+- Response stays in scope (Nasir's expertise)
 - Error handled gracefully if API fails
 
 ### Test 4: Theme Toggle

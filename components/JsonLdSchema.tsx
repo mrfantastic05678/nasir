@@ -13,8 +13,8 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${baseUrl}/#person`,
-    "name": "Owais Abdullah",
-    "alternateName": ["Muhammad Owais", "Owais"],
+    "name": "Nasir Siddiqui",
+    "alternateName": ["Muhammad Nasir", "Nasir"],
     "jobTitle": ["AI Agents Developer", "Full Stack Developer", "Next.js Developer", "React Developer", "Web Developer"],
     "description": "AI Agents Developer, Full Stack Developer, and Next.js specialist. Expert in React, AI integration, and modern web development.",
     "url": baseUrl,
@@ -62,13 +62,13 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
-    "name": "Owais Abdullah Portfolio",
+    "name": "Nasir Siddiqui Portfolio",
     "url": baseUrl,
     "logo": `${baseUrl}/assets/owais_logo.png`,
-    "description": "Professional portfolio of Owais Abdullah - AI Agents Developer and Full Stack Developer",
+    "description": "Professional portfolio of Nasir Siddiqui - AI Agents Developer and Full Stack Developer",
     "founder": {
       "@type": "Person",
-      "name": "Owais Abdullah"
+      "name": "Nasir Siddiqui"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -82,12 +82,12 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
-    "name": "Owais Abdullah Portfolio",
+    "name": "Nasir Siddiqui Portfolio",
     "url": baseUrl,
     "description": "Professional portfolio showcasing AI Agents Development, Full Stack Development, and Next.js expertise",
     "publisher": {
       "@type": "Person",
-      "name": "Owais Abdullah"
+      "name": "Nasir Siddiqui"
     },
     "potentialAction": {
       "@type": "SearchAction",
@@ -134,7 +134,7 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
     "@type": "CreativeWork",
     "@id": `${pageUrl}#creativework`,
     "name": "Portfolio Projects",
-    "description": "Collection of web development and AI integration projects by Owais Abdullah",
+    "description": "Collection of web development and AI integration projects by Nasir Siddiqui",
     "author": {
       "@id": `${baseUrl}/#person`
     },
@@ -154,7 +154,7 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
     "@type": "Service",
     "@id": `${pageUrl}#service`,
     "name": "Web Development Services",
-    "description": "Professional web development and AI integration services by Owais Abdullah",
+    "description": "Professional web development and AI integration services by Nasir Siddiqui",
     "provider": {
       "@id": `${baseUrl}/#person`
     },
@@ -197,26 +197,26 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
 // Helper functions
 function getPageTitle(type: string): string {
   const titles = {
-    home: "Owais Abdullah | AI Agents Developer & Full Stack Developer",
-    about: "About Owais Abdullah | AI Agents Developer & Full Stack Developer",
-    projects: "Projects | Owais Abdullah - AI Agents Developer & Full Stack Developer",
-    skills: "Skills | Owais Abdullah - AI Agents Developer & Full Stack Developer",
-    contact: "Contact | Owais Abdullah - AI Agents Developer & Full Stack Developer",
-    services: "Services | Owais Abdullah - Spec-Driven Developer & AI Engineer",
-    service: "Service | Owais Abdullah - Spec-Driven Developer & AI Engineer"
+    home: "Nasir Siddiqui | AI Agents Developer & Full Stack Developer",
+    about: "About Nasir Siddiqui | AI Agents Developer & Full Stack Developer",
+    projects: "Projects | Nasir Siddiqui - AI Agents Developer & Full Stack Developer",
+    skills: "Skills | Nasir Siddiqui - AI Agents Developer & Full Stack Developer",
+    contact: "Contact | Nasir Siddiqui - AI Agents Developer & Full Stack Developer",
+    services: "Services | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+    service: "Service | Nasir Siddiqui - Spec-Driven Developer & AI Engineer"
   };
   return titles[type as keyof typeof titles] || titles.home;
 }
 
 function getPageDescription(type: string): string {
   const descriptions = {
-    home: "Welcome to Owais Abdullah's portfolio. AI Agents Developer, Full Stack Developer, and Next.js specialist. Explore my projects, skills, and experience in modern web development and AI integration.",
-    about: "Learn more about Owais Abdullah - AI Agents Developer, Full Stack Developer, and Next.js specialist. Discover my background, expertise, and passion for AI integration and modern web development.",
-    projects: "Explore Owais Abdullah's portfolio of projects. AI Agents Developer, Full Stack Developer, and Next.js specialist showcasing innovative web applications, AI integrations, and modern development solutions.",
-    skills: "Discover Owais Abdullah's technical skills and expertise. AI Agents Developer, Full Stack Developer, and Next.js specialist proficient in React, TypeScript, AI integration, and modern web technologies.",
-    contact: "Get in touch with Owais Abdullah - AI Agents Developer, Full Stack Developer, and Next.js specialist. Available for freelance projects, collaborations, and professional opportunities in web development and AI integration.",
-    services: "Explore services offered by Owais Abdullah: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
-    service: "Professional services by Owais Abdullah - Spec-Driven Developer & AI Engineer specializing in AI Agents, Next.js, and modern web development."
+    home: "Welcome to Nasir Siddiqui's portfolio. AI Agents Developer, Full Stack Developer, and Next.js specialist. Explore my projects, skills, and experience in modern web development and AI integration.",
+    about: "Learn more about Nasir Siddiqui - AI Agents Developer, Full Stack Developer, and Next.js specialist. Discover my background, expertise, and passion for AI integration and modern web development.",
+    projects: "Explore Nasir Siddiqui's portfolio of projects. AI Agents Developer, Full Stack Developer, and Next.js specialist showcasing innovative web applications, AI integrations, and modern development solutions.",
+    skills: "Discover Nasir Siddiqui's technical skills and expertise. AI Agents Developer, Full Stack Developer, and Next.js specialist proficient in React, TypeScript, AI integration, and modern web technologies.",
+    contact: "Get in touch with Nasir Siddiqui - AI Agents Developer, Full Stack Developer, and Next.js specialist. Available for freelance projects, collaborations, and professional opportunities in web development and AI integration.",
+    services: "Explore services offered by Nasir Siddiqui: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
+    service: "Professional services by Nasir Siddiqui - Spec-Driven Developer & AI Engineer specializing in AI Agents, Next.js, and modern web development."
   };
   return descriptions[type as keyof typeof descriptions] || descriptions.home;
 }

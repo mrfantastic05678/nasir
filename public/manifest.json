@@ -1,7 +1,7 @@
 {
-  "name": "Owais Abdullah",
-  "short_name": "Owais",
-  "description": "Portfolio of Owais Abdullah, showcasing projects and skills in AI Agent & Web Development.",
+  "name": "Nasir Siddiqui",
+  "short_name": "Nasir",
+  "description": "Portfolio of Nasir Siddiqui, showcasing projects and skills in AI Agent & Web Development.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#212428",
@@ -30,21 +30,21 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Owais Abdullah Portfolio - Desktop View"
+      "label": "Nasir Siddiqui Portfolio - Desktop View"
     },
     {
       "src": "/assets/owais-abdullah.png",
       "sizes": "750x1334",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Owais Abdullah Portfolio - Mobile View"
+      "label": "Nasir Siddiqui Portfolio - Mobile View"
     }
   ],
   "shortcuts": [
     {
       "name": "About",
       "short_name": "About",
-      "description": "Learn more about Owais Abdullah",
+      "description": "Learn more about Nasir Siddiqui",
       "url": "/about",
       "icons": [
         {
