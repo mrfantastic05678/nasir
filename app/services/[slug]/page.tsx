@@ -38,11 +38,11 @@ export async function generateMetadata({
     openGraph: {
       title: `${service.title} | Nasir Siddiqui`,
       description: service.description,
-      url: `https://owaisabdullah.dev/services/${slug}`,
+      url: `https://nasirsiddiqui.dev/services/${slug}`,
       type: "website",
     },
     alternates: {
-      canonical: `https://owaisabdullah.dev/services/${slug}`,
+      canonical: `https://nasirsiddiqui.dev/services/${slug}`,
     },
   };
 }
@@ -70,7 +70,7 @@ export default async function ServicePage({
     <>
       <JsonLdSchema
         type="service"
-        pageUrl={`https://owaisabdullah.dev/services/${service.slug}`}
+        pageUrl={`https://nasirsiddiqui.dev/services/${service.slug}`}
       />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
@@ -224,7 +224,7 @@ export default async function ServicePage({
                 </button>
               </Link>
               <a
-                href="mailto:mrowaisabdullah@gmail.com"
+                href="mailto:nasirsiddiqui@example.com"
                 className="inline-flex items-center px-8 py-3 text-foreground bg-card hover:bg-accent hover:text-white border-2 border-border hover:border-accent rounded-full font-medium transition-all"
               >
                 Email Me

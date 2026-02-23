@@ -5,47 +5,46 @@ import { ArrowRight } from "lucide-react";
 import ServicesGrid from "@/components/ServicesGrid";
 
 export const metadata: Metadata = {
-  title: "Services | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+  title: "Services | Nasir Siddiqui - AI Automations, Chatbots & Digital Services",
   description:
-    "Explore services offered by Nasir Siddiqui: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
+    "Explore services offered by Nasir Siddiqui: AI Automations, Chatbot Development, Web Development, E-commerce Solutions, API Development, and Technical Consulting.",
   keywords: [
-    "Digital FTE Development",
-    "AI Employee Development",
-    "AI Agents Development",
-    "OpenAI Agents SDK",
+    "AI Automations",
+    "Chatbot Development",
+    "AI Chatbots",
+    "Business Automation",
     "n8n Automation",
-    "Next.js SaaS Development",
-    "Spec-Driven Development",
+    "Web Development",
+    "Next.js Development",
     "WordPress Development",
     "Shopify Development",
-    "Headless CMS",
-    "Sanity CMS",
-    "Technical Consulting",
-    "MVP Development",
+    "E-commerce Solutions",
     "API Development",
     "GraphQL API",
     "REST API",
     "Webhooks",
-    "AI Strategy",
+    "Technical Consulting",
+    "MVP Development",
+    "Digital Services",
     "Startup CTO",
   ],
   openGraph: {
-    title: "Services | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+    title: "Services | Nasir Siddiqui - AI Automations, Chatbots & Digital Services",
     description:
-      "Explore services offered by Nasir Siddiqui: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
-    url: "https://owaisabdullah.dev/services",
+      "Explore services offered by Nasir Siddiqui: AI Automations, Chatbot Development, Web Development, E-commerce Solutions, API Development, and Technical Consulting.",
+    url: "https://nasirsiddiqui.dev/services",
     siteName: "Nasir Siddiqui Portfolio",
     type: "website",
   },
   alternates: {
-    canonical: "https://owaisabdullah.dev/services",
+    canonical: "https://nasirsiddiqui.dev/services",
   },
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <JsonLdSchema type="services" pageUrl="https://owaisabdullah.dev/services" />
+      <JsonLdSchema type="services" pageUrl="https://nasirsiddiqui.dev/services" />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-5">
@@ -54,9 +53,9 @@ export default function ServicesPage() {
               Services
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              Transform your business with AI-driven solutions and modern web
-              development. From autonomous agents that work 24/7 to scalable
-              SaaS products built with spec-driven methodology.
+              Transform your business with AI-powered solutions and modern web
+              development. From intelligent chatbots that engage customers 24/7 to
+              scalable web applications and automation systems that streamline operations.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="#contact">
@@ -93,20 +92,20 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Spec-Driven Approach
+                  Results-Driven Approach
                 </h3>
                 <p className="text-muted-foreground">
-                  Clear specifications before coding means fewer surprises, less
-                  rework, and products that match your vision exactly.
+                  Focused on delivering tangible business outcomes through automation,
+                  improved efficiency, and enhanced customer engagement.
                 </p>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
-                  AI-First Development
+                  AI-Powered Solutions
                 </h3>
                 <p className="text-muted-foreground">
-                  Leverage the latest AI technologies like OpenAI Agents SDK
-                  and General Agents for intelligent automation.
+                  Leverage cutting-edge AI technologies including chatbots, automation
+                  tools, and intelligent systems to transform your operations.
                 </p>
               </div>
               <div className="p-6">
@@ -114,8 +113,8 @@ export default function ServicesPage() {
                   Modern Tech Stack
                 </h3>
                 <p className="text-muted-foreground">
-                  Next.js 15, TypeScript, Tailwind CSS, and cutting-edge tools
-                  for performant, scalable applications.
+                  Next.js, TypeScript, Tailwind CSS, and proven tools for building
+                  performant, scalable applications.
                 </p>
               </div>
               <div className="p-6">
@@ -147,9 +146,9 @@ export default function ServicesPage() {
                 },
                 {
                   step: "02",
-                  title: "Specification",
+                  title: "Planning",
                   description:
-                    "I write detailed specifications for your project. You review and approve before any coding begins.",
+                    "I create a clear roadmap for your project with defined milestones, timeline, and deliverables.",
                 },
                 {
                   step: "03",
@@ -159,9 +158,9 @@ export default function ServicesPage() {
                 },
                 {
                   step: "04",
-                  title: "Delivery",
+                  title: "Delivery & Support",
                   description:
-                    "Your product is deployed, tested, and handed off with documentation and support.",
+                    "Your product is deployed, tested, and handed off with documentation and ongoing support.",
                 },
               ].map((item, index) => (
                 <div key={index} className="flex gap-6">
@@ -197,7 +196,7 @@ export default function ServicesPage() {
                 </button>
               </Link>
               <a
-                href="mailto:mrowaisabdullah@gmail.com"
+                href="mailto:nasirsiddiqui@example.com"
                 className="inline-flex items-center px-8 py-3 text-foreground bg-card hover:bg-accent hover:text-white border-2 border-border hover:border-accent rounded-full font-medium transition-all"
               >
                 Email Me

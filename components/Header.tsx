@@ -1,6 +1,7 @@
 "use client";
-
 import Image from "next/image";
+
+
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
@@ -61,15 +62,18 @@ const Header = () => {
           }`}
         >
           {/* Logo */}
-          <Link href={"/"} className="flex z-10 relative items-center" onClick={handleLinkClick}>
+          <Link href={"/"} className="flex z-10 relative items-center gap-3 group" onClick={handleLinkClick}>
             <Image
-              src="/assets/owais_logo.png"
-              width={scrolled ? 70 : 80}
-              height={scrolled ? 35 : 40}
-              alt={"logo"}
-              className="relative z-10 transition-all duration-300"
+              src="/assets/logo.svg"
+              width={scrolled ? 36 : 44}
+              height={scrolled ? 36 : 44}
+              alt={"Nasir Siddiqui Logo"}
+              className="relative z-10 transition-all duration-300 drop-shadow-lg rounded-xl group-hover:scale-105"
               unoptimized
             />
+            <span className={`font-montserrat font-bold tracking-tight text-white transition-all duration-300 ${scrolled ? "text-lg" : "text-xl"}`}>
+              Nasir Siddiqui
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -11,51 +11,51 @@ import Services from "@/components/Services";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Nasir Siddiqui | Spec-Driven Developer & AI Agent Engineer",
+  title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
   description:
-    "Spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Building production-ready web applications with TypeScript, OpenAI Agents SDK, and modern architectures.",
+    "AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
   keywords: [
     "Nasir Siddiqui Portfolio",
-    "Spec-Driven Developer",
-    "AI Agent Developer",
-    "AI-Driven Development",
-    "Next.js SaaS Developer",
-    "Full Stack Digital FTE",
-    "OpenAI Agents SDK Developer",
-    "TypeScript Developer",
-    "AI Automation Engineer",
-    "SaaS Architect",
-    "WordPress Developer",
+    "AI Automation Expert",
+    "Chatbot Developer",
+    "Business Automation",
+    "Next.js Developer",
     "Full Stack Developer",
+    "TypeScript Developer",
+    "Web Development",
+    "E-commerce Solutions",
+    "API Development",
+    "WordPress Developer",
     "React Developer",
     "Python Developer",
   ],
   openGraph: {
-    title: "Nasir Siddiqui | Spec-Driven Developer & AI Agent Engineer",
+    title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
     description:
-      "Spec-driven developer and AI engineer building Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and production-ready web architectures.",
-    url: "https://owaisabdullah.dev",
+      "AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
+    url: "https://nasirsiddiqui.dev",
     siteName: "Nasir Siddiqui Portfolio",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/assets/owais-abdullah-og.png",
+        url: "/assets/Nasir.png",
         width: 1200,
         height: 630,
-        alt: "Nasir Siddiqui - Spec-Driven Developer & AI Agent Engineer",
+        alt: "Nasir Siddiqui - AI Automation Expert",
       },
     ],
   },
   twitter: {
-    title: "Nasir Siddiqui | Spec-Driven Developer & AI Agent Engineer",
+    title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
     description:
-      "Spec-driven developer and AI engineer building Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and production-ready web architectures.",
+      "AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
     card: "summary_large_image",
-    images: ["/assets/Owais Abdullah (2).png"],
+    images: ["/assets/Nasir.png"],
+    creator: "@nasirsiddiqui",
   },
   alternates: {
-    canonical: "https://owaisabdullah.dev/",
+    canonical: "https://nasirsiddiqui.dev/",
   },
   robots: {
     index: true,
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <JsonLdSchema type="home" pageUrl="https://owaisabdullah.dev" />
+      <JsonLdSchema type="home" pageUrl="https://nasirsiddiqui.dev" />
       <Hero />
       <About />
       <Services />

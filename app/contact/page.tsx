@@ -6,52 +6,52 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Contact Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+  title: "Contact Nasir Siddiqui | AI Automations & Web Development",
   description:
-    "Get in touch with Nasir Siddiqui for spec-driven SaaS projects, AI agent development, and full-time digital solutions. Expert in Next.js, TypeScript, and OpenAI Agents SDK.",
-  authors: [{ name: "Owais Abdullah", url: "https://owaisabdullah.dev" }],
+    "Get in touch with Nasir Siddiqui for AI automation projects, chatbot development, and web development services. Expert in Next.js, TypeScript, and intelligent automation solutions.",
+  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
   keywords: [
     "Contact Nasir Siddiqui",
-    "Hire Spec-Driven Developer",
-    "AI Agent Developer Contact",
-    "AI-Driven Development Contact",
-    "Next.js SaaS Developer Contact",
-    "Full Stack Digital FTE",
-    "Hire AI Engineer",
-    "SaaS Architect Contact",
-    "OpenAI Agents SDK Developer",
+    "Hire AI Automation Expert",
+    "Chatbot Developer Contact",
+    "AI Services Contact",
+    "Next.js Developer Contact",
+    "Full Stack Developer Contact",
+    "Web Development Services",
+    "Business Automation Contact",
     "TypeScript Developer Contact",
     "Freelance Developer",
     "Hire Developer",
-    "Web Development Services",
-    "AI Integration Services",
+    "WordPress Developer Contact",
+    "E-commerce Solutions",
+    "Digital Services",
     "Professional Contact",
   ],
   openGraph: {
-    title: "Contact Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+    title: "Contact Nasir Siddiqui | AI Automations & Web Development",
     description:
-      "Get in touch with Nasir Siddiqui for spec-driven SaaS projects, AI agent development, and full-time digital solutions. Expert in Next.js, TypeScript, and OpenAI Agents SDK.",
-    url: "https://owaisabdullah.dev/contact",
+      "Get in touch with Nasir Siddiqui for AI automation projects, chatbot development, and web development services.",
+    url: "https://nasirsiddiqui.dev/contact",
     siteName: "Nasir Siddiqui Portfolio",
     type: "website",
     images: [
       {
-        url: "/assets/Owais Abdullah (2).png",
+        url: "/assets/nasir-siddiqui-contact.png",
         width: 1200,
         height: 630,
-        alt: "Contact Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+        alt: "Contact Nasir Siddiqui - AI Automation Expert",
       },
     ],
   },
   twitter: {
-    title: "Contact Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+    title: "Contact Nasir Siddiqui | AI Automations & Web Development",
     description:
-      "Get in touch with Nasir Siddiqui for spec-driven SaaS projects, AI agent development, and full-time digital solutions. Expert in Next.js, TypeScript, and OpenAI Agents SDK.",
+      "Get in touch with Nasir Siddiqui for AI automation projects, chatbot development, and web development services.",
     card: "summary_large_image",
-    images: ["/assets/Owais Abdullah (2).png"],
+    images: ["/assets/nasir-siddiqui-contact.png"],
   },
   alternates: {
-    canonical: "https://owaisabdullah.dev/contact",
+    canonical: "https://nasirsiddiqui.dev/contact",
   },
 };
 
@@ -60,7 +60,7 @@ const contact = () => {
     <>
       <JsonLdSchema
         type="contact"
-        pageUrl="https://owaisabdullah.dev/contact"
+        pageUrl="https://nasirsiddiqui.dev/contact"
       />
       <div className="pt-32">
         <Contact />

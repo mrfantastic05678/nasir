@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+
 import Link from "next/link";
 import {
   FaLinkedin,
@@ -16,17 +17,20 @@ const Footer = () => {
       <div className="absolute bottom-5 md:-bottom-20 left-10 md:-left-20 w-64 h-64 bg-gradient-to-tl from-primary to-accent rounded-full blur-[100px] opacity-30 -z-10"></div>
       
       <div className="px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <Link href={"/"} className="flex mb-4 md:mb-0 relative">
-          <Image src="/assets/owais_logo.png" width={80} height={40} alt={"logo"} className="relative z-10" unoptimized />
+        <Link href={"/"} className="flex mb-4 md:mb-0 relative py-2 items-center gap-3 group">
+          <Image src="/assets/logo.svg" width={44} height={44} alt={"Nasir Siddiqui Logo"} className="relative z-10 drop-shadow-lg rounded-xl group-hover:scale-105 transition-all duration-300" unoptimized />
+          <span className="font-montserrat font-bold tracking-tight text-white text-xl">
+            Nasir Siddiqui
+          </span>
         </Link>
         <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
           © 2026 Nasir Siddiqui —
           <Link
-            href="https://www.linkedin.com/in/mrowaisabdullah/"
+            href="https://www.linkedin.com/in/nasirsiddiqui/"
             className="text-gray-600 ml-1 hover:text-accent"
             target="_blank"
           >
-            @MrOwaisAbdullah
+            @NasirSiddiqui
           </Link>
         </p>
         <span className="inline-flex gap-3 sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
@@ -38,35 +42,35 @@ const Footer = () => {
             Services
           </Link>
           <Link
-            href={"https://www.twitter.com/MrOwaisAbdullah"}
+            href={"https://www.twitter.com/NasirSiddiqui"}
             className="text-gray-500 text-2xl hover:text-[#171515]"
             target="_blank"
           >
             <FaSquareXTwitter />
           </Link>
           <Link
-            href={"https://www.linkedin.com/in/mrowaisabdullah/"}
+            href={"https://www.linkedin.com/in/nasirsiddiqui/"}
             className="text-gray-500 text-2xl hover:text-[#0077B5]"
             target="_blank"
           >
             <FaLinkedin />
           </Link>
           <Link
-            href={"https://www.instagram.com/mrowaisabdullah/"}
+            href={"https://www.instagram.com/nasirsiddiqui/"}
             className="text-gray-500 text-2xl hover:text-[#d62976]"
             target="_blank"
           >
             <FaInstagramSquare />
           </Link>
           <Link
-            href={"https://github.com/MrOwaisAbdullah"}
+            href={"https://github.com/nasirsiddiqui"}
             className="text-gray-500 text-2xl hover:text-[#171515]"
             target="_blank"
           >
             <FaGithubSquare />
           </Link>
           <Link
-            href={"https://www.facebook.com/mrowaisabdullah"}
+            href={"https://www.facebook.com/nasirsiddiqui"}
             className="text-gray-500 text-2xl hover:text-[#5890FF]"
             target="_blank"
           >

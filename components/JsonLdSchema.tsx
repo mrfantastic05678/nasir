@@ -6,8 +6,8 @@ interface JsonLdSchemaProps {
 }
 
 const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
-  const baseUrl = 'https://owaisabdullah.dev';
-  
+  const baseUrl = 'https://nasirsiddiqui.dev';
+
   // Person Schema
   const personSchema = {
     "@context": "https://schema.org",
@@ -15,20 +15,16 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
     "@id": `${baseUrl}/#person`,
     "name": "Nasir Siddiqui",
     "alternateName": ["Muhammad Nasir", "Nasir"],
-    "jobTitle": ["AI Agents Developer", "Full Stack Developer", "Next.js Developer", "React Developer", "Web Developer"],
-    "description": "AI Agents Developer, Full Stack Developer, and Next.js specialist. Expert in React, AI integration, and modern web development.",
+    "jobTitle": ["AI Automation Expert", "Chatbot Developer", "Full Stack Developer", "Next.js Developer", "Web Developer"],
+    "description": "AI automation expert and full-stack developer specializing in intelligent chatbots, business automation, and modern web solutions.",
     "url": baseUrl,
-    "image": `${baseUrl}/assets/owais-abdullah.png`,
+    "image": `${baseUrl}/assets/Nasir.png`,
     "sameAs": [
-      "https://twitter.com/mrowaisabdullah",
-      "https://linkedin.com/in/mrowaisabdullah",
-      "https://github.com/MrOwaisAbdullah",
-      "https://facebook.com/mrowaisabdullah",
-      "https://www.threads.com/@mrowaisabdullah",
-      "https://www.instagram.com/mrowaisabdullah/",
-      "https://bsky.app/profile/mrowaisabdullah.bsky.social",
-      "https://www.reddit.com/user/MrOwaisabdullah/",
-      "https://www.quora.com/profile/Mr-Owais-Abdullah"
+      "https://twitter.com/nasirsiddiqui",
+      "https://linkedin.com/in/nasirsiddiqui",
+      "https://github.com/nasirsiddiqui",
+      "https://facebook.com/nasirsiddiqui",
+      "https://www.instagram.com/nasirsiddiqui/",
     ],
     "knowsAbout": [
       "AI Agents Development",
@@ -64,8 +60,8 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
     "@id": `${baseUrl}/#organization`,
     "name": "Nasir Siddiqui Portfolio",
     "url": baseUrl,
-    "logo": `${baseUrl}/assets/owais_logo.png`,
-    "description": "Professional portfolio of Nasir Siddiqui - AI Agents Developer and Full Stack Developer",
+    "logo": `${baseUrl}/assets/Nasir.png`,
+    "description": "Professional portfolio of Nasir Siddiqui - AI Automation Expert and Full Stack Developer",
     "founder": {
       "@type": "Person",
       "name": "Nasir Siddiqui"
@@ -197,26 +193,26 @@ const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
 // Helper functions
 function getPageTitle(type: string): string {
   const titles = {
-    home: "Nasir Siddiqui | AI Agents Developer & Full Stack Developer",
-    about: "About Nasir Siddiqui | AI Agents Developer & Full Stack Developer",
-    projects: "Projects | Nasir Siddiqui - AI Agents Developer & Full Stack Developer",
-    skills: "Skills | Nasir Siddiqui - AI Agents Developer & Full Stack Developer",
-    contact: "Contact | Nasir Siddiqui - AI Agents Developer & Full Stack Developer",
-    services: "Services | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
-    service: "Service | Nasir Siddiqui - Spec-Driven Developer & AI Engineer"
+    home: "Nasir Siddiqui | AI Automation Expert & Full Stack Developer",
+    about: "About Nasir Siddiqui | AI Automation Expert & Full Stack Developer",
+    projects: "Projects | Nasir Siddiqui - AI Automation Expert & Full Stack Developer",
+    skills: "Skills | Nasir Siddiqui - AI Automation Expert & Full Stack Developer",
+    contact: "Contact | Nasir Siddiqui - AI Automation Expert & Full Stack Developer",
+    services: "Services | Nasir Siddiqui - AI Automations & Digital Services",
+    service: "Service | Nasir Siddiqui - AI Automations & Web Development"
   };
   return titles[type as keyof typeof titles] || titles.home;
 }
 
 function getPageDescription(type: string): string {
   const descriptions = {
-    home: "Welcome to Nasir Siddiqui's portfolio. AI Agents Developer, Full Stack Developer, and Next.js specialist. Explore my projects, skills, and experience in modern web development and AI integration.",
-    about: "Learn more about Nasir Siddiqui - AI Agents Developer, Full Stack Developer, and Next.js specialist. Discover my background, expertise, and passion for AI integration and modern web development.",
-    projects: "Explore Nasir Siddiqui's portfolio of projects. AI Agents Developer, Full Stack Developer, and Next.js specialist showcasing innovative web applications, AI integrations, and modern development solutions.",
-    skills: "Discover Nasir Siddiqui's technical skills and expertise. AI Agents Developer, Full Stack Developer, and Next.js specialist proficient in React, TypeScript, AI integration, and modern web technologies.",
-    contact: "Get in touch with Nasir Siddiqui - AI Agents Developer, Full Stack Developer, and Next.js specialist. Available for freelance projects, collaborations, and professional opportunities in web development and AI integration.",
-    services: "Explore services offered by Nasir Siddiqui: Digital FTE Development, AI Agents & Automations, Next.js SaaS Development, CMS & E-commerce, Technical Consulting, and API Development.",
-    service: "Professional services by Nasir Siddiqui - Spec-Driven Developer & AI Engineer specializing in AI Agents, Next.js, and modern web development."
+    home: "Welcome to Nasir Siddiqui's portfolio. AI automation expert and full-stack developer specializing in intelligent chatbots, business automation, and modern web solutions.",
+    about: "Learn more about Nasir Siddiqui - AI automation expert and full-stack developer. Discover my background, expertise, and passion for building intelligent chatbots and modern web solutions.",
+    projects: "Explore Nasir Siddiqui's portfolio of projects. AI automation expert and full-stack developer showcasing innovative chatbots, automation systems, and modern web applications.",
+    skills: "Discover Nasir Siddiqui's technical skills and expertise. AI automation expert and full-stack developer proficient in React, TypeScript, chatbots, and modern web technologies.",
+    contact: "Get in touch with Nasir Siddiqui - AI automation expert and full-stack developer. Available for freelance projects, collaborations, and professional opportunities.",
+    services: "Explore services offered by Nasir Siddiqui: AI Automations, Chatbot Development, Web Development, E-commerce Solutions, API Development, and Technical Consulting.",
+    service: "Professional services by Nasir Siddiqui - AI automation expert and full-stack developer specializing in chatbots, automation, and modern web development."
   };
   return descriptions[type as keyof typeof descriptions] || descriptions.home;
 }

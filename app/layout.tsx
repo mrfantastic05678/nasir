@@ -9,37 +9,37 @@ import Script from "next/script";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://owaisabdullah.dev"),
+  metadataBase: new URL("https://nasirsiddiqui.dev"),
   title: {
-    default: "Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
-    template: "%s | Spec-Driven Developer & AI Engineer",
+    default: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
+    template: "%s | AI Automations & Web Development",
   },
   description:
-    "Nasir Siddiqui is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures with AI-driven engineering.",
+    "Nasir Siddiqui is an AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions. Expert in Next.js, TypeScript, and building production-ready applications.",
   keywords: [
     "Nasir Siddiqui",
     "Nasir",
-    "Spec-Driven Developer",
-    "AI Agent Engineer",
-    "AI-Driven Development",
-    "Next.js SaaS Developer",
-    "Full Stack Digital FTE",
-    "OpenAI Agents SDK",
-    "TypeScript Developer",
-    "SaaS Architect",
-    "AI Automation Engineer",
-    "WordPress Developer",
+    "AI Automation Expert",
+    "Chatbot Developer",
+    "AI Chatbots",
+    "Business Automation",
+    "Web Development",
+    "Next.js Developer",
     "Full Stack Developer",
+    "TypeScript Developer",
+    "WordPress Developer",
+    "E-commerce Solutions",
+    "API Development",
+    "Digital Services",
     "React Developer",
     "Python Developer",
     "Portfolio",
-    "Web Development",
-    "AI Integration",
+    "Web Development Services",
     "Software Development",
   ],
-  authors: [{ name: "Owais Abdullah", url: "https://owaisabdullah.dev" }],
-  creator: "Owais Abdullah",
-  publisher: "Owais Abdullah",
+  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
+  creator: "Nasir Siddiqui",
+  publisher: "Nasir Siddiqui",
   formatDetection: {
     email: false,
     address: false,
@@ -51,12 +51,10 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/assets/logo.png" },
-      { url: "/assets/owais_logo.png", sizes: "192x192", type: "image/png" },
-      { url: "/assets/owais_logo.png", sizes: "512x512", type: "image/png" },
+      { url: "/assets/logo.svg", sizes: "any", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/assets/logo-180.png", sizes: "180x180", type: "image/png" },
+      { url: "/assets/logo.svg", sizes: "180x180", type: "image/svg+xml" },
     ],
   },
   appleWebApp: {
@@ -67,27 +65,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://owaisabdullah.dev",
-    title: "Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+    url: "https://nasirsiddiqui.dev",
+    title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
     description:
-      "Nasir Siddiqui is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures.",
+      "Nasir Siddiqui is an AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
     siteName: "Nasir Siddiqui Portfolio",
     images: [
       {
-        url: "/assets/owais-abdullah-og.png",
+        url: "/assets/nasir-siddiqui-og.png",
         width: 1200,
         height: 630,
-        alt: "Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+        alt: "Nasir Siddiqui - AI Automation & Web Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+    title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
     description:
-      "Nasir Siddiqui is a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Expert in TypeScript, OpenAI Agents SDK, and building production-ready architectures.",
-    images: ["/assets/owais-abdullah-og.png"],
-    creator: "@mrowaisabdullah",
+      "Nasir Siddiqui is an AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
+    images: ["/assets/nasir-siddiqui-og.png"],
+    creator: "@nasirsiddiqui",
   },
   robots: {
     index: true,

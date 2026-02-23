@@ -6,49 +6,49 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Projects | Nasir Siddiqui - Spec-Driven Development & AI Solutions",
+  title: "Projects | Nasir Siddiqui - AI Automations & Web Development",
   description:
-    "Explore Nasir Siddiqui's portfolio of spec-driven SaaS products, AI agents, and full-time digital solutions. Featuring Next.js, TypeScript, OpenAI Agents SDK, and production-ready architectures.",
-  authors: [{ name: "Owais Abdullah", url: "https://owaisabdullah.dev" }],
+    "Explore Nasir Siddiqui's portfolio of AI automation projects, chatbot development, and web solutions. Featuring Next.js, TypeScript, and modern digital services.",
+  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
   keywords: [
     "Nasir Siddiqui Projects",
-    "Spec-Driven Development Projects",
-    "AI Agent Developer Projects",
-    "AI-Driven Development Projects",
-    "Next.js SaaS Projects",
-    "Full Stack Digital FTE",
-    "OpenAI Agents SDK Projects",
-    "TypeScript Projects",
-    "SaaS Architecture Projects",
     "AI Automation Projects",
-    "Production-Ready Applications",
+    "Chatbot Development Projects",
+    "Web Development Projects",
+    "Next.js Projects",
+    "Full Stack Projects",
+    "TypeScript Projects",
+    "E-commerce Projects",
+    "API Development Projects",
+    "Business Automation",
+    "Production Applications",
     "Scalable Web Applications",
   ],
   openGraph: {
-    title: "Projects | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+    title: "Projects | Nasir Siddiqui - AI Automations & Web Development",
     description:
-      "Explore Nasir Siddiqui's portfolio of spec-driven SaaS products, AI agents, and full-time digital solutions. Featuring Next.js, TypeScript, OpenAI Agents SDK, and production-ready architectures.",
-    url: "https://owaisabdullah.dev/projects",
+      "Explore Nasir Siddiqui's portfolio of AI automation projects, chatbot development, and web solutions.",
+    url: "https://nasirsiddiqui.dev/projects",
     siteName: "Nasir Siddiqui Portfolio",
     type: "website",
     images: [
       {
-        url: "/assets/Owais Abdullah (2).png",
+        url: "/assets/nasir-siddiqui-projects.png",
         width: 1200,
         height: 630,
-        alt: "Projects by Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+        alt: "Projects by Nasir Siddiqui - AI Automation Expert",
       },
     ],
   },
   twitter: {
-    title: "Projects | Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+    title: "Projects | Nasir Siddiqui - AI Automations & Web Development",
     description:
-      "Explore Nasir Siddiqui's portfolio of spec-driven SaaS products, AI agents, and full-time digital solutions. Featuring Next.js, TypeScript, OpenAI Agents SDK, and production-ready architectures.",
+      "Explore Nasir Siddiqui's portfolio of AI automation projects, chatbot development, and web solutions.",
     card: "summary_large_image",
-    images: ["/assets/Owais Abdullah (2).png"],
+    images: ["/assets/nasir-siddiqui-projects.png"],
   },
   alternates: {
-    canonical: "https://owaisabdullah.dev/projects",
+    canonical: "https://nasirsiddiqui.dev/projects",
   },
 };
 
@@ -57,7 +57,7 @@ const projects = () => {
     <>
       <JsonLdSchema
         type="projects"
-        pageUrl="https://owaisabdullah.dev/projects"
+        pageUrl="https://nasirsiddiqui.dev/projects"
       />
       <div className="pt-32">
         <ProjectsTab />

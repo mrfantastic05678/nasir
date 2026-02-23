@@ -33,220 +33,94 @@ export interface FAQ {
 }
 
 export const services: Record<string, Service> = {
-  "digital-fte": {
-    slug: "digital-fte",
-    title: "Digital FTE (AI Employee) Development",
-    tagline: "Your Business on Autopilot",
+  "ai-automations": {
+    slug: "ai-automations",
+    title: "AI Automations & Workflows",
+    tagline: "Smart Automation for Business",
     description:
-      "Autonomous AI agents that handle business operations 24/7. Transform how you work with AI employees that never sleep.",
+      "Custom AI-powered automation workflows that save time and reduce manual work using n8n, Make.com, and custom scripts.",
     longDescription:
-      "Imagine having a senior employee who works 24/7, manages your emails, handles customer support, audits your finances, and prepares Monday morning briefings—all without breaks. That's the power of Digital FTE (Full-Time Equivalent) development. I build autonomous AI agents using General Agents framework that proactively manage personal and business affairs, turning the AI from a chatbot into a proactive business partner.",
-    icon: "Bot",
+      "Automation is the key to scaling your business efficiently. I build intelligent automation workflows using tools like n8n, Make.com, and custom Python/Node.js scripts. From automating repetitive tasks to integrating AI-powered decision making—transform how your business operates.",
+    icon: "Zap",
     gradient: "from-blue-500 to-cyan-500",
     features: [
-      "Autonomous AI Employees that work 24/7",
-      "Monday Morning CEO Briefing with financial audits",
-      "Email management and automated responses",
-      "Customer support automation",
-      "Task and project management oversight",
-      "Local-first, privacy-focused architecture",
-      "General Agents framework implementation",
-      "Multi-channel monitoring (Gmail, WhatsApp, etc.)",
-    ],
-    techStack: [
-      "Claude Code / OpenAI Agents SDK",
-      "General Agents Framework",
-      "Python Watchers",
-      "Model Context Protocol (MCP)",
-      "Obsidian (Local Dashboard)",
-      "n8n (Workflow Automation)",
-      "REST APIs & Webhooks",
-    ],
-    process: [
-      {
-        step: 1,
-        title: "Discovery & Planning",
-        description:
-          "We identify repetitive tasks and business processes that can be automated. Define scope, KPIs, and success metrics for your AI employee.",
-      },
-      {
-        step: 2,
-        title: "Architecture Design",
-        description:
-          "Design local-first architecture with proper data isolation. Plan watcher scripts, MCP servers, and agent capabilities.",
-      },
-      {
-        step: 3,
-        title: "Agent Development",
-        description:
-          "Build and train your AI employee using General Agents framework. Implement Ralph Wiggum Stop hook for continuous iteration until task completion.",
-      },
-      {
-        step: 4,
-        title: "Integration & Testing",
-        description:
-          "Connect to your existing tools (Gmail, WhatsApp, CRM). Test automation workflows and refine agent behavior based on real scenarios.",
-      },
-      {
-        step: 5,
-        title: "Deployment & Training",
-        description:
-          "Deploy your AI employee with monitoring dashboards. Train your team on how to interact with and oversee the AI agent.",
-      },
-    ],
-    pricing: [
-      {
-        name: "Starter",
-        price: "$800",
-        period: "project",
-        features: [
-          "Single AI Employee Agent",
-          "Basic task automation",
-          "Email monitoring",
-          "Weekly summary reports",
-          "Local deployment",
-          "1 month support",
-        ],
-      },
-      {
-        name: "Professional",
-        price: "$1,500",
-        period: "project",
-        highlighted: true,
-        features: [
-          "Multiple AI Employees",
-          "Monday Morning CEO Briefing",
-          "Multi-channel monitoring",
-          "Custom workflows",
-          "Dashboard integration",
-          "3 months support",
-          "Priority maintenance",
-        ],
-      },
-      {
-        name: "Enterprise",
-        price: "Custom",
-        features: [
-          "Unlimited AI Employees",
-          "Custom agent architecture",
-          "Full business automation",
-          "On-premise deployment",
-          "Dedicated infrastructure",
-          "12 months support",
-          "Custom SLA",
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: "What is a Digital FTE?",
-        answer:
-          "A Digital FTE (Full-Time Equivalent) is an AI agent that acts like a real employee—working 24/7, handling tasks autonomously, and proactively managing operations. Unlike chatbots that wait for input, Digital FTEs actively monitor and execute tasks.",
-      },
-      {
-        question: "Is my data secure with Digital FTEs?",
-        answer:
-          "Yes. I build local-first Digital FTEs where your data stays on your infrastructure. No data leaves your environment unless explicitly configured. Privacy and security are built into the architecture.",
-      },
-      {
-        question: "How long does it take to build a Digital FTE?",
-        answer:
-          "Simple single-purpose agents can be built in 1-2 weeks. Complex multi-agent systems with CEO Briefing capabilities typically take 4-8 weeks depending on integration complexity.",
-      },
-      {
-        question: "Can a Digital FTE replace real employees?",
-        answer:
-          "Digital FTEs are designed to augment human teams, not replace them. They handle repetitive tasks, data processing, and monitoring—freeing up your team to focus on strategic work that requires human judgment.",
-      },
-    ],
-  },
-
-  "ai-agents": {
-    slug: "ai-agents",
-    title: "Custom AI Agents & Automations",
-    tagline: "Intelligent Automation at Scale",
-    description:
-      "Custom AI agents powered by OpenAI Agents SDK and n8n. Build intelligent workflows that automate repetitive tasks.",
-    longDescription:
-      "Automation is no longer about simple if-then rules. Modern automation uses AI agents that can understand context, make decisions, and handle complex workflows. I specialize in building custom AI agents using the OpenAI Agents SDK and n8n workflow automation—creating intelligent systems that integrate seamlessly with your existing tools and processes.",
-    icon: "Zap",
-    gradient: "from-purple-500 to-pink-500",
-    features: [
-      "OpenAI Agents SDK development",
       "n8n workflow automation",
-      "Custom General Agents",
+      "Make.com integrations",
+      "Custom Python/Node.js scripts",
       "AI-powered decision making",
-      "Multi-step workflow automation",
-      "Third-party service integrations",
+      "Email automation",
+      "CRM & database automation",
+      "Report generation",
       "Webhook & API integrations",
       "Process optimization",
     ],
     techStack: [
-      "OpenAI Agents SDK",
-      "n8n Workflow Automation",
-      "General Agents Framework",
-      "Python & Node.js",
-      "REST APIs & GraphQL",
-      "Webhooks",
-      "PostgreSQL & SQLite",
-      "Docker (optional)",
+      "n8n Automation",
+      "Make.com",
+      "Python Scripts",
+      "Node.js Scripts",
+      "REST APIs & Webhooks",
+      "PostgreSQL / MySQL",
+      "Gmail / Google Workspace",
+      "Slack / Discord",
+      "Zapier / Integromat",
     ],
     process: [
       {
         step: 1,
-        title: "Process Analysis",
+        title: "Process Discovery",
         description:
-          "Analyze your current workflows to identify automation opportunities. Document manual processes and calculate ROI potential.",
+          "Analyze your current workflows to identify automation opportunities. Document manual tasks and calculate time savings.",
       },
       {
         step: 2,
-        title: "Agent Design",
+        title: "Workflow Design",
         description:
-          "Design AI agents with specific capabilities. Define decision trees, integration points, and error handling strategies.",
+          "Design automation workflows with decision trees, error handling, and integration points.",
       },
       {
         step: 3,
-        title: "Workflow Development",
+        title: "Automation Development",
         description:
-          "Build n8n workflows and custom AI agents using OpenAI Agents SDK. Connect to your existing tools and APIs.",
+          "Build workflows using n8n, Make.com, or custom scripts. Integrate with your existing tools and APIs.",
       },
       {
         step: 4,
-        title: "Testing & Refinement",
+        title: "Testing & Deployment",
         description:
-          "Test automation workflows with real data. Refine agent behavior, optimize response times, and handle edge cases.",
+          "Test with real data, optimize performance, and deploy with monitoring and error alerts.",
       },
       {
         step: 5,
-        title: "Deployment & Monitoring",
+        title: "Training & Handoff",
         description:
-          "Deploy automation workflows with monitoring dashboards. Set up alerts and create documentation for your team.",
+          "Train your team on managing automations, provide documentation, and ongoing support.",
       },
     ],
     pricing: [
       {
         name: "Starter",
-        price: "$500",
+        price: "$400",
         period: "project",
         features: [
           "Single automation workflow",
-          "Basic AI agent",
           "Up to 3 integrations",
-          "n8n setup",
+          "Basic error handling",
+          "n8n/Make setup",
           "2 weeks support",
         ],
       },
       {
         name: "Professional",
-        price: "$1,200",
+        price: "$1,000",
         period: "project",
         highlighted: true,
         features: [
           "Multiple automation workflows",
-          "Custom AI agents",
           "Unlimited integrations",
-          "Advanced n8n workflows",
-          "Custom API endpoints",
+          "Advanced error handling",
+          "Custom scripts",
+          "Dashboard monitoring",
           "2 months support",
         ],
       },
@@ -255,138 +129,9 @@ export const services: Record<string, Service> = {
         price: "Custom",
         features: [
           "Full automation platform",
-          "Custom agent architecture",
           "On-premise deployment",
-          "Team training",
-          "Dedicated support",
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: "What's the difference between n8n and custom agents?",
-        answer:
-          "n8n is excellent for workflow automation and connecting services. Custom AI agents add intelligence—decision-making, context understanding, and dynamic responses. I combine both for maximum effectiveness.",
-      },
-      {
-        question: "Can you automate my existing workflow?",
-        answer:
-          "Most likely. During the discovery phase, I analyze your current processes and identify automation opportunities. If a process is repetitive and rule-based, it's a great candidate for AI automation.",
-      },
-      {
-        question: "What integrations do you support?",
-        answer:
-          "I can integrate with any service that offers REST APIs, GraphQL, or webhooks. This includes Gmail, Slack, CRM systems, payment processors, project management tools, and hundreds more.",
-      },
-    ],
-  },
-
-  "saas-development": {
-    slug: "saas-development",
-    title: "Next.js SaaS Development",
-    tagline: "Build Scalable SaaS Products",
-    description:
-      "Full-stack SaaS products built with spec-driven development. From MVP to production-ready scaling with Next.js 15.",
-    longDescription:
-      "Building a SaaS product requires more than just coding—it needs clear specifications, scalable architecture, and a path from MVP to production. I specialize in spec-driven SaaS development using Next.js 15, TypeScript, and modern AI integrations. Every feature is specified before coding, ensuring you get exactly what you need with minimal rework.",
-    icon: "Rocket",
-    gradient: "from-orange-500 to-red-500",
-    features: [
-      "Next.js 15 with App Router",
-      "TypeScript for type safety",
-      "Spec-driven development process",
-      "AI-powered features",
-      "Authentication & authorization",
-      "Payment integration (Stripe, LemonSqueezy)",
-      "Database design (PostgreSQL, Prisma)",
-      "SEO optimization",
-      "Performance optimization",
-      "Deployment & DevOps",
-    ],
-    techStack: [
-      "Next.js 15 (App Router)",
-      "TypeScript",
-      "Tailwind CSS & shadcn/ui",
-      "Prisma ORM",
-      "PostgreSQL / SQLite",
-      "Clerk Auth / NextAuth",
-      "Stripe / LemonSqueezy",
-      "OpenAI Agents SDK",
-      "Vercel / Railway",
-    ],
-    process: [
-      {
-        step: 1,
-        title: "Specification",
-        description:
-          "Write detailed feature specifications before any code. Define user stories, acceptance criteria, and technical requirements.",
-      },
-      {
-        step: 2,
-        title: "Architecture Design",
-        description:
-          "Design scalable system architecture, database schema, and API structure. Plan for growth from day one.",
-      },
-      {
-        step: 3,
-        title: "MVP Development",
-        description:
-          "Build core features rapidly using Next.js 15. Focus on delivering value quickly with clean, maintainable code.",
-      },
-      {
-        step: 4,
-        title: "Testing & Refinement",
-        description:
-          "Comprehensive testing including unit tests, integration tests, and user acceptance testing. Refine based on feedback.",
-      },
-      {
-        step: 5,
-        title: "Launch & Scale",
-        description:
-          "Deploy to production with monitoring. Plan scaling strategies and iterate based on user feedback.",
-      },
-    ],
-    pricing: [
-      {
-        name: "MVP",
-        price: "$1,500",
-        period: "starting at",
-        features: [
-          "Core feature set",
-          "Next.js 15 + TypeScript",
-          "Basic authentication",
-          "Payment integration",
-          "Responsive design",
-          "SEO basics",
-          "Deployment",
-          "1 month support",
-        ],
-      },
-      {
-        name: "Production",
-        price: "$4,000",
-        period: "starting at",
-        highlighted: true,
-        features: [
-          "Full feature set",
-          "Advanced authentication",
-          "Admin dashboard",
-          "AI features",
-          "Analytics integration",
-          "Performance optimization",
-          "Testing suite",
-          "3 months support",
-        ],
-      },
-      {
-        name: "Enterprise",
-        price: "Custom",
-        features: [
-          "Custom architecture",
-          "Multi-tenant support",
-          "Advanced AI features",
           "Custom integrations",
-          "On-premise option",
+          "Team training",
           "SLA",
           "12 months support",
         ],
@@ -394,278 +139,391 @@ export const services: Record<string, Service> = {
     ],
     faqs: [
       {
-        question: "Why spec-driven development?",
+        question: "What tools do you use for automation?",
         answer:
-          "Spec-driven development prevents scope creep, reduces rework, and ensures everyone agrees on what's being built. It saves time and money by catching issues before coding begins.",
+          "I primarily use n8n and Make.com, along with custom Python and Node.js scripts for complex logic. These tools integrate with hundreds of services.",
       },
       {
-        question: "How long does it take to build a SaaS MVP?",
+        question: "Can you automate my existing workflow?",
         answer:
-          "A typical SaaS MVP takes 4-8 weeks depending on complexity. Spec-driven development actually speeds up the process by reducing decision-making during coding.",
+          "Yes! I analyze your current processes and identify automation opportunities. Most repetitive tasks are great candidates for automation.",
       },
       {
-        question: "Can you add AI features to my SaaS?",
+        question: "How do you handle errors in automations?",
         answer:
-          "Absolutely. I specialize in integrating AI features like chatbots, content generation, intelligent search, and automation. AI can be a key differentiator for your SaaS.",
+          "I implement robust error handling with retries, fallback options, and alerting so you're always informed if something needs attention.",
       },
     ],
   },
 
-  "cms-ecommerce": {
-    slug: "cms-ecommerce",
-    title: "CMS & E-commerce Development",
-    tagline: "Content & Commerce Solutions",
+  "chatbot-development": {
+    slug: "chatbot-development",
+    title: "AI Chatbot Development",
+    tagline: "Smart Conversational AI",
     description:
-      "WordPress, Shopify, and Headless CMS solutions. Custom themes, apps, and integrations tailored to your business.",
+      "Custom AI chatbots for websites, WhatsApp, and Discord. Powered by OpenAI, Gemini, or open-source LLMs.",
     longDescription:
-      "Whether you need a flexible content management system, a powerful e-commerce store, or a headless setup for maximum performance—I have you covered. With expertise in WordPress, Shopify, and Sanity CMS, I build solutions that fit your specific needs. From custom themes and plugins to complex integrations and headless architectures.",
-    icon: "ShoppingCart",
-    gradient: "from-green-500 to-emerald-500",
+      "Chatbots are no longer just FAQ responders—they're intelligent assistants that can understand context, remember conversations, and take actions. I build custom AI chatbots for websites, WhatsApp Business, Discord servers, and more. Powered by OpenAI GPT, Google Gemini, or open-source LMs—your chatbot will provide 24/7 support to your customers.",
+    icon: "Bot",
+    gradient: "from-purple-500 to-pink-500",
     features: [
-      "WordPress custom theme development",
-      "WordPress plugin development",
-      "Shopify custom themes",
-      "Shopify app development",
-      "Headless CMS (Sanity)",
-      "Content modeling",
-      "API-driven content delivery",
-      "E-commerce optimization",
-      "Payment gateway integration",
-      "Performance optimization",
+      "Website chatbots",
+      "WhatsApp Business bots",
+      "Discord server bots",
+      "OpenAI GPT integration",
+      "Google Gemini integration",
+      "Custom LLM fine-tuning",
+      "Conversation context memory",
+      "Multi-language support",
+      "Analytics dashboard",
     ],
     techStack: [
-      "WordPress (PHP, JS)",
-      "Shopify (Liquid, React)",
-      "Sanity CMS",
-      "Next.js (for headless)",
-      "React & TypeScript",
-      "Node.js",
-      "Stripe API",
-      "REST APIs & GraphQL",
+      "OpenAI API / GPT-4",
+      "Google Gemini / PaLM 2",
+      "Llama 3 / Mistral (open-source)",
+      "Next.js / React",
+      "Node.js / Python",
+      "WhatsApp Business API",
+      "Discord.js",
+      "Vector databases (Pinecone)",
+      "LangChain / Vercel AI SDK",
     ],
     process: [
       {
         step: 1,
-        title: "Requirements Gathering",
+        title: "Requirement Gathering",
         description:
-          "Understand your content and commerce needs. Choose the right platform (WordPress, Shopify, or Headless) for your goals.",
+          "Understand your chatbot's purpose, target audience, platform (web, WhatsApp, Discord), and key features.",
       },
       {
         step: 2,
-        title: "Design & Planning",
+        title: "Design & Persona",
         description:
-          "Create custom designs or work with your brand. Plan content models, product catalogs, and integration requirements.",
+          "Design conversation flow, create chatbot persona, define tone and personality, and plan for edge cases.",
       },
       {
         step: 3,
         title: "Development",
         description:
-          "Build custom themes, plugins, or apps. Set up headless CMS with Next.js frontend if needed. Integrate payment gateways.",
+          "Build chatbot with selected AI model, implement conversation logic, integrate with your platform, and add memory.",
       },
       {
         step: 4,
-        title: "Content & Product Setup",
+        title: "Testing & Training",
         description:
-          "Migrate existing content or set up new content structure. Configure products, pricing, and shipping options.",
+          "Test with real conversations, fine-tune responses, handle edge cases, and optimize for user experience.",
       },
       {
         step: 5,
-        title: "Launch & Optimization",
+        title: "Deployment & Analytics",
         description:
-          "Deploy to production with performance optimization. Set up analytics, monitoring, and provide training.",
+          "Deploy to production with conversation analytics. Monitor performance and iterate based on user interactions.",
       },
     ],
     pricing: [
       {
-        name: "WordPress",
-        price: "$600",
-        period: "starting at",
+        name: "Basic Bot",
+        price: "$500",
+        period: "project",
         features: [
-          "Custom theme",
-          "Plugin customization",
-          "Basic integrations",
-          "SEO setup",
-          "Performance optimization",
+          "Simple chatbot",
+          "One platform (web/WhatsApp/Discord)",
+          "GPT-3.5 or equivalent",
+          "Basic conversation flow",
           "1 month support",
         ],
       },
       {
-        name: "WordPress + WooCommerce",
-        price: "$1,000",
-        period: "starting at",
+        name: "Advanced Bot",
+        price: "$1,200",
+        period: "project",
+        highlighted: true,
         features: [
-          "Custom WordPress theme",
-          "WooCommerce setup",
-          "Product catalog configuration",
-          "Payment gateway integration",
-          "Shipping & tax setup",
-          "E-commerce optimization",
+          "Multi-platform deployment",
+          "GPT-4 or Gemini Pro",
+          "Conversation memory",
+          "Custom knowledge base",
+          "Analytics dashboard",
           "2 months support",
         ],
       },
       {
-        name: "Shopify",
-        price: "$700",
+        name: "Enterprise Bot",
+        price: "Custom",
+        features: [
+          "Custom LLM fine-tuning",
+          "Omnichannel deployment",
+          "Advanced analytics",
+          "Custom integrations",
+          "SLA",
+          "12 months support",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which platforms can chatbots be deployed to?",
+        answer:
+          "I build chatbots for websites (embedded widget), WhatsApp Business, Discord servers, Telegram, and more—depending on your needs.",
+      },
+      {
+        question: "Do chatbots understand context?",
+        answer:
+          "Yes! I implement conversation memory so chatbots remember previous messages and maintain context throughout conversations.",
+      },
+      {
+        question: "Can I train the chatbot on my data?",
+        answer:
+          "Absolutely. I can integrate your knowledge base (PDFs, websites, databases) so the chatbot provides accurate, business-specific responses.",
+      },
+    ],
+  },
+
+  "web-development": {
+    slug: "web-development",
+    title: "Web Development",
+    tagline: "Modern Websites & Applications",
+    description:
+      "Full-stack web development using Next.js, React, and TypeScript. From landing pages to complex web applications.",
+    longDescription:
+      "Your website is often the first impression customers have of your business. I build modern, fast, and beautiful websites and web applications using Next.js 15, React, TypeScript, and Tailwind CSS. Whether you need a simple landing page, a portfolio, a corporate website, or a complex web application—I deliver production-ready code with excellent performance.",
+    icon: "Rocket",
+    gradient: "from-orange-500 to-red-500",
+    features: [
+      "Next.js 15 with App Router",
+      "React & TypeScript",
+      "Tailwind CSS styling",
+      "Responsive design",
+      "SEO optimization",
+      "Performance optimization",
+      "Contact forms & integrations",
+      "CMS integration (optional)",
+      "Analytics setup",
+    ],
+    techStack: [
+      "Next.js 15 (App Router)",
+      "React 18",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion (animations)",
+      "Sanity CMS (optional)",
+      "Vercel deployment",
+      "Google Analytics",
+      "Brevo email",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Discovery",
+        description:
+          "Understand your requirements, target audience, and goals. Review competitors and discuss design preferences.",
+      },
+      {
+        step: 2,
+        title: "Design",
+        description:
+          "Create wireframes, choose color scheme and typography, design pages, and build interactive components.",
+      },
+      {
+        step: 3,
+        title: "Development",
+        description:
+          "Build your website with Next.js, implement all features and pages, integrate APIs and services.",
+      },
+      {
+        step: 4,
+        title: "Testing & Review",
+        description:
+          "Test across browsers and devices, fix bugs, optimize performance, and review with you.",
+      },
+      {
+        step: 5,
+        title: "Launch & Support",
+        description:
+          "Deploy to production with analytics, set up domain and hosting, provide training and ongoing support.",
+      },
+    ],
+    pricing: [
+      {
+        name: "Landing Page",
+        price: "$300",
         period: "starting at",
         features: [
-          "Custom theme",
-          "App development",
-          "Payment setup",
-          "Product optimization",
-          "Conversion optimization",
-          "2 months support",
+          "Single page",
+          "Responsive design",
+          "Contact form",
+          "SEO optimization",
+          "Deployment",
+          "1 week support",
         ],
       },
       {
-        name: "Headless CMS",
-        price: "$1,500",
+        name: "Business Website",
+        price: "$800",
         period: "starting at",
         highlighted: true,
         features: [
-          "Sanity CMS setup",
-          "Next.js frontend",
-          "Custom content models",
-          "API integrations",
-          "Static generation",
+          "Up to 10 pages",
+          "Responsive design",
+          "CMS integration (optional)",
+          "SEO optimization",
+          "Analytics setup",
+          "1 month support",
+        ],
+      },
+      {
+        name: "Web Application",
+        price: "$1,500",
+        period: "starting at",
+        features: [
+          "Custom web application",
+          "Database integration",
+          "Authentication",
+          "Admin dashboard",
+          "API development",
+          "3 months support",
+        ],
+      },
+      ],
+    faqs: [
+      {
+        question: "How long does it take to build a website?",
+        answer:
+          "Landing pages take 3-5 days. Business websites typically 1-3 weeks. Complex web applications 4-8 weeks depending on complexity.",
+      },
+      {
+        question: "Do you work with design tools?",
+        answer:
+          "Yes! I work with Figma, Adobe XD, or can provide my own design recommendations. I can implement any design you provide.",
+      },
+      {
+        question: "Will my website be mobile-friendly?",
+        answer:
+          "Absolutely! All websites I build are fully responsive and work great on phones, tablets, and desktops.",
+      },
+    ],
+  },
+
+  "ecommerce-solutions": {
+    slug: "ecommerce-solutions",
+    title: "E-commerce Solutions",
+    tagline: "Online Stores Made Easy",
+    description:
+      "Shopify, WooCommerce, and custom e-commerce solutions. From product setup to payment integration.",
+    longDescription:
+      "Selling online requires more than just a product catalog—you need smooth checkout experiences, secure payments, inventory management, and order fulfillment. I build complete e-commerce solutions using Shopify, WooCommerce (WordPress), or custom Next.js stores with Stripe payments. From simple product catalogs to complex multi-vendor marketplaces.",
+    icon: "ShoppingCart",
+    gradient: "from-green-500 to-emerald-500",
+    features: [
+      "Shopify store setup",
+      "WooCommerce development",
+      "Stripe payment integration",
+      "Product catalog management",
+      "Shopping cart & checkout",
+      "Order management",
+      "Shipping & tax setup",
+      "Inventory tracking",
+      "Customer accounts",
+    ],
+    techStack: [
+      "Shopify (Liquid, React)",
+      "WooCommerce (WordPress, PHP)",
+      "Next.js (custom stores)",
+      "Stripe Payments",
+      "PayPal",
+      "PostgreSQL / MySQL",
+      "Brevo email notifications",
+      "Sanity CMS (product data)",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Platform Selection",
+        description:
+          "Recommend the best e-commerce platform based on your needs, budget, and technical requirements.",
+      },
+      {
+        step: 2,
+        title: "Store Setup",
+        description:
+          "Set up products, categories, pricing, images, variants, and product attributes.",
+      },
+      {
+        step: 3,
+        title: "Payment Integration",
+        description:
+          "Integrate Stripe, PayPal, or other payment gateways. Set up tax calculation and shipping options.",
+      },
+      {
+        step: 4,
+        title: "Testing & Optimization",
+        description:
+          "Test checkout flow, fix issues, optimize conversion rates, and set up abandoned cart recovery.",
+      },
+      {
+        step: 5,
+        title: "Launch & Marketing",
+        description:
+          "Deploy store, set up analytics and email marketing, and provide training for store management.",
+      },
+    ],
+    pricing: [
+      {
+        name: "Shopify Setup",
+        price: "$400",
+        period: "starting at",
+        features: [
+          "Store configuration",
+          "Theme customization",
+          "Product setup (up to 20 products)",
+          "Payment setup",
+          "Basic SEO",
+          "2 weeks support",
+        ],
+      },
+      {
+        name: "WooCommerce Store",
+        price: "$700",
+        period: "starting at",
+        highlighted: true,
+        features: [
+          "WordPress + WooCommerce",
+          "Custom theme or child theme",
+          "Product setup (up to 50 products)",
+          "Payment gateway integration",
+          "SEO optimization",
+          "1 month support",
+        ],
+      },
+      {
+        name: "Custom E-commerce",
+        price: "$2,000",
+        period: "starting at",
+        features: [
+          "Next.js custom store",
+          "Stripe/PayPal integration",
+          "Custom checkout flow",
+          "Admin dashboard",
+          "Advanced features",
           "3 months support",
         ],
       },
     ],
     faqs: [
       {
-        question: "Should I use WordPress, Shopify, or Headless?",
+        question: "Which e-commerce platform should I choose?",
         answer:
-          "It depends on your needs. WordPress for content-heavy sites with flexibility. Shopify for pure e-commerce. Headless CMS (Sanity + Next.js) for maximum performance and developer experience. I'll help you choose.",
+          "Shopify for easiest setup, WooCommerce for WordPress sites, custom Next.js for maximum flexibility. I'll recommend based on your specific needs.",
       },
       {
-        question: "Can you migrate my existing site?",
+        question: "Can I manage products myself?",
         answer:
-          "Yes. I handle migrations from WordPress to Shopify, traditional CMS to headless, and almost any other migration scenario.",
+          "Yes! I build admin dashboards where you can easily add/edit products, manage orders, and track inventory.",
       },
       {
-        question: "Do you offer ongoing maintenance?",
+        question: "How do I handle payments?",
         answer:
-          "Yes. I offer maintenance packages for all platforms including updates, security monitoring, performance optimization, and content updates.",
-      },
-    ],
-  },
-
-  "consulting-mvp": {
-    slug: "consulting-mvp",
-    title: "Technical Consulting & MVP Development",
-    tagline: "From Idea to Working Product",
-    description:
-      "Technical consulting with spec-driven development. AI strategy, rapid MVP prototyping, and architecture reviews.",
-    longDescription:
-      "Great products start with great specifications and solid architecture. I offer technical consulting that combines spec-driven development methodology with rapid MVP prototyping. Whether you need AI strategy, architecture reviews, or a working MVP to validate your idea—I help you make informed technical decisions and build products the right way from day one.",
-    icon: "Lightbulb",
-    gradient: "from-yellow-500 to-orange-500",
-    features: [
-      "Spec-driven development consulting",
-      "AI implementation strategy",
-      "Architecture design reviews",
-      "Tech stack recommendations",
-      "Rapid MVP prototyping",
-      "Idea validation",
-      "Technical due diligence",
-      "Team training & mentorship",
-      "Code review & optimization",
-      "Startup CTO advisory",
-    ],
-    techStack: [
-      "Strategic Planning",
-      "System Design",
-      "Next.js ecosystem",
-      "AI/ML technologies",
-      "Cloud architecture",
-      "Best practices & patterns",
-    ],
-    process: [
-      {
-        step: 1,
-        title: "Discovery Call",
-        description:
-          "Understand your vision, goals, and constraints. Discuss technical options and potential approaches.",
-      },
-      {
-        step: 2,
-        title: "Strategy & Planning",
-        description:
-          "Create technical specifications, architecture diagrams, and implementation roadmap. Define success metrics.",
-      },
-      {
-        step: 3,
-        title: "Advisory & Guidance",
-        description:
-          "Provide ongoing technical guidance. Review code, architecture decisions, and help your team execute effectively.",
-      },
-      {
-        step: 4,
-        title: "MVP Development (Optional)",
-        description:
-          "Build a working MVP rapidly to validate assumptions. Test with real users and iterate based on feedback.",
-      },
-      {
-        step: 5,
-        title: "Handoff & Next Steps",
-        description:
-          "Document everything for your team. Provide recommendations for scaling and next development phases.",
-      },
-    ],
-    pricing: [
-      {
-        name: "Strategy Session",
-        price: "$200",
-        period: "one-time",
-        features: [
-          "1 hour consultation",
-          "Technical recommendations",
-          "Architecture review",
-          "Tech stack guidance",
-          "Follow-up summary",
-        ],
-      },
-      {
-        name: "MVP Package",
-        price: "$1,000",
-        period: "starting at",
-        highlighted: true,
-        features: [
-          "Full specifications",
-          "Architecture design",
-          "Working MVP",
-          "Deployment",
-          "2 weeks support",
-        ],
-      },
-      {
-        name: "Advisory Retainer",
-        price: "$800",
-        period: "/month",
-        features: [
-          "Ongoing technical guidance",
-          "Weekly calls",
-          "Code reviews",
-          "Architecture reviews",
-          "Slack access",
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: "Do I need a technical background?",
-        answer:
-          "Not necessarily. I work with both technical and non-technical founders. I translate technical concepts and help you make informed decisions.",
-      },
-      {
-        question: "How fast can you build an MVP?",
-        answer:
-          "Simple MVPs can be built in 2-3 weeks. More complex products typically take 4-6 weeks. Speed comes from the spec-driven approach—less rework means faster delivery.",
-      },
-      {
-        question: "Can you help me hire developers?",
-        answer:
-          "Yes. I can help you write job descriptions, interview candidates, and evaluate technical skills. I can also create technical specifications for your team to execute.",
+          "I integrate secure payment gateways like Stripe or PayPal. Money goes directly to your account, I never handle your payment data.",
       },
     ],
   },
@@ -677,61 +535,61 @@ export const services: Record<string, Service> = {
     description:
       "RESTful & GraphQL API design and development. Third-party integrations, webhooks, and real-time features.",
     longDescription:
-      "Modern applications need to talk to each other seamlessly. Whether you need a robust API for your product, integrations with third-party services, or real-time features—API development is foundational to scalable software. I design and build RESTful and GraphQL APIs, create custom integrations, implement webhooks, and enable real-time communication.",
+      "Modern applications need to communicate with each other seamlessly. Whether you need a robust API for your product, integrations with third-party services like Brevo or Stripe, or real-time features—API development is foundational. I design and build RESTful and GraphQL APIs, create custom integrations, implement webhooks, and enable real-time communication.",
     icon: "Cpu",
     gradient: "from-indigo-500 to-purple-500",
     features: [
-      "RESTful API design & development",
+      "RESTful API design",
       "GraphQL API development",
-      "API documentation (OpenAPI/Swagger)",
-      "Third-party service integrations",
+      "API documentation",
+      "Third-party integrations",
       "Webhook implementations",
-      "Real-time features (WebSockets, SSE)",
-      "Custom middleware development",
-      "API authentication & authorization",
+      "Real-time features (SSE, WebSockets)",
+      "Authentication & authorization",
       "Rate limiting & caching",
       "API versioning",
     ],
     techStack: [
       "Node.js & Express",
       "Next.js API Routes",
-      "GraphQL (Apollo, Yoga)",
+      "GraphQL (Apollo Server)",
       "PostgreSQL & Prisma",
       "Redis (caching)",
       "WebSockets (Socket.io)",
       "OpenAPI/Swagger",
-      "Postman & Insomnia",
+      "Stripe & Brevo APIs",
+      "Webhook handlers",
     ],
     process: [
       {
         step: 1,
         title: "API Design",
         description:
-          "Design API endpoints, data models, and authentication strategy. Create API documentation and integration guidelines.",
+          "Design endpoints, data models, authentication strategy, and create API documentation.",
       },
       {
         step: 2,
         title: "Development",
         description:
-          "Build RESTful or GraphQL APIs with proper error handling, validation, and security. Implement rate limiting and caching.",
+          "Build APIs with proper validation, error handling, security, and performance optimization.",
       },
       {
         step: 3,
-        title: "Integration",
+        title: "Integrations",
         description:
-          "Integrate with third-party services. Implement webhooks for real-time data sync. Handle authentication and authorization.",
+          "Connect with third-party services like payment gateways, email services, CRMs, or custom tools.",
       },
       {
         step: 4,
-        title: "Testing & Documentation",
+        title: "Documentation & Testing",
         description:
-          "Write comprehensive tests. Document all endpoints with examples. Create integration guides for developers.",
+          "Write comprehensive API documentation, implement tests, and ensure reliability.",
       },
       {
         step: 5,
         title: "Deployment & Monitoring",
         description:
-          "Deploy APIs with monitoring and alerting. Set up logging and analytics. Provide ongoing maintenance.",
+          "Deploy with monitoring, logging, and alerting. Provide ongoing maintenance.",
       },
     ],
     pricing: [
@@ -741,7 +599,7 @@ export const services: Record<string, Service> = {
         period: "starting at",
         features: [
           "One third-party integration",
-          "Webhook setup",
+          "Webhook or API setup",
           "Basic documentation",
           "Testing",
           "1 week support",
@@ -768,7 +626,6 @@ export const services: Record<string, Service> = {
           "Complex architecture",
           "Multiple integrations",
           "Real-time features",
-          "Custom middleware",
           "SLA",
           "Dedicated support",
         ],
@@ -778,17 +635,134 @@ export const services: Record<string, Service> = {
       {
         question: "REST or GraphQL—which should I choose?",
         answer:
-          "REST is simpler and widely adopted. GraphQL is better for complex data requirements and mobile apps where bandwidth matters. I'll recommend based on your specific use case.",
+          "REST is simpler and more common. GraphQL is better for complex data requirements and mobile apps. I'll recommend based on your use case.",
       },
       {
         question: "Can you integrate with any service?",
         answer:
-          "Any service with a documented API or webhook system. I've integrated with hundreds of services including Stripe, Gmail, Slack, CRM systems, payment gateways, and more.",
+          "Any service with documented APIs or webhooks. I've integrated Stripe, Brevo, Gmail, Slack, CRMs, payment gateways, and more.",
       },
       {
         question: "Do you provide API documentation?",
         answer:
-          "Yes. Comprehensive documentation is part of every API project. I use OpenAPI/Swagger for REST and schema documentation for GraphQL.",
+        "Yes. Comprehensive documentation with examples is included with every API project, using OpenAPI/Swagger or GraphQL schemas.",
+      },
+    ],
+  },
+
+  "technical-consulting": {
+    slug: "technical-consulting",
+    title: "Technical Consulting & Advisory",
+    tagline: "Expert Technical Guidance",
+    description:
+      "Technical consulting, code reviews, architecture design, and mentorship. Navigate technical decisions with confidence.",
+    longDescription:
+      "Great products are built on solid technical foundations. Whether you need help with technical architecture, code reviews, team training, or strategic technical decisions—I provide expert consulting to guide your journey. I help non-technical founders and startup teams make informed technical decisions and avoid costly mistakes.",
+    icon: "Lightbulb",
+    gradient: "from-yellow-500 to-orange-500",
+    features: [
+      "Technical architecture design",
+      "Code reviews & audits",
+      "Tech stack recommendations",
+      "Development process improvement",
+      "Team training & mentorship",
+      "Startup CTO advisory",
+      "Debugging & troubleshooting",
+      "Performance optimization",
+      "Security audits",
+    ],
+    techStack: [
+      "System Design",
+      "Next.js ecosystem",
+      "AI/ML technologies",
+      "Cloud architecture",
+      "Best practices & patterns",
+      "Performance analysis",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Assessment",
+        description:
+          "Review your current technical setup, identify gaps, and understand your goals and challenges.",
+      },
+      {
+        step: 2,
+        title: "Strategy",
+        description:
+          "Create technical roadmap, define priorities, and plan implementation approach.",
+      },
+      {
+        step: 3,
+        title: "Implementation",
+        description:
+          "Provide ongoing guidance, review code, help with hiring, and mentor your team.",
+      },
+      {
+        step: 4,
+        title: "Validation",
+        description:
+          "Review progress against goals, adjust strategy based on learnings, and validate outcomes.",
+      },
+      {
+        step: 5,
+        title: "Continuous Improvement",
+        description:
+          "Ongoing advisory, staying aligned as your product evolves and scales.",
+      },
+    ],
+    pricing: [
+      {
+        name: "Strategy Session",
+        price: "$150",
+        period: "one-time",
+        features: [
+          "1 hour consultation",
+          "Technical recommendations",
+          "Architecture review",
+          "Follow-up summary",
+        ],
+      },
+      {
+        name: "Code Review",
+        price: "$300",
+        period: "per review",
+        features: [
+          "Comprehensive review",
+          "Security check",
+          "Performance analysis",
+          "Improvement recommendations",
+        ],
+      },
+      {
+        name: "Advisory Retainer",
+        price: "$600",
+        period: "/month",
+        highlighted: true,
+        features: [
+          "Ongoing guidance",
+          "Weekly calls",
+          "Code reviews",
+          "Slack access",
+          "Priority support",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do I need to be technical?",
+        answer:
+          "No! I help both technical and non-technical founders. I translate complex concepts and help you make informed decisions.",
+      },
+      {
+        question: "Can you help me hire developers?",
+        answer:
+          "Yes! I can write job descriptions, interview candidates, assess technical skills, and help build your team.",
+      },
+      {
+        question: "How do I get started?",
+        answer:
+          "Start with a strategy session where we discuss your current situation, goals, and I'll provide a roadmap forward.",
       },
     ],
   },

@@ -2,49 +2,49 @@ import { Metadata } from "next";
 import AboutPageContent from "./AboutPageContent";
 
 export const metadata: Metadata = {
-  title: "About Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+  title: "About Nasir Siddiqui | AI Automation Expert & Web Developer",
   description:
-    "Learn about Nasir Siddiqui, a spec-driven developer and AI engineer specializing in Next.js SaaS products, AI agents, and full-time digital solutions. Discover my expertise in OpenAI Agents SDK and production-ready architectures.",
-  authors: [{ name: "Owais Abdullah", url: "https://owaisabdullah.dev" }],
+    "Learn about Nasir Siddiqui, an AI automation expert and full-stack developer specializing in intelligent chatbots, business automation, and modern web solutions.",
+  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
   keywords: [
     "About Nasir Siddiqui",
-    "Spec-Driven Developer",
-    "AI Agent Engineer",
-    "AI-Driven Development",
-    "Next.js SaaS Developer",
-    "Full Stack Digital FTE",
-    "OpenAI Agents SDK",
+    "AI Automation Expert",
+    "Chatbot Developer",
+    "Web Development Specialist",
+    "Next.js Developer",
+    "Full Stack Developer",
     "TypeScript Developer",
-    "SaaS Architect",
-    "AI Automation Engineer",
+    "WordPress Developer",
+    "Business Automation",
+    "Digital Solutions",
     "Professional Background",
     "Developer Portfolio",
   ],
   openGraph: {
-    title: "About Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+    title: "About Nasir Siddiqui | AI Automation Expert & Web Developer",
     description:
-      "Discover Nasir Siddiqui's journey as a spec-driven developer and AI engineer. Expert in Next.js SaaS products, AI agents, OpenAI Agents SDK, and building production-ready architectures.",
-    url: "https://owaisabdullah.dev/about",
+      "Discover Nasir Siddiqui's journey as an AI automation expert and full-stack developer. Specializing in intelligent chatbots, business automation, and modern web solutions.",
+    url: "https://nasirsiddiqui.dev/about",
     siteName: "Nasir Siddiqui Portfolio",
     type: "website",
     images: [
       {
-        url: "/assets/Owais Abdullah (2).png",
+        url: "/assets/nasir-siddiqui-about.png",
         width: 1200,
         height: 630,
-        alt: "About Nasir Siddiqui - Spec-Driven Developer & AI Engineer",
+        alt: "About Nasir Siddiqui - AI Automation Expert",
       },
     ],
   },
   twitter: {
-    title: "About Nasir Siddiqui | Spec-Driven Developer & AI Engineer",
+    title: "About Nasir Siddiqui | AI Automation Expert & Web Developer",
     description:
-      "Discover Nasir Siddiqui's journey as a spec-driven developer and AI engineer. Expert in Next.js SaaS products, AI agents, OpenAI Agents SDK, and building production-ready architectures.",
+      "Discover Nasir Siddiqui's journey as an AI automation expert and full-stack developer.",
     card: "summary_large_image",
-    images: ["/assets/Owais Abdullah (2).png"],
+    images: ["/assets/nasir-siddiqui-about.png"],
   },
   alternates: {
-    canonical: "https://owaisabdullah.dev/about",
+    canonical: "https://nasirsiddiqui.dev/about",
   },
 };
 

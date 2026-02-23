@@ -21,7 +21,7 @@ const About = () => {
             About Me!
           </h3>
           <h2 className="sm:text-3xl text-center text-2xl md:text-left text-foreground font-medium title-font mb-2 md:w-2/5">
-            Spec-Driven Developer & AI Engineer
+            AI Automation Expert & Web Developer
           </h2>
         </motion.div>
         <motion.div
@@ -32,7 +32,7 @@ const About = () => {
           className="md:-mt-24 md:w-3/5 md:pl-6 justify-self-end"
         >
           <p className="leading-relaxed text-center md:text-left text-base text-gray-500">
-            I am a <span className="text-accent font-semibold">spec-driven developer</span> and <span className="text-accent font-semibold">AI engineer</span> specializing in Next.js SaaS products and full-time digital solutions. I build production-ready web applications and AI agents using <span className="text-accent font-semibold">AI-driven engineering</span> practices, from writing clear specifications before coding to implementing intelligent automation with the OpenAI Agents SDK. Passionate about creating scalable architectures that help businesses grow through technology.
+            I am an <span className="text-accent font-semibold">AI automation expert</span> and <span className="text-accent font-semibold">full-stack developer</span> specializing in intelligent chatbots, business automation systems, and modern web solutions. I build production-ready applications that streamline operations, enhance customer engagement, and drive business growth through smart technology.
           </p>
           <motion.div
             initial={{ opacity: 0 }}
