@@ -52,7 +52,7 @@ const ServiceHeroContent: React.FC<ServiceHeroContentProps> = ({
         className={`absolute -bottom-20 -left-20 w-96 h-96 bg-gradient-to-br ${gradient} rounded-full blur-3xl opacity-5`}
       />
 
-      <div className="max-w-7xl mx-auto px-5 py-24 relative">
+      <div className="max-w-7xl mx-auto px-5 py-24 pt-40 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="order-2 md:order-1">

@@ -12,27 +12,28 @@ import { siteConfig, getAbsolutePath } from "@/lib/config";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
+  title: "Nasir Siddiqui | AI Solutions Developer & Full-Stack Developer",
   description:
-    "AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
+    "AI Solutions Developer and Full-Stack Developer specializing in intelligent automation systems, AI model integration, chatbots that handle complex queries, and business workflow optimization with measurable results.",
   keywords: [
     "Nasir Siddiqui Portfolio",
-    "AI Automation Expert",
+    "AI Solutions Developer",
+    "Full-Stack Developer",
     "Chatbot Developer",
-    "Business Automation",
+    "AI Model Integration",
+    "Business Workflow Automation",
     "Next.js Developer",
-    "Full Stack Developer",
     "TypeScript Developer",
+    "Python Developer",
     "Web Development",
-    "E-commerce Solutions",
     "API Development",
     "WordPress Developer",
     "React Developer",
-    "Python Developer",
   ],
   openGraph: {
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: "Nasir Siddiqui | AI Solutions Developer & Full-Stack Developer",
+    description:
+      "AI Solutions Developer and Full-Stack Developer specializing in intelligent automation systems, AI model integration, and business workflow optimization.",
     url: siteConfig.url,
     siteName: `${siteConfig.name} Portfolio`,
     locale: "en_US",
@@ -42,14 +43,14 @@ export const metadata: Metadata = {
         url: "/assets/Nasir.png",
         width: 1200,
         height: 630,
-        alt: "Nasir Siddiqui - AI Automation Expert",
+        alt: "Nasir Siddiqui - AI Solutions & Full-Stack Developer",
       },
     ],
   },
   twitter: {
-    title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
+    title: "Nasir Siddiqui | AI Solutions Developer & Full-Stack Developer",
     description:
-      "AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
+      "AI Solutions Developer and Full-Stack Developer specializing in intelligent automation systems, AI model integration, and business workflow optimization.",
     card: "summary_large_image",
     images: ["/assets/Nasir.png"],
     creator: "@nasirsiddiqui",
@@ -79,10 +80,10 @@ export default function Home() {
       <Services />
       <div className="flex flex-wrap w-full mt-10 mb-20 flex-col items-center text-center">
         <h3 className="text-base text-accent font-medium sm:text-lg">
-          Areas of Expertise
+          Technical Expertise
         </h3>
         <h2 className="text-5xl text-foreground font-semibold sm:text-6xl">
-          Tech Stack
+          AI & Full-Stack Tech Stack
         </h2>
       </div>
       <SkillSlider />

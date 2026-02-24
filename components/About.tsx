@@ -21,7 +21,7 @@ const About = () => {
             About Me!
           </h3>
           <h2 className="sm:text-3xl text-center text-2xl md:text-left text-foreground font-medium title-font mb-2 md:w-2/5">
-            AI Automation Expert & Web Developer
+            AI Solutions Developer & Full-Stack Developer
           </h2>
         </motion.div>
         <motion.div
@@ -32,7 +32,7 @@ const About = () => {
           className="md:-mt-24 md:w-3/5 md:pl-6 justify-self-end"
         >
           <p className="leading-relaxed text-center md:text-left text-base text-gray-500">
-            I am an <span className="text-accent font-semibold">AI automation expert</span> and <span className="text-accent font-semibold">full-stack developer</span> specializing in intelligent chatbots, business automation systems, and modern web solutions. I build production-ready applications that streamline operations, enhance customer engagement, and drive business growth through smart technology.
+            As a freelance developer, I <span className="text-accent font-semibold">spearhead intelligent automation systems</span> and modern web applications. I lead AI model integration into client-facing products, building chatbots that handle complex queries and automate repetitive tasks. As a <span className="text-accent font-semibold">bridge between technical teams and clients</span>, I ensure every solution is strategically aligned with business goals—delivering measurable results in efficiency and conversion rates.
           </p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -52,11 +52,11 @@ const About = () => {
             </Link>
             <Link
               href={"/projects"}
-              className="group text-accent-500 inline-flex items-center ml-4"
+              className="group text-accent-500 inline-flex items-center ml-4 relative"
             >
               Learn More
               <motion.span
-                className="group-hover:rotate-90 ml-5 duration-300 group-hover:text-accent inline-block"
+                className="group-hover:rotate-90 ml-2 duration-300 group-hover:text-accent inline-block absolute -top-2 -right-4"
               >
                 <FaArrowRight />
               </motion.span>

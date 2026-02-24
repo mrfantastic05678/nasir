@@ -36,7 +36,7 @@ const Hero = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
                 </span>
-                Available for AI Projects & Web Development
+                Available for AI Solutions & Full-Stack Projects
               </span>
             </div>
 
@@ -47,12 +47,12 @@ const Hero = () => {
                 <span className="text-gray-200 font-semibold tracking-normal mt-2 inline-block">
                   <Typewriter
                     words={[
-                      "an AI Automation Expert.",
-                      "a Chatbot Developer.",
-                      "a Web Development Specialist.",
-                      "a Full Stack Developer.",
-                      "a TypeScript Expert.",
-                      "a Digital Solutions Provider.",
+                      "an AI Solutions Developer.",
+                      "a Full-Stack Developer.",
+                      "a Chatbot Expert.",
+                      "an Automation Specialist.",
+                      "a Business Workflow Optimizer.",
+                      "a Technical-Business Bridge.",
                     ]}
                     loop={0}
                     cursor
@@ -65,7 +65,7 @@ const Hero = () => {
               </h1>
             </div>
             <p className="mb-8 leading-relaxed font-poppins text-gray-400">
-              I build intelligent chatbots, automation systems, and modern web applications that help businesses work smarter. Specializing in AI-powered solutions, full-stack development, and digital services that drive real results.
+              Spearheading intelligent automation systems and modern web applications that optimize business workflows. I lead AI model integration into client-facing products, build chatbots that handle complex queries, and deliver full-stack solutions with measurable results.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Link href="#contact" className="scroll-smooth duration-300">
@@ -152,7 +152,7 @@ const Hero = () => {
             <div className="-mt-56 -mr-[155px] w-11/12 sm:w-[24rem] h-[70%] shadow-2xl opacity-40 shadow-indigo-900/30 rounded-xl absolute bottom-0 right-40 z-0 md:w-11/12 md:h-[75%] md:-mr-28 md:bottom-0 xs:h-[75%] xs:bottom-0 sm:bottom-0 sm:-mr-32 sm:w-10/12 lg:-mr-40 xl:w-10/12 xl:-mr-30 xl:h-[75%] xl:bottom-0 bg-card border border-white/5"></div>
             <AnimatedTooltip
               tooltipTitle="Nasir Siddiqui"
-              tooltipDescription="AI Automation & Web Developer"
+              tooltipDescription="AI Solutions & Full-Stack Developer"
             >
               <Image
                 src="/assets/Nasir.png"

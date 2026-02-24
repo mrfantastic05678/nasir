@@ -42,9 +42,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           Job Experience
         </h2>
         <p className="text-muted-foreground text-sm md:text-base text-center max-w-2xl mx-auto">
-          Over the past few years, I&apos;ve been building my expertise in web
-          development, AI integrations, and digital marketing. Here&apos;s a timeline
-          of my journey so far:
+          Building intelligent automation systems, integrating AI models into client-facing products, and delivering full-stack solutions that drive measurable business results. Here&apos;s my professional journey:
         </p>
       </div>
 

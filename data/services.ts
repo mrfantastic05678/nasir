@@ -36,27 +36,32 @@ export const services: Record<string, Service> = {
   "ai-automations": {
     slug: "ai-automations",
     title: "AI Automations & Workflows",
-    tagline: "Smart Automation for Business",
+    tagline: "Optimize Business Workflows with AI",
     description:
-      "Custom AI-powered automation workflows that save time and reduce manual work using n8n, Make.com, and custom scripts.",
+      "Intelligent automation systems that optimize business workflows, increase efficiency, and drive measurable results using n8n, Make.com, and custom AI solutions.",
     longDescription:
-      "Automation is the key to scaling your business efficiently. I build intelligent automation workflows using tools like n8n, Make.com, and custom Python/Node.js scripts. From automating repetitive tasks to integrating AI-powered decision making—transform how your business operates.",
+      "Intelligent automation is the key to scaling your business efficiently. I build AI-powered automation systems and workflows that transform how businesses operate. From automating repetitive tasks to integrating AI models that handle complex queries—every solution is designed to deliver measurable results like increased efficiency, reduced operational costs, and higher conversion rates.",
     icon: "Zap",
     gradient: "from-blue-500 to-cyan-500",
     features: [
+      "Business workflow optimization",
+      "AI-powered decision making",
+      "Repetitive task automation",
+      "Complex query handling",
       "n8n workflow automation",
       "Make.com integrations",
       "Custom Python/Node.js scripts",
-      "AI-powered decision making",
-      "Email automation",
       "CRM & database automation",
-      "Report generation",
+      "Email automation systems",
       "Webhook & API integrations",
       "Process optimization",
+      "Measurable ROI tracking",
     ],
     techStack: [
       "n8n Automation",
       "Make.com",
+      "OpenAI GPT Integration",
+      "Google Gemini",
       "Python Scripts",
       "Node.js Scripts",
       "REST APIs & Webhooks",
@@ -68,33 +73,33 @@ export const services: Record<string, Service> = {
     process: [
       {
         step: 1,
-        title: "Process Discovery",
+        title: "Workflow Discovery",
         description:
-          "Analyze your current workflows to identify automation opportunities. Document manual tasks and calculate time savings.",
+          "Analyze your current business workflows to identify automation opportunities. Calculate potential time savings and ROI.",
       },
       {
         step: 2,
-        title: "Workflow Design",
+        title: "AI Integration Design",
         description:
-          "Design automation workflows with decision trees, error handling, and integration points.",
+          "Design automation workflows with AI model integration, decision trees, error handling, and strategic business alignment.",
       },
       {
         step: 3,
         title: "Automation Development",
         description:
-          "Build workflows using n8n, Make.com, or custom scripts. Integrate with your existing tools and APIs.",
+          "Build intelligent automation systems using n8n, Make.com, or custom scripts. Integrate AI models for complex query handling.",
       },
       {
         step: 4,
-        title: "Testing & Deployment",
+        title: "Testing & Optimization",
         description:
-          "Test with real data, optimize performance, and deploy with monitoring and error alerts.",
+          "Test with real data, optimize for measurable results, and deploy with monitoring for efficiency tracking.",
       },
       {
         step: 5,
-        title: "Training & Handoff",
+        title: "Deployment & Handoff",
         description:
-          "Train your team on managing automations, provide documentation, and ongoing support.",
+          "Deploy with full documentation, train your team, and provide ongoing support for optimal results.",
       },
     ],
     pricing: [
@@ -159,19 +164,21 @@ export const services: Record<string, Service> = {
   "chatbot-development": {
     slug: "chatbot-development",
     title: "AI Chatbot Development",
-    tagline: "Smart Conversational AI",
+    tagline: "Intelligent Conversational AI Solutions",
     description:
-      "Custom AI chatbots for websites, WhatsApp, and Discord. Powered by OpenAI, Gemini, or open-source LLMs.",
+      "Custom AI chatbots that handle complex queries, automate repetitive tasks, and integrate seamlessly into client-facing products using OpenAI, Gemini, and modern LLMs.",
     longDescription:
-      "Chatbots are no longer just FAQ responders—they're intelligent assistants that can understand context, remember conversations, and take actions. I build custom AI chatbots for websites, WhatsApp Business, Discord servers, and more. Powered by OpenAI GPT, Google Gemini, or open-source LMs—your chatbot will provide 24/7 support to your customers.",
+      "I lead the integration of AI models into client-facing products. I build custom AI chatbots that go beyond simple FAQ responders—intelligent assistants that handle complex queries, maintain context, and take meaningful actions. Whether for websites, WhatsApp Business, Discord servers, or custom platforms—your chatbot will provide 24/7 intelligent support that automates repetitive tasks while delivering exceptional customer experiences.",
     icon: "Bot",
     gradient: "from-purple-500 to-pink-500",
     features: [
+      "Complex query handling",
+      "AI model integration (GPT-4, Gemini)",
+      "Repetitive task automation",
+      "Client-facing product integration",
       "Website chatbots",
       "WhatsApp Business bots",
       "Discord server bots",
-      "OpenAI GPT integration",
-      "Google Gemini integration",
       "Custom LLM fine-tuning",
       "Conversation context memory",
       "Multi-language support",
@@ -191,33 +198,33 @@ export const services: Record<string, Service> = {
     process: [
       {
         step: 1,
-        title: "Requirement Gathering",
+        title: "Requirements & Strategy",
         description:
-          "Understand your chatbot's purpose, target audience, platform (web, WhatsApp, Discord), and key features.",
+          "Understand your chatbot's purpose, business goals, target audience, platform (web, WhatsApp, Discord), and key features for client-facing integration.",
       },
       {
         step: 2,
-        title: "Design & Persona",
+        title: "AI Model Selection & Design",
         description:
-          "Design conversation flow, create chatbot persona, define tone and personality, and plan for edge cases.",
+          "Select optimal AI model for complex query handling, design conversation flows, create persona, and plan integration with existing products.",
       },
       {
         step: 3,
-        title: "Development",
+        title: "Development & Integration",
         description:
-          "Build chatbot with selected AI model, implement conversation logic, integrate with your platform, and add memory.",
+          "Build chatbot with selected AI model, implement complex query logic, integrate into client-facing products, and add conversation memory.",
       },
       {
         step: 4,
-        title: "Testing & Training",
+        title: "Testing & Optimization",
         description:
-          "Test with real conversations, fine-tune responses, handle edge cases, and optimize for user experience.",
+          "Test with real conversations, fine-tune for complex queries, optimize task automation, and ensure seamless user experience.",
       },
       {
         step: 5,
         title: "Deployment & Analytics",
         description:
-          "Deploy to production with conversation analytics. Monitor performance and iterate based on user interactions.",
+          "Deploy to production with conversation analytics. Monitor performance, track task automation rates, and iterate based on user interactions.",
       },
     ],
     pricing: [
@@ -281,27 +288,29 @@ export const services: Record<string, Service> = {
 
   "web-development": {
     slug: "web-development",
-    title: "Web Development",
-    tagline: "Modern Websites & Applications",
+    title: "Full-Stack Web Development",
+    tagline: "Modern Web Applications & Solutions",
     description:
-      "Full-stack web development using Next.js, React, and TypeScript. From landing pages to complex web applications.",
+      "Robust full-stack development using Next.js, React, and TypeScript. From landing pages to complex web applications that deliver measurable business results.",
     longDescription:
-      "Your website is often the first impression customers have of your business. I build modern, fast, and beautiful websites and web applications using Next.js 15, React, TypeScript, and Tailwind CSS. Whether you need a simple landing page, a portfolio, a corporate website, or a complex web application—I deliver production-ready code with excellent performance.",
+      "I maintain and expand a robust full-stack skill set. I build modern, fast, and production-ready web applications using Next.js, React, TypeScript, and Tailwind CSS. Every solution is designed to deliver measurable results—increased efficiency, higher conversion rates, and seamless user experiences. Whether you need a landing page, corporate website, or complex web application, I ensure all digital services align strategically with your business goals.",
     icon: "Rocket",
     gradient: "from-orange-500 to-red-500",
     features: [
-      "Next.js 15 with App Router",
+      "Next.js full-stack development",
       "React & TypeScript",
       "Tailwind CSS styling",
-      "Responsive design",
-      "SEO optimization",
+      "Frontend responsiveness",
+      "Backend stability",
       "Performance optimization",
+      "SEO optimization",
       "Contact forms & integrations",
       "CMS integration (optional)",
       "Analytics setup",
+      "Conversion-focused design",
     ],
     techStack: [
-      "Next.js 15 (App Router)",
+      "Next.js (App Router)",
       "React 18",
       "TypeScript",
       "Tailwind CSS",
@@ -310,37 +319,39 @@ export const services: Record<string, Service> = {
       "Vercel deployment",
       "Google Analytics",
       "Brevo email",
+      "Node.js / Express",
+      "PostgreSQL / Prisma",
     ],
     process: [
       {
         step: 1,
-        title: "Discovery",
+        title: "Discovery & Strategy",
         description:
-          "Understand your requirements, target audience, and goals. Review competitors and discuss design preferences.",
+          "Understand your requirements, business goals, and target audience. Ensure technical solutions align with business strategy.",
       },
       {
         step: 2,
-        title: "Design",
+        title: "Design & Planning",
         description:
-          "Create wireframes, choose color scheme and typography, design pages, and build interactive components.",
+          "Create wireframes, choose design system, plan architecture, and ensure solutions bridge technical and business requirements.",
       },
       {
         step: 3,
-        title: "Development",
+        title: "Full-Stack Development",
         description:
-          "Build your website with Next.js, implement all features and pages, integrate APIs and services.",
+          "Build with robust frontend and backend. Implement features, integrate APIs, ensure responsiveness and stability.",
       },
       {
         step: 4,
-        title: "Testing & Review",
+        title: "Testing & Optimization",
         description:
-          "Test across browsers and devices, fix bugs, optimize performance, and review with you.",
+          "Test across devices, optimize for performance, verify measurable results, and ensure business goals are met.",
       },
       {
         step: 5,
         title: "Launch & Support",
         description:
-          "Deploy to production with analytics, set up domain and hosting, provide training and ongoing support.",
+          "Deploy to production with analytics, provide documentation, and offer ongoing support for optimal performance.",
       },
     ],
     pricing: [
@@ -653,23 +664,24 @@ export const services: Record<string, Service> = {
   "technical-consulting": {
     slug: "technical-consulting",
     title: "Technical Consulting & Advisory",
-    tagline: "Expert Technical Guidance",
+    tagline: "Bridge Between Technical & Business",
     description:
-      "Technical consulting, code reviews, architecture design, and mentorship. Navigate technical decisions with confidence.",
+      "Technical consulting that bridges technical teams and clients. Ensuring solutions are functional and strategically aligned with business goals.",
     longDescription:
-      "Great products are built on solid technical foundations. Whether you need help with technical architecture, code reviews, team training, or strategic technical decisions—I provide expert consulting to guide your journey. I help non-technical founders and startup teams make informed technical decisions and avoid costly mistakes.",
+      "With years of experience acting as a bridge between technical teams and clients, I provide expert consulting that ensures every solution is not only functional but also strategically aligned with business goals. Whether you need technical architecture guidance, code reviews, team training, or help navigating complex technical decisions—I help both technical and non-technical stakeholders achieve alignment and avoid costly mistakes.",
     icon: "Lightbulb",
     gradient: "from-yellow-500 to-orange-500",
     features: [
-      "Technical architecture design",
+      "Technical-business alignment",
+      "Architecture design & review",
       "Code reviews & audits",
       "Tech stack recommendations",
-      "Development process improvement",
+      "Client communication bridge",
       "Team training & mentorship",
       "Startup CTO advisory",
-      "Debugging & troubleshooting",
+      "Process optimization",
       "Performance optimization",
-      "Security audits",
+      "Strategic technical guidance",
     ],
     techStack: [
       "System Design",
@@ -678,37 +690,38 @@ export const services: Record<string, Service> = {
       "Cloud architecture",
       "Best practices & patterns",
       "Performance analysis",
+      "Business strategy alignment",
     ],
     process: [
       {
         step: 1,
-        title: "Assessment",
+        title: "Assessment & Discovery",
         description:
-          "Review your current technical setup, identify gaps, and understand your goals and challenges.",
+          "Review current technical setup, understand business goals, and identify gaps between technical and business teams.",
       },
       {
         step: 2,
-        title: "Strategy",
+        title: "Alignment Strategy",
         description:
-          "Create technical roadmap, define priorities, and plan implementation approach.",
+          "Create technical roadmap aligned with business goals. Ensure all stakeholders understand and support the direction.",
       },
       {
         step: 3,
-        title: "Implementation",
+        title: "Implementation & Guidance",
         description:
-          "Provide ongoing guidance, review code, help with hiring, and mentor your team.",
+          "Bridge communication between technical teams and clients. Provide ongoing guidance, code reviews, and mentorship.",
       },
       {
         step: 4,
-        title: "Validation",
+        title: "Validation & Results",
         description:
-          "Review progress against goals, adjust strategy based on learnings, and validate outcomes.",
+          "Review progress against business goals, validate measurable outcomes, and ensure technical solutions deliver expected results.",
       },
       {
         step: 5,
         title: "Continuous Improvement",
         description:
-          "Ongoing advisory, staying aligned as your product evolves and scales.",
+          "Ongoing advisory to maintain technical-business alignment as products evolve and scale.",
       },
     ],
     pricing: [
@@ -718,9 +731,9 @@ export const services: Record<string, Service> = {
         period: "one-time",
         features: [
           "1 hour consultation",
-          "Technical recommendations",
+          "Technical-business alignment",
           "Architecture review",
-          "Follow-up summary",
+          "Strategic recommendations",
         ],
       },
       {
@@ -731,7 +744,7 @@ export const services: Record<string, Service> = {
           "Comprehensive review",
           "Security check",
           "Performance analysis",
-          "Improvement recommendations",
+          "Business alignment assessment",
         ],
       },
       {
@@ -740,7 +753,7 @@ export const services: Record<string, Service> = {
         period: "/month",
         highlighted: true,
         features: [
-          "Ongoing guidance",
+          "Technical-business bridge",
           "Weekly calls",
           "Code reviews",
           "Slack access",
@@ -752,7 +765,7 @@ export const services: Record<string, Service> = {
       {
         question: "Do I need to be technical?",
         answer:
-          "No! I help both technical and non-technical founders. I translate complex concepts and help you make informed decisions.",
+          "No! I specialize in bridging technical teams and clients. I translate complex concepts and help all stakeholders make informed decisions.",
       },
       {
         question: "Can you help me hire developers?",
@@ -762,7 +775,7 @@ export const services: Record<string, Service> = {
       {
         question: "How do I get started?",
         answer:
-          "Start with a strategy session where we discuss your current situation, goals, and I'll provide a roadmap forward.",
+          "Start with a strategy session where we discuss your current situation, business goals, and technical alignment needs.",
       },
     ],
   },
