@@ -45,3 +45,6 @@ next-env.d.ts
 history/
 specs/
 Claude.md
+
+# docs
+docs/reverse-engineered/

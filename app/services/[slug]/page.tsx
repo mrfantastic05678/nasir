@@ -7,7 +7,7 @@ import ServiceHeroContent from "@/components/ServiceHeroContent";
 import ServiceFAQ from "@/components/ServiceFAQ";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { siteConfig, getAbsolutePath } from "@/lib/config";
+import { getAbsolutePath } from "@/lib/config";
 
 // Generate metadata for SEO
 export async function generateMetadata({

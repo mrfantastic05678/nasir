@@ -3,7 +3,7 @@ import React from "react";
 import JsonLdSchema from "@/components/JsonLdSchema";
 import type { Metadata } from "next";
 import SkillSlider from "@/components/SkillSlider";
-import { siteConfig, getAbsolutePath } from "@/lib/config";
+import { getAbsolutePath } from "@/lib/config";
 
 export const dynamic = "force-static";
 

@@ -14,7 +14,6 @@ import {
   GitBranch,
   Cloud,
   Circle,
-  BookOpen,
   Gem,
   HardDrive,
   Smile,

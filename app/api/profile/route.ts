@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { siteConfig, getAbsolutePath } from "@/lib/config";
+import { siteConfig } from "@/lib/config";
 
 // Existing projects from data/projects.ts - these have images and are already on the website
 const existingProjects = [
