@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { RiRefreshLine } from "react-icons/ri";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface Project {
@@ -47,7 +47,7 @@ const ProjectTabs = () => {
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState<Record<string, number>>({});
   const [loadingMore, setLoadingMore] = useState<Record<string, boolean>>({});
-  const PROJECTS_PER_PAGE = 3;
+  const PROJECTS_PER_PAGE = 6;
 
   useEffect(() => {
     async function fetchProjects() {
@@ -58,11 +58,11 @@ const ProjectTabs = () => {
 
         const categories = Object.keys(data.projectsByCategory || {});
         if (categories.length > 0) {
-          // Initialize visible count for each category (show all projects since max is 4)
+          // Initialize visible count for each category (show 3 initially)
           const initialCounts: Record<string, number> = {};
           const initialLoading: Record<string, boolean> = {};
           categories.forEach(cat => {
-            initialCounts[cat] = (data.projectsByCategory[cat] || []).length;
+            initialCounts[cat] = Math.min(3, (data.projectsByCategory[cat] || []).length);
             initialLoading[cat] = false;
           });
           setVisibleCount(initialCounts);
@@ -83,14 +83,14 @@ const ProjectTabs = () => {
     await new Promise(resolve => setTimeout(resolve, 500));
     setVisibleCount(prev => ({
       ...prev,
-      [category]: (projectsByCategory[category] || []).length
+      [category]: Math.min((prev[category] || 0) + PROJECTS_PER_PAGE, (projectsByCategory[category] || []).length)
     }));
     setLoadingMore(prev => ({ ...prev, [category]: false }));
   };
 
   if (loading) {
     return (
-      <section id="projects" className="max-w-7xl mx-auto mt-20 px-5 pb-5">
+      <section id="projects" className="max-w-7xl mx-auto mt-20 px-5 pb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,27 +113,6 @@ const ProjectTabs = () => {
   }
 
   const categories = Object.keys(projectsByCategory);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
 
   return (
     <section id="projects" className="max-w-7xl mx-auto mt-20 px-5 pb-5">
@@ -186,20 +165,21 @@ const ProjectTabs = () => {
           return (
             <TabsContent key={category} value={category} className="mt-6">
               <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
-                <AnimatePresence mode="popLayout">
-                  {visibleProjects.map((project, index) => (
-                    <motion.div
-                      key={`${category}-${index}`}
-                      variants={itemVariants}
-                      whileHover={{ y: -8 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      className="scroll-smooth border border-border rounded-xl overflow-hidden shadow-lg bg-card group"
-                    >
+                {visibleProjects.map((project, index) => (
+                  <motion.div
+                    key={`${category}-${project.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
+                    layout
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    whileHover={{ y: -8 }}
+                    className="scroll-smooth border border-border rounded-xl overflow-hidden shadow-lg bg-card group"
+                  >
                       <div className="relative overflow-hidden">
                         <motion.div
                           whileHover={{ scale: 1.05 }}
@@ -267,8 +247,7 @@ const ProjectTabs = () => {
                       </div>
                     </motion.div>
                   ))}
-                </AnimatePresence>
-              </motion.div>
+                </motion.div>
 
               {/* Load More Button */}
               {hasMore && (
