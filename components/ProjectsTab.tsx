@@ -45,10 +45,9 @@ const ProjectCardSkeleton = () => (
 const ProjectTabs = () => {
   const [projectsByCategory, setProjectsByCategory] = useState<ProjectsByCategory>({});
   const [loading, setLoading] = useState(true);
-  const [selectedTab, setSelectedTab] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<Record<string, number>>({});
   const [loadingMore, setLoadingMore] = useState<Record<string, boolean>>({});
-  const PROJECTS_PER_PAGE = 9;
+  const PROJECTS_PER_PAGE = 3;
 
   useEffect(() => {
     async function fetchProjects() {
@@ -58,13 +57,12 @@ const ProjectTabs = () => {
         setProjectsByCategory(data.projectsByCategory || {});
 
         const categories = Object.keys(data.projectsByCategory || {});
-        if (categories.length > 0 && !selectedTab) {
-          setSelectedTab(categories[0]);
-          // Initialize visible count for each category
+        if (categories.length > 0) {
+          // Initialize visible count for each category (show all projects since max is 4)
           const initialCounts: Record<string, number> = {};
           const initialLoading: Record<string, boolean> = {};
           categories.forEach(cat => {
-            initialCounts[cat] = Math.min(PROJECTS_PER_PAGE, (data.projectsByCategory[cat] || []).length);
+            initialCounts[cat] = (data.projectsByCategory[cat] || []).length;
             initialLoading[cat] = false;
           });
           setVisibleCount(initialCounts);
@@ -78,19 +76,15 @@ const ProjectTabs = () => {
     }
 
     fetchProjects();
-  }, [selectedTab]);
+  }, []);
 
   const handleLoadMore = async (category: string) => {
     setLoadingMore(prev => ({ ...prev, [category]: true }));
-
-    // Simulate loading delay for better UX
-    await new Promise(resolve => setTimeout(resolve, 800));
-
+    await new Promise(resolve => setTimeout(resolve, 500));
     setVisibleCount(prev => ({
       ...prev,
-      [category]: Math.min((prev[category] || 0) + PROJECTS_PER_PAGE, (projectsByCategory[category] || []).length)
+      [category]: (projectsByCategory[category] || []).length
     }));
-
     setLoadingMore(prev => ({ ...prev, [category]: false }));
   };
 
@@ -171,7 +165,6 @@ const ProjectTabs = () => {
               <TabsTrigger
                 key={category}
                 value={category}
-                onClick={() => setSelectedTab(category)}
                 className="px-4 py-2 rounded-lg bg-card text-foreground hover:bg-accent hover:text-accent-foreground transition data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
               >
                 {category}
