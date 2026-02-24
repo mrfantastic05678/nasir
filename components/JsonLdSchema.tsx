@@ -1,4 +1,5 @@
 import React from 'react';
+import { siteConfig } from '@/lib/config';
 
 interface JsonLdSchemaProps {
   type: 'home' | 'about' | 'projects' | 'skills' | 'contact' | 'services' | 'service';
@@ -6,7 +7,7 @@ interface JsonLdSchemaProps {
 }
 
 const JsonLdSchema: React.FC<JsonLdSchemaProps> = ({ type, pageUrl }) => {
-  const baseUrl = 'https://nasirsiddiqui.dev';
+  const baseUrl = siteConfig.url;
 
   // Person Schema
   const personSchema = {

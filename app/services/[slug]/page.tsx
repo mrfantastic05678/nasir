@@ -7,6 +7,7 @@ import ServiceHeroContent from "@/components/ServiceHeroContent";
 import ServiceFAQ from "@/components/ServiceFAQ";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -38,11 +39,11 @@ export async function generateMetadata({
     openGraph: {
       title: `${service.title} | Nasir Siddiqui`,
       description: service.description,
-      url: `https://nasirsiddiqui.dev/services/${slug}`,
+      url: getAbsolutePath(`/services/${slug}`),
       type: "website",
     },
     alternates: {
-      canonical: `https://nasirsiddiqui.dev/services/${slug}`,
+      canonical: getAbsolutePath(`/services/${slug}`),
     },
   };
 }
@@ -70,7 +71,7 @@ export default async function ServicePage({
     <>
       <JsonLdSchema
         type="service"
-        pageUrl={`https://nasirsiddiqui.dev/services/${service.slug}`}
+        pageUrl={getAbsolutePath(`/services/${service.slug}`)}
       />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

@@ -2,6 +2,7 @@ import React from "react";
 import ProjectsTab from "@/components/ProjectsTab";
 import JsonLdSchema from "@/components/JsonLdSchema";
 import type { Metadata } from "next";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 export const dynamic = "force-static";
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "Projects | Nasir Siddiqui - AI Automations & Web Development",
   description:
     "Explore Nasir Siddiqui's portfolio of AI automation projects, chatbot development, and web solutions. Featuring Next.js, TypeScript, and modern digital services.",
-  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
   keywords: [
     "Nasir Siddiqui Projects",
     "AI Automation Projects",
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
     title: "Projects | Nasir Siddiqui - AI Automations & Web Development",
     description:
       "Explore Nasir Siddiqui's portfolio of AI automation projects, chatbot development, and web solutions.",
-    url: "https://nasirsiddiqui.dev/projects",
-    siteName: "Nasir Siddiqui Portfolio",
+    url: getAbsolutePath('/projects'),
+    siteName: `${siteConfig.name} Portfolio`,
     type: "website",
     images: [
       {
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     images: ["/assets/nasir-siddiqui-projects.png"],
   },
   alternates: {
-    canonical: "https://nasirsiddiqui.dev/projects",
+    canonical: getAbsolutePath('/projects'),
   },
 };
 
@@ -57,7 +58,7 @@ const projects = () => {
     <>
       <JsonLdSchema
         type="projects"
-        pageUrl="https://nasirsiddiqui.dev/projects"
+        pageUrl={getAbsolutePath('/projects')}
       />
       <div className="pt-32">
         <ProjectsTab />

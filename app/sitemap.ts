@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/config";
 
 export const revalidate = 60;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://owaisabdullah.dev";
+  const baseUrl = siteConfig.url;
   const currentDate = new Date().toISOString();
 
   return [

@@ -2,6 +2,7 @@ import React from "react";
 import Contact from "@/components/Contact";
 import JsonLdSchema from "@/components/JsonLdSchema";
 import type { Metadata } from "next";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 export const dynamic = "force-static";
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "Contact Nasir Siddiqui | AI Automations & Web Development",
   description:
     "Get in touch with Nasir Siddiqui for AI automation projects, chatbot development, and web development services. Expert in Next.js, TypeScript, and intelligent automation solutions.",
-  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
   keywords: [
     "Contact Nasir Siddiqui",
     "Hire AI Automation Expert",
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
     title: "Contact Nasir Siddiqui | AI Automations & Web Development",
     description:
       "Get in touch with Nasir Siddiqui for AI automation projects, chatbot development, and web development services.",
-    url: "https://nasirsiddiqui.dev/contact",
-    siteName: "Nasir Siddiqui Portfolio",
+    url: getAbsolutePath('/contact'),
+    siteName: `${siteConfig.name} Portfolio`,
     type: "website",
     images: [
       {
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     images: ["/assets/nasir-siddiqui-contact.png"],
   },
   alternates: {
-    canonical: "https://nasirsiddiqui.dev/contact",
+    canonical: getAbsolutePath('/contact'),
   },
 };
 
@@ -60,7 +61,7 @@ const contact = () => {
     <>
       <JsonLdSchema
         type="contact"
-        pageUrl="https://nasirsiddiqui.dev/contact"
+        pageUrl={getAbsolutePath('/contact')}
       />
       <div className="pt-32">
         <Contact />

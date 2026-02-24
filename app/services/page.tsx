@@ -3,6 +3,7 @@ import Link from "next/link";
 import JsonLdSchema from "@/components/JsonLdSchema";
 import { ArrowRight } from "lucide-react";
 import ServicesGrid from "@/components/ServicesGrid";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Services | Nasir Siddiqui - AI Automations, Chatbots & Digital Services",
@@ -32,19 +33,19 @@ export const metadata: Metadata = {
     title: "Services | Nasir Siddiqui - AI Automations, Chatbots & Digital Services",
     description:
       "Explore services offered by Nasir Siddiqui: AI Automations, Chatbot Development, Web Development, E-commerce Solutions, API Development, and Technical Consulting.",
-    url: "https://nasirsiddiqui.dev/services",
-    siteName: "Nasir Siddiqui Portfolio",
+    url: getAbsolutePath('/services'),
+    siteName: `${siteConfig.name} Portfolio`,
     type: "website",
   },
   alternates: {
-    canonical: "https://nasirsiddiqui.dev/services",
+    canonical: getAbsolutePath('/services'),
   },
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <JsonLdSchema type="services" pageUrl="https://nasirsiddiqui.dev/services" />
+      <JsonLdSchema type="services" pageUrl={getAbsolutePath('/services')} />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-5">

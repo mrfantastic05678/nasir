@@ -7,6 +7,7 @@ import JsonLdSchema from "@/components/JsonLdSchema";
 import type { Metadata } from "next";
 import SkillSlider from "@/components/SkillSlider";
 import Services from "@/components/Services";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 export const dynamic = "force-static";
 
@@ -30,11 +31,10 @@ export const metadata: Metadata = {
     "Python Developer",
   ],
   openGraph: {
-    title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
-    description:
-      "AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
-    url: "https://nasirsiddiqui.dev",
-    siteName: "Nasir Siddiqui Portfolio",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: `${siteConfig.name} Portfolio`,
     locale: "en_US",
     type: "website",
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     creator: "@nasirsiddiqui",
   },
   alternates: {
-    canonical: "https://nasirsiddiqui.dev/",
+    canonical: getAbsolutePath('/'),
   },
   robots: {
     index: true,
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <JsonLdSchema type="home" pageUrl="https://nasirsiddiqui.dev" />
+      <JsonLdSchema type="home" pageUrl={getAbsolutePath('/')} />
       <Hero />
       <About />
       <Services />

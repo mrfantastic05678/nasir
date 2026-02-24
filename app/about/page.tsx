@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import AboutPageContent from "./AboutPageContent";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "About Nasir Siddiqui | AI Automation Expert & Web Developer",
   description:
     "Learn about Nasir Siddiqui, an AI automation expert and full-stack developer specializing in intelligent chatbots, business automation, and modern web solutions.",
-  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
   keywords: [
     "About Nasir Siddiqui",
     "AI Automation Expert",
@@ -24,8 +25,8 @@ export const metadata: Metadata = {
     title: "About Nasir Siddiqui | AI Automation Expert & Web Developer",
     description:
       "Discover Nasir Siddiqui's journey as an AI automation expert and full-stack developer. Specializing in intelligent chatbots, business automation, and modern web solutions.",
-    url: "https://nasirsiddiqui.dev/about",
-    siteName: "Nasir Siddiqui Portfolio",
+    url: getAbsolutePath('/about'),
+    siteName: `${siteConfig.name} Portfolio`,
     type: "website",
     images: [
       {
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     images: ["/assets/nasir-siddiqui-about.png"],
   },
   alternates: {
-    canonical: "https://nasirsiddiqui.dev/about",
+    canonical: getAbsolutePath('/about'),
   },
 };
 

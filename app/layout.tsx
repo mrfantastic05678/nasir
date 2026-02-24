@@ -6,16 +6,16 @@ import Footer from "@/components/Footer";
 import { inter, poppins, montserrat } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import { siteConfig } from "@/lib/config";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nasirsiddiqui.dev"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
+    default: siteConfig.title,
     template: "%s | AI Automations & Web Development",
   },
-  description:
-    "Nasir Siddiqui is an AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions. Expert in Next.js, TypeScript, and building production-ready applications.",
+  description: siteConfig.description,
   keywords: [
     "Nasir Siddiqui",
     "Nasir",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "Web Development Services",
     "Software Development",
   ],
-  authors: [{ name: "Nasir Siddiqui", url: "https://nasirsiddiqui.dev" }],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: "Nasir Siddiqui",
   publisher: "Nasir Siddiqui",
   formatDetection: {
@@ -65,11 +65,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://nasirsiddiqui.dev",
-    title: "Nasir Siddiqui | AI Automations, Chatbots & Digital Services",
-    description:
-      "Nasir Siddiqui is an AI automation expert and full-stack developer specializing in intelligent chatbots, business automation systems, and modern web solutions.",
-    siteName: "Nasir Siddiqui Portfolio",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: `${siteConfig.name} Portfolio`,
     images: [
       {
         url: "/assets/nasir-siddiqui-og.png",

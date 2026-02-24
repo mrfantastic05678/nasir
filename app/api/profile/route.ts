@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 // Existing projects from data/projects.ts - these have images and are already on the website
 const existingProjects = [
@@ -7,7 +8,7 @@ const existingProjects = [
     title: "Personal Portfolio Website",
     description: "My personal portfolio showcasing my skills, projects, and experience, built with Next.js.",
     image: "/assets/projects/owais-portfolio.png",
-    link: "https://owaisabdullah.dev",
+    link: siteConfig.url,
     repoUrl: "https://github.com/MrOwaisAbdullah/Owais-Abdullah",
     category: "Next.js",
     tags: ["Next.js", "Tailwind", "Portfolio"],
@@ -529,7 +530,7 @@ export async function GET() {
     about: "Spec-Driven Developer. AI Agent Engineer. SaaS Architect.",
     summary:
       "I build production-ready web applications and AI agents using spec-driven development and AI-driven engineering. Specializing in Next.js SaaS products, full-time digital solutions, and intelligent automation that scales with businesses. Expert in TypeScript, OpenAI Agents SDK, and building robust architectures from the ground up.",
-    personalWebsiteUrl: "https://owaisabdullah.dev/",
+    personalWebsiteUrl: siteConfig.url,
     githubUrl: "https://github.com/MrOwaisAbdullah",
     linkedInUrl: "https://www.linkedin.com/in/mrowaisabdullah/",
     contact: {

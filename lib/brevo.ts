@@ -1,8 +1,9 @@
 import { BrevoClient } from "@getbrevo/brevo";
+import { siteConfig, getAbsolutePath } from "./config";
 
 // Get configuration from environment
-const getSenderEmail = () => process.env.BREVO_SENDER_EMAIL || "noreply@nasirsiddiqui.dev";
-const getSenderName = () => process.env.BREVO_SENDER_NAME || "Nasir Siddiqui";
+const getSenderEmail = () => process.env.BREVO_SENDER_EMAIL || `noreply@${new URL(siteConfig.url).hostname}`;
+const getSenderName = () => process.env.BREVO_SENDER_NAME || siteConfig.name;
 const getAdminEmail = () => process.env.BREVO_ADMIN_EMAIL || "nasirsiddiqui@example.com";
 
 // Get API key with validation
@@ -131,11 +132,11 @@ export async function handleContactForm(data: {
           Thanks for reaching out! I've received your message and I'll get back to you within 24 hours.
         </p>
         <p style="font-size: 14px; color: #777; margin-top: 20px;">
-          In the meantime, feel free to check out my <a href="https://nasirsiddiqui.dev/projects" style="color: #3a69ff;">projects</a>
-          or <a href="https://nasirsiddiqui.dev/services" style="color: #3a69ff;">services</a>.
+          In the meantime, feel free to check out my <a href="${getAbsolutePath('/projects')}" style="color: #3a69ff;">projects</a>
+          or <a href="${getAbsolutePath('/services')}" style="color: #3a69ff;">services</a>.
         </p>
         <div style="margin-top: 30px;">
-          <a href="https://nasirsiddiqui.dev" style="display: inline-block; background: #3a69ff; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+          <a href="${siteConfig.url}" style="display: inline-block; background: #3a69ff; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">
             Visit Portfolio
           </a>
         </div>

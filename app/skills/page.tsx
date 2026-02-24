@@ -3,6 +3,7 @@ import React from "react";
 import JsonLdSchema from "@/components/JsonLdSchema";
 import type { Metadata } from "next";
 import SkillSlider from "@/components/SkillSlider";
+import { siteConfig, getAbsolutePath } from "@/lib/config";
 
 export const dynamic = "force-static";
 
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
       "Skills | Nasir Siddiqui - AI Automation Expert & Full Stack Developer",
     description:
       "Discover Nasir Siddiqui's technical skills and expertise. AI automation expert, full-stack developer, and Next.js specialist proficient in React, TypeScript, chatbots, and modern web technologies.",
-    url: "https://nasirsiddiqui.dev/skills",
+    url: getAbsolutePath('/skills'),
     images: [
       {
         url: "/assets/nasir-siddiqui-skills.png",
@@ -58,14 +59,14 @@ export const metadata: Metadata = {
       "Discover Nasir Siddiqui's technical skills and expertise. AI automation expert and full-stack developer proficient in modern web technologies.",
   },
   alternates: {
-    canonical: "https://nasirsiddiqui.dev/skills",
+    canonical: getAbsolutePath('/skills'),
   },
 };
 
 const skills = () => {
   return (
     <>
-      <JsonLdSchema type="skills" pageUrl="https://nasirsiddiqui.dev/skills" />
+      <JsonLdSchema type="skills" pageUrl={getAbsolutePath('/skills')} />
       <div className="pt-32">
         <div className="mb-10">
           <SkillSlider />
