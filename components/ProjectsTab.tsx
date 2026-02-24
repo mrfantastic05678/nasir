@@ -115,7 +115,7 @@ const ProjectTabs = () => {
   const categories = Object.keys(projectsByCategory);
 
   return (
-    <section id="projects" className="max-w-7xl mx-auto mt-20 px-5 pb-5">
+    <section id="projects" className="max-w-7xl mx-auto mt-20 px-5 pb-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ const ProjectTabs = () => {
       </motion.div>
 
       {/* Tabs */}
-      <Tabs defaultValue={categories[0]} className="w-full mt-10">
+      <Tabs defaultValue={categories[0]} className="w-full mt-10 mb-5">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
