@@ -40,7 +40,7 @@ export const services: Record<string, Service> = {
     description:
       "Intelligent automation systems that optimize business workflows, increase efficiency, and drive measurable results using n8n, Make.com, and custom AI solutions.",
     longDescription:
-      "Intelligent automation is the key to scaling your business efficiently. I build AI-powered automation systems and workflows that transform how businesses operate. From automating repetitive tasks to integrating AI models that handle complex queries—every solution is designed to deliver measurable results like increased efficiency, reduced operational costs, and higher conversion rates.",
+      "Intelligent automation is the key to scaling your business efficiently. I build AI-powered automation systems and workflows that transform how businesses operate. From automating repetitive tasks to integrating AI models that handle complex queries,every solution is designed to deliver measurable results like increased efficiency, reduced operational costs, and higher conversion rates.",
     icon: "Zap",
     gradient: "from-blue-500 to-cyan-500",
     features: [
@@ -168,7 +168,7 @@ export const services: Record<string, Service> = {
     description:
       "Custom AI chatbots that handle complex queries, automate repetitive tasks, and integrate seamlessly into client-facing products using OpenAI, Gemini, and modern LLMs.",
     longDescription:
-      "I lead the integration of AI models into client-facing products. I build custom AI chatbots that go beyond simple FAQ responders—intelligent assistants that handle complex queries, maintain context, and take meaningful actions. Whether for websites, WhatsApp Business, Discord servers, or custom platforms—your chatbot will provide 24/7 intelligent support that automates repetitive tasks while delivering exceptional customer experiences.",
+      "I lead the integration of AI models into client-facing products. I build custom AI chatbots that go beyond simple FAQ responders,intelligent assistants that handle complex queries, maintain context, and take meaningful actions. Whether for websites, WhatsApp Business, Discord servers, or custom platforms,your chatbot will provide 24/7 intelligent support that automates repetitive tasks while delivering exceptional customer experiences.",
     icon: "Bot",
     gradient: "from-purple-500 to-pink-500",
     features: [
@@ -271,7 +271,7 @@ export const services: Record<string, Service> = {
       {
         question: "Which platforms can chatbots be deployed to?",
         answer:
-          "I build chatbots for websites (embedded widget), WhatsApp Business, Discord servers, Telegram, and more—depending on your needs.",
+          "I build chatbots for websites (embedded widget), WhatsApp Business, Discord servers, Telegram, and more,depending on your needs.",
       },
       {
         question: "Do chatbots understand context?",
@@ -293,7 +293,7 @@ export const services: Record<string, Service> = {
     description:
       "Robust full-stack development using Next.js, React, and TypeScript. From landing pages to complex web applications that deliver measurable business results.",
     longDescription:
-      "I maintain and expand a robust full-stack skill set. I build modern, fast, and production-ready web applications using Next.js, React, TypeScript, and Tailwind CSS. Every solution is designed to deliver measurable results—increased efficiency, higher conversion rates, and seamless user experiences. Whether you need a landing page, corporate website, or complex web application, I ensure all digital services align strategically with your business goals.",
+      "I maintain and expand a robust full-stack skill set. I build modern, fast, and production-ready web applications using Next.js, React, TypeScript, and Tailwind CSS. Every solution is designed to deliver measurable results,increased efficiency, higher conversion rates, and seamless user experiences. Whether you need a landing page, corporate website, or complex web application, I ensure all digital services align strategically with your business goals.",
     icon: "Rocket",
     gradient: "from-orange-500 to-red-500",
     features: [
@@ -422,7 +422,7 @@ export const services: Record<string, Service> = {
     description:
       "Shopify, WooCommerce, and custom e-commerce solutions. From product setup to payment integration.",
     longDescription:
-      "Selling online requires more than just a product catalog—you need smooth checkout experiences, secure payments, inventory management, and order fulfillment. I build complete e-commerce solutions using Shopify, WooCommerce (WordPress), or custom Next.js stores with Stripe payments. From simple product catalogs to complex multi-vendor marketplaces.",
+      "Selling online requires more than just a product catalog,you need smooth checkout experiences, secure payments, inventory management, and order fulfillment. I build complete e-commerce solutions using Shopify, WooCommerce (WordPress), or custom Next.js stores with Stripe payments. From simple product catalogs to complex multi-vendor marketplaces.",
     icon: "ShoppingCart",
     gradient: "from-green-500 to-emerald-500",
     features: [
@@ -546,7 +546,7 @@ export const services: Record<string, Service> = {
     description:
       "RESTful & GraphQL API design and development. Third-party integrations, webhooks, and real-time features.",
     longDescription:
-      "Modern applications need to communicate with each other seamlessly. Whether you need a robust API for your product, integrations with third-party services like Brevo or Stripe, or real-time features—API development is foundational. I design and build RESTful and GraphQL APIs, create custom integrations, implement webhooks, and enable real-time communication.",
+      "Modern applications need to communicate with each other seamlessly. Whether you need a robust API for your product, integrations with third-party services like Brevo or Stripe, or real-time features,API development is foundational. I design and build RESTful and GraphQL APIs, create custom integrations, implement webhooks, and enable real-time communication.",
     icon: "Cpu",
     gradient: "from-indigo-500 to-purple-500",
     features: [
@@ -644,7 +644,7 @@ export const services: Record<string, Service> = {
     ],
     faqs: [
       {
-        question: "REST or GraphQL—which should I choose?",
+        question: "REST or GraphQL,which should I choose?",
         answer:
           "REST is simpler and more common. GraphQL is better for complex data requirements and mobile apps. I'll recommend based on your use case.",
       },
@@ -668,7 +668,7 @@ export const services: Record<string, Service> = {
     description:
       "Technical consulting that bridges technical teams and clients. Ensuring solutions are functional and strategically aligned with business goals.",
     longDescription:
-      "With years of experience acting as a bridge between technical teams and clients, I provide expert consulting that ensures every solution is not only functional but also strategically aligned with business goals. Whether you need technical architecture guidance, code reviews, team training, or help navigating complex technical decisions—I help both technical and non-technical stakeholders achieve alignment and avoid costly mistakes.",
+      "With years of experience acting as a bridge between technical teams and clients, I provide expert consulting that ensures every solution is not only functional but also strategically aligned with business goals. Whether you need technical architecture guidance, code reviews, team training, or help navigating complex technical decisions,I help both technical and non-technical stakeholders achieve alignment and avoid costly mistakes.",
     icon: "Lightbulb",
     gradient: "from-yellow-500 to-orange-500",
     features: [

@@ -32,7 +32,7 @@ const About = () => {
           className="md:-mt-24 md:w-3/5 md:pl-6 justify-self-end"
         >
           <p className="leading-relaxed text-center md:text-left text-base text-gray-500">
-            As a freelance developer, I <span className="text-accent font-semibold">spearhead intelligent automation systems</span> and modern web applications. I lead AI model integration into client-facing products, building chatbots that handle complex queries and automate repetitive tasks. As a <span className="text-accent font-semibold">bridge between technical teams and clients</span>, I ensure every solution is strategically aligned with business goals—delivering measurable results in efficiency and conversion rates.
+            As a freelance developer, I <span className="text-accent font-semibold">spearhead intelligent automation systems</span> and modern web applications. I lead AI model integration into client-facing products, building chatbots that handle complex queries and automate repetitive tasks. As a <span className="text-accent font-semibold">bridge between technical teams and clients</span>, I ensure every solution is strategically aligned with business goals,delivering measurable results in efficiency and conversion rates.
           </p>
           <motion.div
             initial={{ opacity: 0 }}

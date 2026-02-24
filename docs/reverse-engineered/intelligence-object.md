@@ -5,7 +5,7 @@
 
 ## Overview
 
-This document captures the reusable intelligence embedded in the portfolio website codebase—patterns, decisions, and expertise worth preserving and applying to future projects.
+This document captures the reusable intelligence embedded in the portfolio website codebase,patterns, decisions, and expertise worth preserving and applying to future projects.
 
 ---
 

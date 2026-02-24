@@ -132,7 +132,7 @@ const Skill: React.FC = () => {
             Skills & Technologies
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
-            A robust full-stack toolkit for building production-ready applications. Specialized in AI model integration, intelligent automation systems, chatbots that handle complex queries, and business workflow optimization—delivering measurable results in efficiency and conversion rates.
+            A robust full-stack toolkit for building production-ready applications. Specialized in AI model integration, intelligent automation systems, chatbots that handle complex queries, and business workflow optimization,delivering measurable results in efficiency and conversion rates.
           </p>
         </motion.div>
 
