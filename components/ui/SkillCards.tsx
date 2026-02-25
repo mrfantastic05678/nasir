@@ -7,37 +7,36 @@ interface SkillCardProps {
 }
 
 const SkillCards = ({ name, icon: Icon, color }: SkillCardProps) => {
-  // If the color is white (like Vercel), map it to the theme's foreground so it shows up in Light Mode.
   const isWhite = color.toLowerCase() === "#ffffff";
   const displayColor = isWhite ? "var(--foreground)" : color;
-  const glowColor = isWhite ? "#888888" : color; // Use a neutral gray for the glow if it's white/foreground
+  const glowColor = isWhite ? "#888888" : color;
 
   return (
     <div className="flex-shrink-0 mx-3 group cursor-pointer">
       <div className="relative">
         {/* Enhanced hover glow effect */}
         <div 
-          className="absolute -inset-3 rounded-2xl opacity-0 group-hover:opacity-60 transition-all duration-500 blur-xl"
+          className="absolute -inset-3 rounded-2xl opacity-0 group-hover:opacity-20 transition-all duration-500 blur-md"
           style={{ 
-            background: `radial-gradient(circle, ${glowColor}80, ${glowColor}40, transparent 70%)`
+            background: `radial-gradient(circle, ${glowColor}50, ${glowColor}10, transparent 60%)`
           }}
         ></div>
         
         {/* Main card with enhanced styling */}
-        <div className="relative bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-4 w-32 h-24 flex flex-col items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:bg-card/90 group-hover:border-accent/30 group-hover:shadow-2xl">
+        <div className="relative bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-4 w-32 h-24 flex flex-col items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:bg-card/90 group-hover:border-accent/30 group-hover:shadow-lg">
           {/* Icon container with enhanced glow */}
           <div 
             className="relative p-2 rounded-xl mb-2 transition-all duration-300 group-hover:scale-110"
             style={{ 
-              background: `linear-gradient(135deg, ${glowColor}30, ${glowColor}10)`,
-              boxShadow: `0 4px 20px ${glowColor}25, inset 0 1px 0 ${glowColor}40`
+              background: `linear-gradient(135deg, ${glowColor}15, ${glowColor}05)`,
+              boxShadow: `0 4px 20px ${glowColor}15, inset 0 1px 0 ${glowColor}20`
             }}
           >
             <Icon 
               size={20} 
               className="transition-all duration-300"
               style={{ 
-                filter: `drop-shadow(0 0 8px ${glowColor}80)`,
+                filter: `drop-shadow(0 0 6px ${glowColor}50)`,
                 color: displayColor
               }}
             />

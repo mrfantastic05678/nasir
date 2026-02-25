@@ -117,7 +117,17 @@ const Skill: React.FC = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-background py-16 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative">
+        {/* Global SVG Gradient for CircularProgressbar */}
+        <svg style={{ width: 0, height: 0, position: "absolute" }} aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#FECD1A" />
+              <stop offset="100%" stopColor="#64F4AB" />
+            </linearGradient>
+          </defs>
+        </svg>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
