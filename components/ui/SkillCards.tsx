@@ -7,6 +7,11 @@ interface SkillCardProps {
 }
 
 const SkillCards = ({ name, icon: Icon, color }: SkillCardProps) => {
+  // If the color is white (like Vercel), map it to the theme's foreground so it shows up in Light Mode.
+  const isWhite = color.toLowerCase() === "#ffffff";
+  const displayColor = isWhite ? "var(--foreground)" : color;
+  const glowColor = isWhite ? "#888888" : color; // Use a neutral gray for the glow if it's white/foreground
+
   return (
     <div className="flex-shrink-0 mx-3 group cursor-pointer">
       <div className="relative">
@@ -14,7 +19,7 @@ const SkillCards = ({ name, icon: Icon, color }: SkillCardProps) => {
         <div 
           className="absolute -inset-3 rounded-2xl opacity-0 group-hover:opacity-60 transition-all duration-500 blur-xl"
           style={{ 
-            background: `radial-gradient(circle, ${color}80, ${color}40, transparent 70%)`
+            background: `radial-gradient(circle, ${glowColor}80, ${glowColor}40, transparent 70%)`
           }}
         ></div>
         
@@ -24,16 +29,16 @@ const SkillCards = ({ name, icon: Icon, color }: SkillCardProps) => {
           <div 
             className="relative p-2 rounded-xl mb-2 transition-all duration-300 group-hover:scale-110"
             style={{ 
-              background: `linear-gradient(135deg, ${color}30, ${color}10)`,
-              boxShadow: `0 4px 20px ${color}25, inset 0 1px 0 ${color}40`
+              background: `linear-gradient(135deg, ${glowColor}30, ${glowColor}10)`,
+              boxShadow: `0 4px 20px ${glowColor}25, inset 0 1px 0 ${glowColor}40`
             }}
           >
             <Icon 
               size={20} 
-              className="text-foreground transition-all duration-300"
+              className="transition-all duration-300"
               style={{ 
-                filter: `drop-shadow(0 0 8px ${color}80)`,
-                color: color
+                filter: `drop-shadow(0 0 8px ${glowColor}80)`,
+                color: displayColor
               }}
             />
           </div>
@@ -47,8 +52,8 @@ const SkillCards = ({ name, icon: Icon, color }: SkillCardProps) => {
           <div 
             className="w-4 h-0.5 rounded-full mt-1.5 opacity-50 group-hover:opacity-90 group-hover:w-8 transition-all duration-300"
             style={{ 
-              background: `linear-gradient(90deg, transparent, ${color}, transparent)`,
-              boxShadow: `0 0 10px ${color}60`
+              background: `linear-gradient(90deg, transparent, ${glowColor}, transparent)`,
+              boxShadow: `0 0 10px ${glowColor}60`
             }}
           ></div>
         </div>

@@ -8,6 +8,7 @@ import ServiceFAQ from "@/components/ServiceFAQ";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { getAbsolutePath } from "@/lib/config";
+import { PremiumButton } from "@/components/ui/PremiumButton";
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -117,7 +118,7 @@ export default async function ServicePage({
                 <div key={index} className="mb-8 last:mb-0">
                   <div className="flex items-start gap-6">
                     <div
-                      className={`flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white font-bold text-lg`}
+                      className="flex-shrink-0 w-12 h-12 rounded-lg bg-theme-gradient flex items-center justify-center text-black font-bold text-lg shadow-[0_0_15px_rgba(254,205,26,0.2)]"
                     >
                       {step.step}
                     </div>
@@ -161,7 +162,7 @@ export default async function ServicePage({
                     }`}
                   >
                     {tier.highlighted && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent text-white text-xs font-bold rounded-full">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-theme-gradient text-black text-xs font-bold rounded-full shadow-md">
                         MOST POPULAR
                       </div>
                     )}
@@ -186,16 +187,16 @@ export default async function ServicePage({
                         </li>
                       ))}
                     </ul>
-                    <Link href="#contact">
-                      <button
-                        className={`w-full py-2 rounded-lg font-medium transition-colors ${
-                          tier.highlighted
-                            ? "bg-accent text-white hover:bg-accent/90"
-                            : "bg-muted text-foreground hover:bg-muted/80"
-                        }`}
-                      >
-                        Get Started
-                      </button>
+                    <Link href="#contact" className="block w-full">
+                      {tier.highlighted ? (
+                        <PremiumButton className="w-full">
+                          Get Started
+                        </PremiumButton>
+                      ) : (
+                        <PremiumButton variant="secondary" className="w-full">
+                          Get Started
+                        </PremiumButton>
+                      )}
                     </Link>
                   </div>
                 ))}
@@ -219,16 +220,14 @@ export default async function ServicePage({
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact">
-                <button className="group inline-flex items-center px-8 py-3 text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 rounded-full font-medium transition-all">
+                <PremiumButton icon={<ArrowRight className="w-4 h-4" />}>
                   Contact Me
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </PremiumButton>
               </Link>
-              <a
-                href="mailto:nasirsiddiqui@example.com"
-                className="inline-flex items-center px-8 py-3 text-foreground bg-card hover:bg-accent hover:text-white border-2 border-border hover:border-accent rounded-full font-medium transition-all"
-              >
-                Email Me
+              <a href="mailto:nasirsiddiqui@example.com">
+                <PremiumButton variant="secondary">
+                  Email Me
+                </PremiumButton>
               </a>
             </div>
           </div>

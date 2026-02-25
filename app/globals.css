@@ -6,78 +6,96 @@
 
 @layer base {
   :root {
-    --background: #f3f4f6; /* light background */
-    --foreground: #1f2937; /* dark foreground */
+    --background: #FAFAFA; /* clean off-white */
+    --foreground: #111827; /* nearly black */
 
-    --card: #ffffff; /* white card */
-    --card-foreground: #1f2937; /* dark card foreground */
+    --card: #ffffff; /* pure white card */
+    --card-foreground: #111827; 
 
-    --popover: #ffffff; /* white popover */
-    --popover-foreground: #1f2937; /* dark popover foreground */
+    --popover: #ffffff;
+    --popover-foreground: #111827;
 
-    --primary: #3a69ff; /* blue primary */
-    --primary-foreground: #ffffff; /* white primary foreground */
+    --primary: #FECD1A; /* Vibrant Yellow */
+    --primary-foreground: #000000; /* black on yellow */
 
-    --secondary: #1f2937; /* dark secondary */
-    --secondary-foreground: #ffffff; /* white secondary foreground */
+    --secondary: #f4f4f5; /* light gray secondary */
+    --secondary-foreground: #111827;
 
-    --muted: #e5e7eb; /* light muted */
-    --muted-foreground: #4b5563; /* dark muted foreground */
+    --muted: #f4f4f5; 
+    --muted-foreground: #4b5563; /* medium gray */
 
-    --accent: #3a69ff; /* blue accent */
-    --accent-foreground: #ffffff; /* white accent foreground */
+    --accent: #64F4AB; /* Mint Green */
+    --accent-foreground: #000000; /* black on green */
 
-    --destructive: #ef4444; /* red destructive */
-    --destructive-foreground: #ffffff; /* white destructive foreground */
+    --destructive: #ef4444; 
+    --destructive-foreground: #ffffff; 
 
-    --border: #d1d5db; /* light border */
-    --input: #d1d5db; /* light input */
-    --ring: #3a69ff; /* blue ring */
+    --border: rgba(0, 0, 0, 0.05); /* very subtle dark border */
+    --input: #e5e7eb; 
+    --ring: #FECD1A; /* Yellow ring */
 
     --radius: 0.5rem;
 
-    --heading: #1f2937; /* dark heading */
-    --text: #fff; /* white text */
-    --text2: #4b5563; /* dark text2 */
-    --toc-background: #e5e7eb; /* light TOC background */
-    --blog: #f3f4f6; /* light blog background */
+    --heading: #111827; 
+    --text: #111827; 
+    --text2: #4b5563; 
+    --toc-background: #ffffff; 
+    --blog: #ffffff; 
+    
+    /* Smooth Tech-Luxury Gradient */
+    --theme-gradient: linear-gradient(135deg, #FECD1A 0%, #fde047 30%, #86efac 80%, #64F4AB 100%);
   }
 
   .dark {
-    /* Tech-Luxury Theme - Approved in /design-sample */
-    --background: #05060A; /* Deep Onyx */
-    --foreground: #ffffff; /* white foreground */
+    /* Tech-Luxury Theme - Yellow & Green Edition */
+    --background: #0A0A0A; /* Deep Onyx */
+    --foreground: #ffffff; 
 
-    --card: #0E101A; /* Slightly lighter card */
-    --card-foreground: #ffffff; /* white card foreground */
+    --card: #141414; /* Slightly lighter than background */
+    --card-foreground: #ffffff; 
 
-    --popover: #0E101A; /* dark popover */
-    --popover-foreground: #ffffff; /* white popover foreground */
+    --popover: #141414; 
+    --popover-foreground: #ffffff; 
 
-    --primary: #6366f1; /* Electric Indigo */
-    --primary-foreground: #ffffff; /* white primary foreground */
+    --primary: #FECD1A; /* Vibrant Yellow */
+    --primary-foreground: #000000; 
 
-    --secondary: #1f2937; /* dark secondary */
-    --secondary-foreground: #ffffff; /* white secondary foreground */
+    --secondary: #1A1A1A; /* dark grey */
+    --secondary-foreground: #ffffff; 
 
-    --muted: #1e2538; /* dark muted */
-    --muted-foreground: #a1a1aa; /* light muted foreground */
+    --muted: #1A1A1A; 
+    --muted-foreground: #9ca3af; /* light gray for muted text */
 
-    --accent: #38bdf8; /* Vibrant Cyan */
-    --accent-foreground: #ffffff; /* white accent foreground */
+    --accent: #64F4AB; /* Mint Green */
+    --accent-foreground: #000000;
 
-    --destructive: #ef4444; /* red destructive */
-    --destructive-foreground: #ffffff; /* white destructive foreground */
+    --destructive: #ef4444; 
+    --destructive-foreground: #ffffff; 
 
-    --border: rgba(99, 102, 241, 0.3); /* Indigo Glow border */
-    --input: #1e2538; /* dark input */
-    --ring: #38bdf8; /* Cyan ring */
+    --border: rgba(255, 255, 255, 0.1); /* Subtle white glow border */
+    --input: #1A1A1A; 
+    --ring: #FECD1A; /* Yellow ring */
 
-    --heading: #ffffff; /* white heading */
-    --text: #fff; /* white text */
-    --text2: #d1d5db; /* light text2 */
-    --toc-background: #0E101A; /* dark TOC background */
-    --blog: #0A0D15; /* dark blog background */
+    --heading: #ffffff; 
+    --text: #ffffff; 
+    --text2: #d1d5db; 
+    --toc-background: #141414; 
+    --blog: #0A0A0A; 
+
+    /* Smooth Tech-Luxury Gradient */
+    --theme-gradient: linear-gradient(135deg, #FECD1A 0%, #fde047 30%, #86efac 80%, #64F4AB 100%);
+  }
+}
+
+@layer utilities {
+  .bg-theme-gradient {
+    background-image: var(--theme-gradient);
+  }
+  .text-theme-gradient {
+    background-image: var(--theme-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
@@ -88,49 +106,16 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-poppins);
+    /* Global light-mode noise texture */
+    background-color: var(--background);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    transition: background-color 0.5s ease;
   }
 
   .dark body {
-    /* Apply the global luxury noise texture only in dark mode */
-    background-color: var(--background);
+    /* Slightly heavier noise for dark mode */
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-  }
-}
-
-/* CSS for hero section animation */
-
-.entrance-left {
-  opacity: 0;
-  animation-timeline: view();
-  animation: slideInLeft 2s ease-in-out forwards;
-}
-
-.entrance-right {
-  opacity: 0;
-  animation-timeline: view();
-  animation: slideInRight 2s ease-in-out forwards;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -163,25 +148,25 @@
 }
 @keyframes infinite-scroll-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(50%);
+    transform: translateX(0);
   }
 }
 .animate-infinite-scroll-right {
-  animation: infinite-scroll-right 60s linear infinite;
+  animation: infinite-scroll-right 120s linear infinite;
   will-change: transform;
 }
 .animate-infinite-scroll-left {
-  animation: infinite-scroll-left 60s linear infinite;
+  animation: infinite-scroll-left 120s linear infinite;
   will-change: transform;
 }
 @media (min-width: 1024px) {
   .animate-infinite-scroll-right {
-    animation-duration: 50s;
+    animation-duration: 100s;
   }
   .animate-infinite-scroll-left {
-    animation-duration: 40s;
+    animation-duration: 90s;
   }
 }

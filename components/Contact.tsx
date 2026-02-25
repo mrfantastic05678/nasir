@@ -3,13 +3,18 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { PremiumButton } from "./ui/PremiumButton";
 
 const Contact = () => {
+  // Track when component rendered for timing validation
+  const [formTimestamp] = useState(() => Date.now());
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
+    website: "", // Honeypot field - should stay empty for humans
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -35,7 +40,10 @@ const Contact = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          timestamp: formTimestamp, // Include timestamp for timing validation
+        }),
       });
 
       const data = await response.json();
@@ -46,7 +54,7 @@ const Contact = () => {
           message: "Message sent successfully! I'll get back to you soon.",
         });
         // Reset form
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "", website: "" });
       } else {
         setSubmitStatus({
           type: "error",
@@ -158,6 +166,18 @@ const Contact = () => {
           )}
 
           <form onSubmit={handleSubmit}>
+            {/* Honeypot field - hidden from humans, traps bots */}
+            <input
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              className="opacity-0 absolute top-0 left-0 h-0 w-0 z-[-1]"
+              tabIndex={-1}
+              autoComplete="one-time-code"
+              aria-hidden="true"
+            />
+
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -245,22 +265,21 @@ const Contact = () => {
               />
             </motion.div>
 
-            <motion.button
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.55 }}
-              whileHover={{ 
-                scale: isSubmitting ? 1 : 1.05,
-                boxShadow: isSubmitting ? "none" : "0px 0px 20px rgba(99, 102, 241, 0.5)"
-              }}
-              whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full text-white bg-gradient-to-r from-primary to-accent border-0 py-4 px-6 focus:outline-none hover:bg-opacity-90 rounded text-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full"
             >
-              {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
-            </motion.button>
+              <PremiumButton
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full"
+              >
+                {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
+              </PremiumButton>
+            </motion.div>
           </form>
           <p className="text-xs bg-transparent text-center text-gray-500 mt-5">
             Send me a message, and I&apos;ll contact you shortly.

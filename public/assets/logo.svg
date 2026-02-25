@@ -20,16 +20,16 @@
   </text>
 
   <!-- Accent Dot -->
-  <circle cx="410" cy="350" r="28" fill="#06B6D4" />
+  <circle cx="410" cy="350" r="28" fill="#FECD1A" />
 
   <defs>
     <linearGradient id="bg-gradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1e1b4b"/> <!-- Indigo 950 -->
-      <stop offset="1" stop-color="#020617"/> <!-- Slate 950 -->
+      <stop stop-color="#141414"/> <!-- Onyx Base -->
+      <stop offset="1" stop-color="#0A0A0A"/> <!-- Deep Onyx -->
     </linearGradient>
     <linearGradient id="border-gradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#06B6D4"/> <!-- Cyan 500 -->
-      <stop offset="1" stop-color="#4F46E5"/> <!-- Indigo 600 -->
+      <stop stop-color="#FECD1A"/> <!-- Vibrant Yellow -->
+      <stop offset="1" stop-color="#64F4AB"/> <!-- Mint Green -->
     </linearGradient>
   </defs>
 </svg>

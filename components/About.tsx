@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { PremiumButton } from "./ui/PremiumButton";
 
 const About = () => {
   return (
@@ -31,35 +32,31 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="md:-mt-24 md:w-3/5 md:pl-6 justify-self-end"
         >
-          <p className="leading-relaxed text-center md:text-left text-base text-gray-500">
-            As a freelance developer, I <span className="text-accent font-semibold">spearhead intelligent automation systems</span> and modern web applications. I lead AI model integration into client-facing products, building chatbots that handle complex queries and automate repetitive tasks. As a <span className="text-accent font-semibold">bridge between technical teams and clients</span>, I ensure every solution is strategically aligned with business goals,delivering measurable results in efficiency and conversion rates.
+          <p className="leading-relaxed text-center md:text-left text-base text-muted-foreground transition-colors duration-300">
+            As a freelance developer, I <span className="text-accent font-semibold transition-colors duration-300">spearhead intelligent automation systems</span> and modern web applications. I lead AI model integration into client-facing products, building chatbots that handle complex queries and automate repetitive tasks. As a <span className="text-accent font-semibold transition-colors duration-300">bridge between technical teams and clients</span>, I ensure every solution is strategically aligned with business goals,delivering measurable results in efficiency and conversion rates.
           </p>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-center md:justify-start md:mt-4 mt-6"
+            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 md:mt-4 mt-8"
           >
             <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex font-semibold text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 hover:bg-blue-500 hover:bg-gradient-to-tr border-0 py-2 px-4 focus:outline-none rounded-full"
-              >
+              <PremiumButton>
                 Contact Me
-              </motion.button>
+              </PremiumButton>
             </Link>
             <Link
               href={"/projects"}
-              className="group text-accent-500 inline-flex items-center ml-4 relative"
+              className="group text-foreground hover:text-primary font-medium inline-flex items-center transition-colors duration-300 text-sm tracking-wide"
             >
               Learn More
-              <motion.span
-                className="group-hover:rotate-90 ml-2 duration-300 group-hover:text-accent inline-block absolute -top-2 -right-4"
+              <span
+                className="ml-2 transition-transform duration-300 group-hover:-rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 inline-block"
               >
                 <FaArrowRight />
-              </motion.span>
+              </span>
             </Link>
           </motion.div>
         </motion.div>

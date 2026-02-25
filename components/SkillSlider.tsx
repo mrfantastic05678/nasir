@@ -85,27 +85,29 @@ const SkillSlider = () => {
       {/* Top row - sliding right */}
       <div className="mb-8 relative">
         <div className="w-max flex flex-nowrap animate-infinite-scroll-right">
-          {[...skills, ...skills].map((skill, index) => (
-            <SkillCards
-              key={`top-${skill.name}-${index}`}
-              name={skill.name}
-              icon={skill.icon}
-              color={skill.color}
-            />
+          {[...skills, ...skills, ...skills, ...skills].map((skill, index) => (
+            <div key={`top-${skill.name}-${index}`} className="flex-shrink-0">
+              <SkillCards
+                name={skill.name}
+                icon={skill.icon}
+                color={skill.color}
+              />
+            </div>
           ))}
         </div>
       </div>
 
       {/* Bottom row - sliding left */}
       <div className="relative">
-        <div className="w-max -ml-[5000px] lg:-ml-[500%] flex flex-nowrap animate-infinite-scroll-left flex-row-reverse">
-          {[...skills, ...skills].reverse().map((skill, index) => (
-            <SkillCards
-              key={`bottom-${skill.name}-${index}`}
-              name={skill.name}
-              icon={skill.icon}
-              color={skill.color}
-            />
+        <div className="w-max flex flex-nowrap animate-infinite-scroll-left">
+          {[...skills, ...skills, ...skills, ...skills].reverse().map((skill, index) => (
+            <div key={`bottom-${skill.name}-${index}`} className="flex-shrink-0">
+              <SkillCards
+                name={skill.name}
+                icon={skill.icon}
+                color={skill.color}
+              />
+            </div>
           ))}
         </div>
       </div>

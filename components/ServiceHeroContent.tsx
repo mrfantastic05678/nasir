@@ -14,6 +14,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import ServiceHeroIcon from "./ServiceHeroIcon";
+import { PremiumButton } from "./ui/PremiumButton";
 
 // Icon mapping inside client component
 const iconMap: Record<string, LucideIcon> = {
@@ -104,15 +105,14 @@ const ServiceHeroContent: React.FC<ServiceHeroContentProps> = ({
               className="flex flex-wrap gap-4"
             >
               <Link href="#contact">
-                <button className="group inline-flex items-center px-8 py-3 text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 rounded-full font-medium transition-all">
+                <PremiumButton icon={<ArrowRight className="w-4 h-4" />}>
                   Get Started
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </PremiumButton>
               </Link>
               <Link href="#pricing">
-                <button className="inline-flex items-center px-8 py-3 text-foreground bg-card hover:bg-accent hover:text-white border-2 border-border hover:border-accent rounded-full font-medium transition-all">
+                <PremiumButton variant="secondary">
                   View Pricing
-                </button>
+                </PremiumButton>
               </Link>
             </motion.div>
           </div>

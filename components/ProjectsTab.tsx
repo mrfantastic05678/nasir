@@ -7,6 +7,7 @@ import { RiRefreshLine } from "react-icons/ri";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PremiumButton } from "./ui/PremiumButton";
 
 interface Project {
   title: string;
@@ -219,7 +220,7 @@ const ProjectTabs = () => {
                           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <Link
                               href={project.link}
-                              className="text-accent inline-flex items-center hover:text-accent/80"
+                              className="text-primary hover:text-primary/80 inline-flex items-center transition-colors"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -252,29 +253,20 @@ const ProjectTabs = () => {
               {/* Load More Button */}
               {hasMore && (
                 <div className="flex justify-center mt-10">
-                  <motion.button
+                  <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.3 }}
-                    onClick={() => handleLoadMore(category)}
-                    disabled={isLoading}
-                    whileHover={{ scale: isLoading ? 1 : 1.02 }}
-                    whileTap={{ scale: isLoading ? 1 : 0.98 }}
-                    className="inline-flex items-center gap-2 px-8 py-3 text-foreground bg-card hover:bg-accent hover:text-accent-foreground border-2 border-border hover:border-accent rounded-full font-medium transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isLoading ? (
-                      <>
-                        <RiRefreshLine className="animate-spin text-lg" />
-                        Loading...
-                      </>
-                    ) : (
-                      <>
-                        Load More Projects
-                        <FaRegArrowAltCircleRight />
-                      </>
-                    )}
-                  </motion.button>
+                    <PremiumButton
+                      onClick={() => handleLoadMore(category)}
+                      disabled={isLoading}
+                      icon={isLoading ? <RiRefreshLine className="animate-spin text-lg" /> : <FaRegArrowAltCircleRight />}
+                    >
+                      {isLoading ? "Loading..." : "Load More Projects"}
+                    </PremiumButton>
+                  </motion.div>
                 </div>
               )}
             </TabsContent>

@@ -4,6 +4,7 @@ import JsonLdSchema from "@/components/JsonLdSchema";
 import { ArrowRight } from "lucide-react";
 import ServicesGrid from "@/components/ServicesGrid";
 import { siteConfig, getAbsolutePath } from "@/lib/config";
+import { PremiumButton } from "@/components/ui/PremiumButton";
 
 export const metadata: Metadata = {
   title: "Services | Nasir Siddiqui - AI Automations, Chatbots & Digital Services",
@@ -60,15 +61,14 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="#contact">
-                <button className="group inline-flex items-center px-8 py-3 text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 rounded-full font-medium transition-all">
+                <PremiumButton icon={<ArrowRight className="w-4 h-4" />}>
                   Get Started
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </PremiumButton>
               </Link>
               <Link href="/contact">
-                <button className="inline-flex items-center px-8 py-3 text-foreground bg-card hover:bg-accent hover:text-white border-2 border-border hover:border-accent rounded-full font-medium transition-all">
+                <PremiumButton variant="secondary">
                   Contact Me
-                </button>
+                </PremiumButton>
               </Link>
             </div>
           </div>
@@ -191,16 +191,14 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact">
-                <button className="group inline-flex items-center px-8 py-3 text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 rounded-full font-medium transition-all">
+                <PremiumButton icon={<ArrowRight className="w-4 h-4" />}>
                   Get In Touch
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </PremiumButton>
               </Link>
-              <a
-                href="mailto:nasirsiddiqui@example.com"
-                className="inline-flex items-center px-8 py-3 text-foreground bg-card hover:bg-accent hover:text-white border-2 border-border hover:border-accent rounded-full font-medium transition-all"
-              >
-                Email Me
+              <a href="mailto:nasirsiddiqui@example.com">
+                <PremiumButton variant="secondary">
+                  Email Me
+                </PremiumButton>
               </a>
             </div>
           </div>

@@ -70,7 +70,10 @@ export default {
   			'scroll-right': 'scroll-right 25s linear infinite',
   			'scroll-left': 'scroll-left 25s linear infinite',
   			'scroll-right-fast': 'scroll-right-fast 15s linear infinite',
-  			'scroll-left-fast': 'scroll-left-fast 15s linear infinite'
+  			'scroll-left-fast': 'scroll-left-fast 15s linear infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'spin-slower': 'spin 20s linear infinite',
+            'spin-slowest': 'spin 50s linear infinite',
   		},
   		screens: {
   			xs: '360px',

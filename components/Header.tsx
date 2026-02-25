@@ -7,6 +7,8 @@ import Link from "next/link";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import { CgMenuRight } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "./ui/ThemeToggle";
+import { PremiumButton } from "./ui/PremiumButton";
 
 const navLinks = [
   { name: "HOME", path: "/" },
@@ -55,10 +57,10 @@ const Header = () => {
         <div className="absolute top-[-50%] left-[-10%] w-[30%] h-[150%] bg-primary rounded-full blur-[100px] opacity-20 pointer-events-none -z-10" />
 
         <div
-          className={`mx-auto max-w-[1200px] flex items-center justify-between transition-all duration-300 ${
+          className={`mx-auto max-w-7xl flex items-center justify-between transition-all duration-300 ${
             scrolled
-              ? "bg-card/80 backdrop-blur-md shadow-lg shadow-black/20 border border-white/10 rounded-full px-6 py-3 mx-4 lg:mx-auto"
-              : "bg-transparent px-6 py-2"
+              ? "bg-card/80 backdrop-blur-md shadow-lg shadow-black/20 border border-border rounded-full px-8 py-3 mx-4 lg:mx-auto"
+              : "bg-transparent px-5 py-2"
           }`}
         >
           {/* Logo */}
@@ -71,7 +73,7 @@ const Header = () => {
               className="relative z-10 transition-all duration-300 drop-shadow-lg rounded-xl group-hover:scale-105"
               unoptimized
             />
-            <span className={`font-montserrat font-bold tracking-tight text-white transition-all duration-300 ${scrolled ? "text-lg" : "text-xl"}`}>
+            <span className={`font-montserrat font-bold tracking-tight text-foreground transition-all duration-300 ${scrolled ? "text-lg" : "text-xl"}`}>
               Nasir Siddiqui
             </span>
           </Link>
@@ -82,7 +84,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 href={link.path}
-                className="text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors"
+                className="text-muted-foreground hover:text-foreground text-sm font-medium tracking-wide transition-colors"
               >
                 {link.name}
               </Link>
@@ -91,24 +93,19 @@ const Header = () => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-4">
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
+
             {/* Hire Me Button - Desktop */}
             <Link href="/contact" className="hidden lg:block">
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0px 0px 20px rgba(99, 102, 241, 0.4)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center text-center font-semibold bg-gradient-to-r from-primary to-accent border border-white/10 py-2.5 px-6 rounded-full text-sm text-white shadow-lg"
-              >
+              <PremiumButton icon={<FaArrowRight />}>
                 HIRE ME
-                <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </PremiumButton>
             </Link>
 
             {/* Mobile Hamburger Menu */}
             <button
-              className="lg:hidden flex items-center justify-center text-3xl text-gray-300 hover:text-white transition-colors"
+              className="lg:hidden flex items-center justify-center text-3xl text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(true)}
             >
               <CgMenuRight />
@@ -139,12 +136,12 @@ const Header = () => {
               className="fixed right-0 top-0 bottom-0 w-[300px] sm:w-[350px] bg-card border-l border-white/10 z-[70] shadow-2xl flex flex-col"
             >
               <div className="flex items-center justify-between p-6 border-b border-white/5">
-                <span className="text-white font-montserrat font-bold tracking-widest text-sm">
+                <span className="text-foreground font-montserrat font-bold tracking-widest text-sm">
                   MENU
                 </span>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-400 hover:text-white p-2 transition-colors rounded-full hover:bg-white/5"
+                  className="text-muted-foreground hover:text-foreground p-2 transition-colors rounded-full hover:bg-black/5 dark:hover:bg-white/5"
                 >
                   <FaTimes size={20} />
                 </button>
@@ -161,7 +158,7 @@ const Header = () => {
                     <Link
                       href={link.path}
                       onClick={handleLinkClick}
-                      className="text-2xl font-montserrat font-medium text-gray-300 hover:text-white hover:pl-2 transition-all duration-300 block"
+                      className="text-2xl font-montserrat font-medium text-muted-foreground hover:text-foreground hover:pl-2 transition-all duration-300 block"
                     >
                       {link.name}
                     </Link>
@@ -171,13 +168,9 @@ const Header = () => {
 
               <div className="p-6 border-t border-white/5 bg-black/20 flex flex-col gap-4">
                 <Link href="/contact" onClick={handleLinkClick} className="w-full">
-                  <motion.button
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full flex items-center justify-center font-bold bg-gradient-to-r from-primary to-accent py-4 rounded-xl text-white shadow-lg shadow-primary/20"
-                  >
+                  <PremiumButton className="w-full" icon={<FaArrowRight />}>
                     HIRE ME
-                    <FaArrowRight className="ml-2" />
-                  </motion.button>
+                  </PremiumButton>
                 </Link>
               </div>
             </motion.div>

@@ -1,45 +1,100 @@
 import { NextRequest, NextResponse } from "next/server";
 import { handleContactForm } from "@/lib/brevo";
+import { checkRateLimit, getClientIP, cleanupExpiredEntries } from "@/lib/rate-limit";
+import { validateContactForm } from "@/lib/validation";
+
+// Cleanup expired entries periodically (run on some requests)
+if (Math.random() < 0.1) {
+  // 10% chance to cleanup on each request
+  cleanupExpiredEntries();
+}
 
 export async function POST(request: NextRequest) {
   try {
     // Parse request body
     const body = await request.json();
-    const { name, email, subject, message } = body;
+    const { name, email, subject, message, website, timestamp } = body;
 
-    // Validate required fields
-    if (!name || !email || !subject || !message) {
+    // Get client IP for rate limiting
+    const clientIP = getClientIP(request);
+
+    // Check rate limit by IP
+    const rateLimitResult = checkRateLimit(clientIP);
+    if (!rateLimitResult.allowed) {
       return NextResponse.json(
-        { error: "Missing required fields", success: false },
+        {
+          error: "Too many requests. Please try again later.",
+          success: false,
+          retryAfter: Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000),
+        },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000).toString(),
+            "X-RateLimit-Limit": "5",
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": new Date(rateLimitResult.resetTime).toISOString(),
+          },
+        }
+      );
+    }
+
+    // Validate form data with honeypot and timing checks
+    const validationResult = validateContactForm({
+      name,
+      email,
+      subject,
+      message,
+      honeypot: website,
+      timestamp,
+    });
+
+    if (!validationResult.valid) {
+      // If honeypot was filled, return success to fool bots
+      // but don't actually send the email
+      const hasHoneypotError = validationResult.errors.some(
+        (e) => e === "Invalid submission"
+      );
+
+      if (hasHoneypotError) {
+        // Silent rejection for bots - return success but log
+        console.warn(`Bot submission blocked from IP: ${clientIP}`);
+        return NextResponse.json({
+          success: true,
+          message: "Message sent successfully!",
+        });
+      }
+
+      // Normal validation errors
+      return NextResponse.json(
+        {
+          error: validationResult.errors.join(". "),
+          success: false,
+        },
         { status: 400 }
       );
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address", success: false },
-        { status: 400 }
-      );
-    }
-
-    // Sanitize inputs
-    const sanitizedData = {
-      name: name.trim().slice(0, 100), // Limit to 100 chars
-      email: email.trim().toLowerCase().slice(0, 255),
-      subject: subject.trim().slice(0, 200),
-      message: message.trim().slice(0, 5000), // Limit to 5000 chars
-    };
+    // Use sanitized data
+    const sanitizedData = validationResult.sanitizedData;
 
     // Send emails via Brevo
     const result = await handleContactForm(sanitizedData);
 
-    return NextResponse.json({
-      success: true,
-      message: "Email sent successfully!",
-      messageId: result.adminMessageId,
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Email sent successfully!",
+        messageId: result.adminMessageId,
+      },
+      {
+        headers: {
+          "X-RateLimit-Limit": "5",
+          "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
+          "X-RateLimit-Reset": new Date(rateLimitResult.resetTime).toISOString(),
+        },
+      }
+    );
   } catch (error) {
     console.error("Contact form error:", error);
 

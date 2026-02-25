@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 // Icon mapping with explicit string keys to match service data
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+const iconMap: Record<string, React.ComponentType<{ className?: string, color?: string }>> = {
   "Bot": Bot,
   "Zap": Zap,
   "Rocket": Rocket,
@@ -34,14 +34,20 @@ const gradientColors: Record<string, { from: string; to: string }> = {
   "from-indigo-500 to-purple-500": { from: "#6366f1", to: "#a855f7" },
 };
 
-// Helper function to get gradient CSS
-function getGradient(gradientClass: string): string {
+// Helper function to get gradient CSS and icon color
+function getGradient(gradientClass: string): { bg: string, icon: string } {
   const colors = gradientColors[gradientClass];
   if (colors) {
-    return `linear-gradient(to bottom right, ${colors.from}, ${colors.to})`;
+    return {
+      bg: `linear-gradient(to bottom right, ${colors.from}, ${colors.to})`,
+      icon: colors.from
+    };
   }
-  // Fallback gradient
-  return `linear-gradient(to bottom right, #6366f1, #a855f7)`;
+  // Fallback
+  return {
+    bg: `linear-gradient(to bottom right, #6366f1, #a855f7)`,
+    icon: "#6366f1"
+  };
 }
 
 const containerVariants = {
@@ -78,6 +84,8 @@ const ServicesGrid = () => {
     >
       {servicesList.map((service) => {
         const Icon = iconMap[service.icon] || Lightbulb;
+        const gradientTheme = getGradient(service.gradient);
+
         return (
           <motion.div
             key={service.slug}
@@ -89,7 +97,7 @@ const ServicesGrid = () => {
               <div className="scroll-smooth border border-border rounded-xl overflow-hidden shadow-lg bg-card h-full hover:shadow-xl transition-all duration-300">
                 {/* Gradient overlay on hover */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                  className={`absolute inset-0 bg-theme-gradient opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                 />
 
                 {/* Icon section */}
@@ -97,7 +105,7 @@ const ServicesGrid = () => {
                   <div
                     className="relative w-16 h-16 rounded-xl mb-4"
                     style={{
-                      background: getGradient(service.gradient),
+                      background: gradientTheme.bg,
                       padding: "3px"
                     }}
                   >
@@ -106,7 +114,7 @@ const ServicesGrid = () => {
                       transition={{ duration: 0.3 }}
                       className="w-full h-full rounded-xl bg-card flex items-center justify-center"
                     >
-                      <Icon className="w-8 h-8 text-accent" />
+                      <Icon className="w-8 h-8" color={gradientTheme.icon} />
                     </motion.div>
                   </div>
 
