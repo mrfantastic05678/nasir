@@ -48,12 +48,11 @@ const Hero = () => {
                 <span className="text-gray-800 dark:text-gray-200 font-semibold tracking-normal mt-2 inline-block transition-colors duration-500">
                   <Typewriter
                     words={[
-                      "an AI Solutions Developer.",
-                      "a Full-Stack Developer.",
-                      "a Chatbot Expert.",
-                      "an Automation Specialist.",
-                      "a Business Workflow Optimizer.",
-                      "a Technical-Business Bridge.",
+                      "an AI & Automation Architect.",
+                      "a Full-Stack Engineer.",
+                      "a Business-Technology Strategist.",
+                      "a Conversational AI Specialist.",
+                      "a Workflow Optimization Expert.",
                     ]}
                     loop={0}
                     cursor
@@ -66,7 +65,7 @@ const Hero = () => {
               </h1>
             </div>
             <p className="mb-8 leading-relaxed font-poppins text-muted-foreground transition-colors duration-500">
-              Spearheading intelligent automation systems and modern web applications that optimize business workflows. I lead AI model integration into client-facing products, build chatbots that handle complex queries, and deliver full-stack solutions with measurable results.
+              An architect of digital transformation, dedicated to building AI-driven solutions that solve complex business challenges. By bridging the gap between technical execution and strategic goals, I design intelligent chatbots, automate critical workflows and develop full-stack platforms that streamline operations and drive real growth.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Link href="#contact" className="scroll-smooth duration-300">

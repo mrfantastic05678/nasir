@@ -19,10 +19,10 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-base text-center md:text-left text-accent font-medium sm:text-lg">
-            About Me!
+            About Me:
           </h3>
           <h2 className="sm:text-3xl text-center text-2xl md:text-left text-foreground font-medium title-font mb-2 md:w-2/5">
-            AI Solutions Developer & Full-Stack Developer
+            AI & Automation Architect
           </h2>
         </motion.div>
         <motion.div
@@ -33,7 +33,7 @@ const About = () => {
           className="md:-mt-24 md:w-3/5 md:pl-6 justify-self-end"
         >
           <p className="leading-relaxed text-center md:text-left text-base text-muted-foreground transition-colors duration-300">
-            As a freelance developer, I <span className="text-accent font-semibold transition-colors duration-300">spearhead intelligent automation systems</span> and modern web applications. I lead AI model integration into client-facing products, building chatbots that handle complex queries and automate repetitive tasks. As a <span className="text-accent font-semibold transition-colors duration-300">bridge between technical teams and clients</span>, I ensure every solution is strategically aligned with business goals,delivering measurable results in efficiency and conversion rates.
+            I build the bridge between innovative code and business value. As a Full-Stack Developer and AI Specialist, I design custom chatbots and automated workflows that solve complex operational problems. By combining technical development with strategic business insight, I help teams work smarter not harder through intelligent process optimization and bespoke AI solutions.
           </p>
           <motion.div
             initial={{ opacity: 0 }}

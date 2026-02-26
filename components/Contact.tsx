@@ -108,18 +108,18 @@ const Contact = () => {
                 EMAIL
               </h2>
               <Link
-                href="mailto:nasirsiddiqui@example.com"
+                href="mailto:nasir@nasirsidiki.com"
                 className="text-accent leading-relaxed"
               >
-                nasirsiddiqui@example.com
+                nasir@nasirsidiki.com
               </Link>
             </div>
             <div>
               <h2 className="title-font font-semibold text-foreground text-xs">
                 PHONE
               </h2>
-              <Link href={"tel:+923001234567"}>
-                <p className="leading-relaxed">+923001234567</p>
+              <Link href={"tel:+923351234563"}>
+                <p className="leading-relaxed">+92 335-1234563</p>
               </Link>
             </div>
           </div>
