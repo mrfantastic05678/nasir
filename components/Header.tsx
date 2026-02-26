@@ -61,7 +61,7 @@ const Header = () => {
           className={`mx-auto max-w-7xl flex items-center justify-between transition-all duration-300 ${
             scrolled
               ? "bg-card/80 backdrop-blur-md shadow-lg shadow-black/20 border border-border rounded-full px-8 py-3 mx-4 lg:mx-auto"
-              : "bg-transparent px-5 py-2"
+              : "bg-white/10 backdrop-blur-sm px-5 py-2"
           }`}
         >
           {/* Logo */}
