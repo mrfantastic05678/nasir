@@ -27,10 +27,10 @@ const Footer = () => {
           © 2026 Nasir Siddiqui | Designed with 🩷 @
           <Link
             href="http://www.hashtagstech.com"
-            className="text-gray-600 ml-1 hover:text-accent"
+            className="text-accent ml-1 hover:text-accent/80 font-medium transition-colors"
             target="_blank"
           >
-            Hashtags Technology
+            Hashtags Technology.
           </Link>
         </p>
         <span className="inline-flex gap-3 sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

@@ -65,7 +65,7 @@ const Hero = () => {
               </h1>
             </div>
             <p className="mb-8 leading-relaxed font-poppins text-muted-foreground transition-colors duration-500">
-              An architect of digital transformation, dedicated to building AI-driven solutions that solve complex business challenges. By bridging the gap between technical execution and strategic goals, I design intelligent chatbots, automate critical workflows and develop full-stack platforms that streamline operations and drive real growth.
+              An architect of <span className="text-accent">digital transformation</span>, dedicated to building <span className="text-accent">AI-driven solutions</span> that solve complex business challenges. By bridging the gap between technical execution and strategic goals, I design <span className="text-accent">intelligent chatbots</span>, automate critical workflows and develop <span className="text-accent">full-stack platforms</span> that streamline operations and drive real growth.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Link href="#contact" className="scroll-smooth duration-300">

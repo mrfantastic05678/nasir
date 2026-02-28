@@ -33,7 +33,7 @@ const About = () => {
           className="md:-mt-24 md:w-3/5 md:pl-6 justify-self-end"
         >
           <p className="leading-relaxed text-center md:text-left text-base text-muted-foreground transition-colors duration-300">
-            I build the bridge between innovative code and business value. As a Full-Stack Developer and AI Specialist, I design custom chatbots and automated workflows that solve complex operational problems. By combining technical development with strategic business insight, I help teams work smarter not harder through intelligent process optimization and bespoke AI solutions.
+            I build the bridge between innovative code and business value. As a <span className="text-accent">Full-Stack Developer</span> and <span className="text-accent">AI Specialist</span>, I design custom <span className="text-accent">chatbots</span> and <span className="text-accent">automated workflows</span> that solve complex operational problems. By combining technical development with strategic business insight, I help teams work smarter not harder through intelligent process optimization and bespoke <span className="text-accent">AI solutions.</span>
           </p>
           <motion.div
             initial={{ opacity: 0 }}
