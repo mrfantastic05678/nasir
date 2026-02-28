@@ -130,15 +130,7 @@ export default function RootLayout({
         />
         <meta name="application-name" content="Nasir Siddiqui Portfolio" />
         <meta name="mobile-web-app-capable" content="yes" />
-      </head>
-      <body
-        className={cn(
-          inter.variable,
-          poppins.variable,
-          montserrat.variable,
-          "font-sans antialiased"
-        )}
-      >
+        
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
@@ -156,6 +148,15 @@ export default function RootLayout({
             </Script>
           </>
         )}
+      </head>
+      <body
+        className={cn(
+          inter.variable,
+          poppins.variable,
+          montserrat.variable,
+          "font-sans antialiased"
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

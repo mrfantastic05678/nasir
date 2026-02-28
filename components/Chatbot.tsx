@@ -189,7 +189,7 @@ export default function Chatbot() {
           >
             <div className="bg-transparent overflow-hidden flex flex-col h-full rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.3)] ring-1 ring-border/50">
               {/* Header */}
-              <div className="bg-card/80 backdrop-blur-xl border-b border-border/50 p-4 relative overflow-hidden shrink-0 rounded-t-2xl">
+              <div className="bg-card/95 backdrop-blur-xl border-b border-border/50 p-4 relative overflow-hidden shrink-0 rounded-t-2xl">
                 <div className="absolute inset-0 bg-theme-gradient opacity-[0.03] pointer-events-none" />
                 <div className="flex items-center justify-between relative z-10">
                   <div className="flex items-center gap-3">
@@ -252,7 +252,7 @@ export default function Chatbot() {
               </div>
 
               {/* Messages */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-5 min-h-0 [scrollbar-width:thin] bg-card/60 backdrop-blur-md">
+              <div className="flex-1 overflow-y-auto p-4 space-y-5 min-h-0 [scrollbar-width:thin] bg-card/95 backdrop-blur-md">
                 <AnimatePresence initial={false}>
                   {messages.map((message) => {
                     const text = getMessageText(message);
@@ -348,13 +348,13 @@ export default function Chatbot() {
                       animate={{ opacity: 1, y: 0 }}
                       className="flex justify-start"
                     >
-                      <div className="max-w-[85%] bg-red-500/10 border border-red-500/20 text-red-400 rounded-2xl px-5 py-3 shadow-md">
+                      <div className="max-w-[85%] bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-600 dark:text-red-400 rounded-2xl px-5 py-3 shadow-md">
                         <p className="text-sm font-medium mb-2">
                           Something went wrong. Please try again.
                         </p>
                         <button
                           onClick={() => regenerate()}
-                          className="text-xs bg-red-500/20 hover:bg-red-500/30 px-3 py-1.5 rounded-full transition-colors font-medium"
+                          className="text-xs bg-red-100 hover:bg-red-200 dark:bg-red-500/20 dark:hover:bg-red-500/30 text-red-700 dark:text-red-300 px-3 py-1.5 rounded-full transition-colors font-medium"
                         >
                           ↻ Retry
                         </button>
@@ -366,8 +366,8 @@ export default function Chatbot() {
               </div>
 
               {/* Input */}
-              <form onSubmit={handleSubmit} className="p-3 sm:p-4 bg-card/80 backdrop-blur-xl shrink-0 rounded-b-2xl border-t border-border/50">
-                <div className="flex gap-2 items-end">
+              <form onSubmit={handleSubmit} className="p-3 sm:p-4 bg-card shrink-0 rounded-b-2xl border-t border-border/50">
+                <div className="flex gap-2 items-center">
                   <input
                     ref={inputRef}
                     type="text"
@@ -375,14 +375,14 @@ export default function Chatbot() {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Ask about my skills or services..."
                     disabled={status !== "ready" && status !== "error"}
-                    className="flex-1 bg-transparent border-0 border-b-2 border-transparent/10 focus:border-primary/50 rounded-none px-4 py-3 text-sm font-medium text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-0 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="flex-1 bg-secondary/50 focus:bg-secondary border border-border/50 focus:border-primary/50 rounded-full px-5 py-3 text-sm font-medium text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                   />
                   <motion.button
                     type="submit"
                     disabled={isLoading || !input.trim()}
                     whileHover={{ scale: (isLoading || !input.trim()) ? 1 : 1.05 }}
                     whileTap={{ scale: (isLoading || !input.trim()) ? 1 : 0.95 }}
-                    className="bg-primary text-black flex items-center justify-center w-[46px] h-[46px] shrink-0 rounded-full shadow-[0_0_15px_rgba(254,205,26,0.2)] disabled:opacity-50 disabled:cursor-not-allowed transition-opacity border border-black/10"
+                    className="bg-theme-gradient text-black flex items-center justify-center w-[46px] h-[46px] shrink-0 rounded-full shadow-[0_0_15px_rgba(254,205,26,0.3)] disabled:opacity-50 disabled:cursor-not-allowed transition-opacity border border-black/10"
                     aria-label="Send message"
                   >
                     <FaPaperPlane className="text-sm relative right-[1px]" />
