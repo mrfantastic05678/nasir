@@ -348,13 +348,13 @@ export default function Chatbot() {
                       animate={{ opacity: 1, y: 0 }}
                       className="flex justify-start"
                     >
-                      <div className="max-w-[85%] bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-600 dark:text-red-400 rounded-2xl px-5 py-3 shadow-md">
+                      <div className="max-w-[85%] bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/50 text-red-600 dark:text-red-300 rounded-2xl px-5 py-3 shadow-md">
                         <p className="text-sm font-medium mb-2">
                           Something went wrong. Please try again.
                         </p>
                         <button
                           onClick={() => regenerate()}
-                          className="text-xs bg-red-100 hover:bg-red-200 dark:bg-red-500/20 dark:hover:bg-red-500/30 text-red-700 dark:text-red-300 px-3 py-1.5 rounded-full transition-colors font-medium"
+                          className="text-xs bg-red-100 hover:bg-red-200 dark:bg-red-900/40 dark:hover:bg-red-900/60 text-red-700 dark:text-red-200 px-3 py-1.5 rounded-full transition-colors font-medium"
                         >
                           ↻ Retry
                         </button>
