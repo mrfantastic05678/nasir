@@ -116,8 +116,8 @@ export default function Chatbot() {
           }}
           transition={isOpen ? { type: "spring", stiffness: 260, damping: 20 } : {
             y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-            scale: { type: "spring", stiffness: 260, damping: 20 },
-            opacity: { duration: 0.3 },
+            scale: { type: "spring", stiffness: 260, damping: 20, duration: 0.4 },
+            opacity: { duration: 0.4 },
           }}
           whileHover={{
             scale: 1.12,
