@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ChatbotWrapper from "@/components/ChatbotWrapper";
 import { inter, poppins, montserrat } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
@@ -164,6 +165,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <ChatbotWrapper />
         </ThemeProvider>
       </body>
     </html>

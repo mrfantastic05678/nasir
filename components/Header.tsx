@@ -55,12 +55,11 @@ const Header = () => {
           scrolled ? "pt-4" : "pt-6"
         }`}
       >
-        <div className="absolute top-[-50%] left-[-10%] w-[30%] h-[150%] bg-primary rounded-full blur-[100px] opacity-20 pointer-events-none -z-10" />
 
         <div
           className={`mx-auto max-w-7xl flex items-center justify-between transition-all duration-300 ${
             scrolled
-              ? "bg-white/50 backdrop-blur-md shadow-lg shadow-black/20 border border-border rounded-full px-8 py-3 mx-4 lg:mx-auto"
+              ? "bg-background/80 dark:bg-card/80 backdrop-blur-2xl shadow-lg shadow-black/10 dark:shadow-black/40 border border-white/10 dark:border-white/5 rounded-full px-8 py-3 mx-4 lg:mx-auto"
               : "bg-transparent px-5 py-2"
           }`}
         >

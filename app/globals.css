@@ -137,6 +137,18 @@
   animation-range: entry 0% cover 40%;
 }
 
+/* Chatbot: smooth fade-in for dots and text transitions */
+@keyframes chatFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Seamless infinite scroll for skill slider */
 @keyframes infinite-scroll-right {
   0% {
