@@ -208,8 +208,8 @@ export default function Chatbot() {
           onClick={() => setIsOpen(!isOpen)}
           className={`relative w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
             isOpen
-              ? "bg-primary hover:bg-primary/90 shadow-[0_4px_24px_rgba(254,205,26,0.3)] ring-1 ring-black/10"
-              : "bg-theme-gradient shadow-[0_4px_24px_rgba(254,205,26,0.4)] hover:shadow-[0_4px_32px_rgba(254,205,26,0.6)] border border-white/20"
+              ? "bg-accent hover:bg-accent/90 shadow-[0_4px_24px_rgba(100,244,171,0.3)] ring-1 ring-black/10"
+              : "bg-accent shadow-[0_4px_24px_rgba(100,244,171,0.4)] hover:shadow-[0_4px_32px_rgba(100,244,171,0.6)] border border-white/20"
           }`}
           aria-label={isOpen ? "Close chat" : "Open chat"}
         >
@@ -458,7 +458,7 @@ export default function Chatbot() {
                     disabled={isLoading || !input.trim()}
                     whileHover={{ scale: (isLoading || !input.trim()) ? 1 : 1.05 }}
                     whileTap={{ scale: (isLoading || !input.trim()) ? 1 : 0.95 }}
-                    className="bg-theme-gradient text-black flex items-center justify-center w-[46px] h-[46px] shrink-0 rounded-full shadow-[0_0_15px_rgba(254,205,26,0.3)] disabled:opacity-50 disabled:cursor-not-allowed transition-opacity border border-black/10"
+                    className="bg-accent text-black flex items-center justify-center w-[46px] h-[46px] shrink-0 rounded-full shadow-[0_0_15px_rgba(100,244,171,0.35)] disabled:opacity-50 disabled:cursor-not-allowed transition-opacity border border-black/10"
                     aria-label="Send message"
                   >
                     <FaPaperPlane className="text-sm relative right-[1px]" />

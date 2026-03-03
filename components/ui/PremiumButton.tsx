@@ -37,8 +37,8 @@ export const PremiumButton = React.forwardRef<HTMLButtonElement, PremiumButtonPr
         ref={ref}
         className={cn(
           "group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full font-bold text-sm px-8 transition-all duration-300",
-          "bg-theme-gradient text-black hover:scale-105 active:scale-95",
-          "shadow-[0_0_20px_rgba(254,205,26,0.3)] hover:shadow-[0_0_30px_rgba(254,205,26,0.5)]",
+          "bg-accent text-black hover:scale-105 active:scale-95",
+          "shadow-[0_0_20px_rgba(100,244,171,0.35)] hover:shadow-[0_0_30px_rgba(100,244,171,0.55)]",
           "border border-white/20 dark:border-white/10",
           className
         )}
