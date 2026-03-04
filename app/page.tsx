@@ -83,7 +83,7 @@ export default function Home() {
           Technical Expertise
         </h3>
         <h2 className="text-5xl text-foreground font-semibold sm:text-6xl">
-          AI & Full-Stack Tech Stack
+          Tech Stack
         </h2>
       </div>
       <SkillSlider />

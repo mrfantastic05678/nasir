@@ -53,9 +53,9 @@ export function NotificationPopup({
             <div
               className={`
                 pointer-events-auto relative w-full max-w-sm rounded-2xl overflow-hidden
-                bg-card/95 backdrop-blur-xl
-                shadow-[0_24px_64px_rgba(0,0,0,0.3)]
-                border ${isSuccess ? "border-accent/30" : "border-destructive/30"}
+                bg-white dark:bg-[#1c1c1e]
+                shadow-[0_24px_64px_rgba(0,0,0,0.35)]
+                border ${isSuccess ? "border-accent/40" : "border-destructive/40"}
               `}
             >
               {/* Top gradient bar */}
