@@ -212,7 +212,7 @@ const ProjectTabs = () => {
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
-                        className="lg:h-48 md:h-36 w-full"
+                        className="h-44 md:h-36 lg:h-48 w-full"
                       >
                         <Image
                           src="/assets/placeholder.png"
