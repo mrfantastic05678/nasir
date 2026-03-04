@@ -8,27 +8,22 @@
  */
 const DISPOSABLE_EMAIL_DOMAINS = [
   // Common disposable email providers
-  "tempmail.org",
-  "guerrillamail.com",
-  "mailinator.com",
-  "10minutemail.com",
-  "throwaway.email",
-  "getairmail.com",
-  "yopmail.com",
-  "maildrop.cc",
-  "sharklasers.com",
-  "temp-mail.org",
-  "fakeinbox.com",
-  "incognitomail.org",
-  "mailnesia.com",
-  "trashmail.com",
-  "tempmail.net",
-  "tempmailaddress.com",
-  "throwawaymail.com",
-  "randomail.net",
-  "ephp.org",
-  "maildisposable.com",
-  "disposablemail.com",
+  "tempmail.org", "tempmail.com", "tempmail.net", "tempmailaddress.com",
+  "temp-mail.org", "temp-mail.io",
+  "guerrillamail.com", "guerrillamail.org", "guerrillamail.net",
+  "mailinator.com", "10minutemail.com", "throwaway.email",
+  "getairmail.com", "yopmail.com", "maildrop.cc",
+  "sharklasers.com", "fakeinbox.com", "incognitomail.org",
+  "mailnesia.com", "trashmail.com", "throwawaymail.com",
+  "randomail.net", "maildisposable.com", "disposablemail.com",
+  "dispostable.com", "trashmail.me", "spamgourmet.com",
+  "spamgourmet.org", "mailnull.com", "spamfree24.org",
+  "discard.email", "filzmail.com", "tempr.email",
+  "getnada.com", "mohmal.com", "tnef.email",
+  "mailpoof.com", "trashmail.at", "trashmail.io",
+  "mailexpire.com", "deadaddress.com", "spambog.com",
+  "spamdecoy.com", "tempinbox.com", "mailsac.com",
+  "jetable.fr", "mytrashmail.com", "mt2015.com",
 ];
 
 /**
@@ -41,8 +36,12 @@ const SPAM_PATTERNS = [
   /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi,
   // Excessive capitalization
   /^[A-Z\s!?]{20,}$/,
-  // Common spam words
-  /\b(viagra|cialis|bitcoin|crypto|lottery|winner|free money|earn \$|make money|casino|poker|forex|trading|investment|loan|debt|credit card)\b/gi,
+  // Money / prize / gambling spam
+  /\b(win|winner|won|prize|lottery|jackpot|earn \$|make \$|\$\d+|usd|free money|easy money|extra income|cash|payout|reward|bonus|gift card|coupon|discount code)\b/gi,
+  // Financial spam
+  /\b(viagra|cialis|bitcoin|crypto|forex|trading|investment|loan|debt|credit card|casino|poker|bet|gambling|nft|airdrop)\b/gi,
+  // Urgency manipulation
+  /\b(urgent|act now|limited time|click here|buy now|order now|sign up now|don'?t miss|expires|last chance|hurry|immediately)\b/gi,
   // Repeated characters
   /(.)\1{10,}/,
   // Phone number spam patterns
@@ -105,6 +104,29 @@ export function validateName(name: string): {
     return { valid: false, error: "Name contains invalid characters" };
   }
 
+  // Detect bot-generated random strings
+  // Real names have vowels — random strings often don't
+  const vowels = (cleanName.match(/[aeiouAEIOU]/g) || []).length;
+  const vowelRatio = vowels / cleanName.replace(/\s/g, "").length;
+  if (vowelRatio < 0.15 && cleanName.length > 4) {
+    return { valid: false, error: "Please enter your real name" };
+  }
+
+  // Real names have spaces (first + last) OR are short (single name like 'Ali')
+  // Bot strings like 'ssFeVZomc' or 'yqPJkl0GU' are 8–12 chars with no space
+  const hasSpace = /\s/.test(cleanName);
+  if (!hasSpace && cleanName.length > 9) {
+    return { valid: false, error: "Please enter your full name" };
+  }
+
+  // Detect random camelCase strings (e.g. 'sFqJMBbsd', 'NaZCXldLX')
+  // Count uppercase letters that are NOT the first char — real names rarely have many
+  const midUpperCount = (cleanName.slice(1).match(/[A-Z]/g) || []).length;
+  const midUpperRatio = midUpperCount / cleanName.length;
+  if (midUpperRatio > 0.35 && cleanName.length > 5) {
+    return { valid: false, error: "Please enter your real name" };
+  }
+
   return { valid: true };
 }
 
@@ -124,6 +146,18 @@ export function validateSubject(subject: string): {
 
   if (cleanSubject.length > 200) {
     return { valid: false, error: "Subject is too long" };
+  }
+
+  // Check subject for spam keywords (same signal patterns as message)
+  const subjectSpamPatterns = [
+    /\b(win|winner|won|prize|lottery|jackpot|\$\d+|free money|easy money|cash|reward|gift card)\b/gi,
+    /\b(viagra|cialis|bitcoin|crypto|casino|poker|forex|investment|loan|credit card|nft|airdrop)\b/gi,
+    /\b(urgent|act now|limited time|click here|buy now|sign up now|last chance|hurry)\b/gi,
+  ];
+  for (const pattern of subjectSpamPatterns) {
+    if (pattern.test(cleanSubject)) {
+      return { valid: false, error: "Subject contains prohibited content" };
+    }
   }
 
   return { valid: true };
@@ -146,6 +180,12 @@ export function validateMessage(message: string): {
 
   if (cleanMessage.length > 5000) {
     return { valid: false, error: "Message is too long" };
+  }
+
+  // Minimum word count (too short = likely spam/test)
+  const wordCount = cleanMessage.split(/\s+/).filter(w => w.length > 1).length;
+  if (wordCount < 3) {
+    return { valid: false, error: "Message is too short. Please describe how I can help you." };
   }
 
   // Check for spam patterns
@@ -177,8 +217,8 @@ export function validateMessage(message: string): {
     spamScore += 1;
   }
 
-  // If spam score is too high, reject
-  if (spamScore >= 3) {
+  // Lower threshold — 2 hits = spam (was 3)
+  if (spamScore >= 2) {
     return {
       valid: false,
       error: "Message appears to be spam",
