@@ -93,15 +93,15 @@ const Header = () => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-4">
-            {/* Theme Toggle Button */}
-            <ThemeToggle />
-
             {/* Hire Me Button - Desktop */}
             <Link href="/contact" className="hidden lg:block">
               <PremiumButton icon={<FaArrowRight />}>
                 HIRE ME
               </PremiumButton>
             </Link>
+
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
 
             {/* Mobile Hamburger Menu */}
             <button

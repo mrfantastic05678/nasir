@@ -136,7 +136,7 @@ const Hero = () => {
           </div>
 
           <div className="sm:entrance-right lg:max-w-lg md:w-2/5 sm:-ml-16 sm:pt-0 relative lg:mt-4 xl:mt-0 md:ml-20 md:-mt-20">
-            <div className="-mt-56 -mr-[155px] w-11/12 sm:w-[24rem] h-[70%] shadow-2xl opacity-40 shadow-primary/10 rounded-xl absolute bottom-0 right-40 z-0 md:w-11/12 md:h-[75%] md:-mr-28 md:bottom-0 xs:h-[75%] xs:bottom-0 sm:bottom-0 sm:-mr-32 sm:w-10/12 lg:-mr-40 xl:w-10/12 xl:-mr-30 xl:h-[75%] xl:bottom-0 bg-card border border-border transition-colors duration-500"></div>
+            {/* <div className="-mt-56 -mr-[155px] w-11/12 sm:w-[24rem] h-[70%] shadow-2xl opacity-40 shadow-primary/10 rounded-xl absolute bottom-0 right-40 z-0 md:w-11/12 md:h-[75%] md:-mr-28 md:bottom-0 xs:h-[75%] xs:bottom-0 sm:bottom-0 sm:-mr-32 sm:w-10/12 lg:-mr-40 xl:w-10/12 xl:-mr-30 xl:h-[75%] xl:bottom-0 bg-card border border-border transition-colors duration-500"></div> */}
             <AnimatedTooltip
               tooltipTitle="Nasir Siddiqui"
               tooltipDescription="AI Solutions & Full-Stack Developer"
